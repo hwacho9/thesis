@@ -1,10 +1,10 @@
 # Fdb version 4
-["dvipdf"] 1752710218.89125 "vrsj2025-t.dvi" "vrsj2025-t.pdf" "vrsj2025-t" 1752710219.627 0
-  "vrsj2025-t.dvi" 1752710218.86792 22120 c630f278f7da0f22006efef0d075fc40 "latex"
+["dvipdf"] 1752714898.46498 "vrsj2025-t.dvi" "vrsj2025-t.pdf" "vrsj2025-t" 1752714899.08383 0
+  "vrsj2025-t.dvi" 1752714898.44836 23520 ab4f0018a015a84e354a13b7cc19f64c "latex"
   (generated)
   "vrsj2025-t.pdf"
   (rewritten before read)
-["latex"] 1752710218.53339 "vrsj2025-t.tex" "vrsj2025-t.dvi" "vrsj2025-t" 1752710219.62591 0
+["latex"] 1752714898.1954 "vrsj2025-t.tex" "vrsj2025-t.dvi" "vrsj2025-t" 1752714899.08345 0
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1741388039 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1741388039 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -16,19 +16,20 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1741388039 856 7404843a5f798859944d7973a47821d5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth9.tfm" 1741388039 856 bed293689e159275e10c27a9927115b7 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1741388039 856 39c171483fe1bb7d0e1368980c0c205b ""
-  "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin6.tfm" 1741388039 856 e782a1e1d78799594d137f0fef162b39 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin8.tfm" 1741388039 856 bdef40bcf3aed4751efa9be9bfa6eb4b ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin9.tfm" 1741388039 856 b22b8128b44bf8881977f2c74b361f47 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1741388039 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1741388039 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1741388039 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1741388039 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1741388039 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1741388039 1524 d89e2d087a9828407a196f428428ef4a ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1741388039 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1741388039 1300 b62933e007d01cfd073f79b963c01526 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1741388039 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1741388039 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1741388039 1116 933a60c408fc0a863a92debe84b2d294 ""
+  "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1741388039 1120 8b7d695260f3cff42e636090a8002094 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1741388039 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1741388039 1224 978390e9c2234eab29404bc21b268d1e ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1741388039 12296 04d6453afafd99986deba3629756d9ec ""
@@ -44,8 +45,8 @@
   "balance.sty" 1741569697 3366 d938ad2440edc1ea1c9042843580ec42 ""
   "logo.eps" 1741569697 509514 b545df1af0a2cb7211613fde401c5275 ""
   "logo.png" 1741569697 34276 1578127b105baefec6364ee351e67d29 ""
-  "vrsj2025-t.aux" 1752710218.86662 2585 000d6bf4fdf545b9b9b72a15685da030 "latex"
-  "vrsj2025-t.tex" 1752710216.48773 17298 32e5ebeb35edaa8f623fb4da5610149b ""
+  "vrsj2025-t.aux" 1752714898.44742 3065 b0e2fdc7e1c55fa5e8fdba5ac69d1cf2 "latex"
+  "vrsj2025-t.tex" 1752714894.38396 18202 2ff942e7ac0640d0bd779c591b9c9de0 ""
   "vrsjj.sty" 1752591090.86701 4571 c82c177ea6276a2ff36b0f94301fe7f5 ""
   (generated)
   "vrsj2025-t.aux"
