@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  日本バーチャルリアリティ学会大会論文集
+%  大会論文集投稿用原稿執筆要領（サンプル原稿）
+%
+%  Apr. 10, 2013  Arranged by Megumi Nakao
+%  Feb.  5, 2014  Arranged by Keita Suzuki, Aichi Institute of Technology
+%  Feb. 20, 2015  Arranged by Yasuyuki Yanagida
+%  Feb. 20, 2019  Arranged by Shoichi Hasegawa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{jlreq}
+%%% 本大会論文集固有のパラメータ，定義を読み込み．
+  \usepackage{luatexja}
+%%% 図貼り付け用．必要に応じて，使用環境に適合するよう編集してください．
+  \usepackage{graphicx}
+%%% 最終ページの高さを自動的に揃える場合，balanceパッケージを使用可．
+  \usepackage{balance}
+
+%%% VRSJ用のコマンド定義
+\newcommand{\HeadComm}[1]{\begin{center}\small #1\end{center}}
+\newcommand{\ProcTitle}[1]{\begin{center}\large\textbf{#1}\end{center}}
+\newcommand{\JTitle}[1]{\begin{center}\Large\textbf{#1}\end{center}}
+\newcommand{\ETitle}[1]{\begin{center}\large\textit{#1}\end{center}}
+\newcommand{\JAuthor}[1]{\begin{center}\large #1\end{center}}
+\newcommand{\EAuthor}[1]{\begin{center}\small #1\end{center}}
+\newcommand{\Affiliation}[1]{\begin{center}\small #1\end{center}}
+\newcommand{\Abstract}[1]{\begin{center}\textbf{要旨}\end{center}\small #1}
+\newcommand{\KeyWords}[1]{\begin{center}\small\textbf{キーワード:} #1\end{center}}  
+  
+%%% ヘッダ用定義．
+\newcounter{vrsjyear}
+\newcounter{vrsjmonth}
+\newcounter{vrsjnum}
+
+\setcounter{vrsjyear}{2025}
+\setcounter{vrsjmonth}{9} % 大会開催月
+\setcounter{vrsjnum}{\value{vrsjyear}}
+\addtocounter{vrsjnum}{-1995}
+
+%%% 行間の指定: \baselinestrechの値が1.32で1ページ50行に相当します．
+\renewcommand{\baselinestretch}{1.32}
+
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small %%% フォントのサイズを small (9 pt) に設定．
+\twocolumn[%%%%%%%%%%%%%%%%%%%% []内が1段組部分．
+%%%【必須】
+\HeadComm{This article is a technical report without peer review, and its polished and/or extended version may be published elsewhere.}%
+%%% 【必須】ロゴとヘッダ．変更しないでください．
+\ProcTitle{第\arabic{vrsjnum}回日本バーチャルリアリティ学会大会論文集（\arabic{vrsjyear}年\arabic{vrsjmonth}月）}%
+%%%
+%%% 【必須】和文タイトル．
+\JTitle{VRコンテンツ体験時における生体情報の統合に基づく\\リアルタイム感情推定フレームワーク}%
+%%% 【オプション】英文タイトル．
+\ETitle{A Real-time Emotion Estimation Framework for VR Experiences \\ by Integrating Biosignals}%
+%%% 【必須】和文著者．
+\JAuthor{趙 聖化$^{1)}$}%
+%%% 【オプション】英文著者．
+\EAuthor{Seong-Hwa CHO$^{1)}$}
+%%% 【必須】和文所属．
+\Affiliation{1) 人間システム工学科 井村研究室}%
+%%% 【必須】和文要旨
+\Abstract{%
+本研究は，VRコンテンツ体験中のユーザの感情を客観的に評価するため，複数の生体信号を統合し，リアルタイムで感情を推定するフレームワークを提案する．視線追跡付きHMD，皮膚電気活動(EDA)，心電(ECG)，筋電(EMG)センサを連携させ，恐怖や集中といった感情状態を捉える．VRホラーゲームを用いた予備実験では，6名の被験者からデータを収集し，生理反応と主観評価の間に見られる個人差を分析した．その結果，ユーザの反応は3つのタイプに分類可能であることが示唆され，本手法が複雑なユーザ体験の多角的な分析に有効であることを確認した．
+}%
+\KeyWords{行動・認知, 計測・認識,感情推定}%
+]%%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+
+
+\section{はじめに}
+
+VRコンテンツの評価は主観的であることが多く，制作者の意図した感情がユーザに伝わっているか客観的に把握することは難しい．本研究では，視線追跡機能付きHMD(ヘッドマウントディスプレイ)，皮膚電気活動(EDA)・心電(ECG)・筋電(EMG)等の複数の生体センサを統合し，VRコンテンツ体験中のユーザの集中,恐怖,驚きといった感情を実時間で推定するフレームワークを構築する．
+
+\section{関連研究}
+
+生体信号を用いた感情推定は広く研究されている．EDAは情動的な覚醒度の指標として, 心拍変動(HRV)はストレスや感情の正負(valence)の評価に用いられている. 複数の生体信号を組み合わせることで，単一のセンサよりも高精度な感情推定が期待できる\cite{Guixeres2020, Glancy2021}.
+
+VR環境下で生体信号を計測し,機械学習を用いて感情を分類する試みも活発になされている．Marín-Moralesら\cite{Marin-Morales2018}はEEGとHRVからSVMを用いて覚醒度と感情価を推定している. また, Orozco-Moraら\cite{Orozco-Mora2024}はVRゲーム中のストレスレベルに応じて難易度を動的に調整するシステム(DDA)を試作しており, プレイヤーの心拍数に基づいてゲーム内パラメータを変化させることで, 恐怖や興奮を適切なレベルに維持できることを示している.
+
+\section{提案手法}
+
+\subsection{システム構成とデータ収集}
+
+視線・瞳孔径情報を取得可能なHMDを中核とし,外部センサとしてEDA,ECG,EMGセンサを連携させる. 多角的データから恐怖による心拍・発汗の上昇,驚きによる瞬きや筋収縮,集中による画面の凝視等を捉える. 客観データはVR内のイベントログと時刻同期させ，体験後の主観評価アンケートと照合する．
+
+\subsection{データ処理と感情状態の解釈}
+
+収集した各センサデータから,リアルタイムで特徴量を抽出する.具体的には,EDAのピーク数,HRV指標（RMSSD, LF/HF比），EMGの振幅などである．本研究の現段階では,これらの客観的特徴量と体験後の主観評価との相関を分析することで, 感情状態を解釈する. 将来的には, 収集したデータを基に, ランダムフォレストやSVMなどの機械学習モデルを用いて感情分類器を構築することを目指す.
+
+\section{予備実験結果}
+
+提案手法の有効性を検証するため,VRホラーゲームを用いた予備実験を実施した. 被験者6名(20代男性)を対象に生体信号(HRV, EMG, EDA)を計測し,体験後に自己申告式のアンケート調査を行った.
+
+総合的な分析の結果,恐怖刺激に対する反応は個人差が非常に大きく,特に客観的な生理反応と主観的な感情認識の関係に基づき,表\ref{table:types}に示す3つのタイプに大別できることが示唆された.
+
+\begin{table}[tb]
+\caption{被験者の反応タイプ分類}
+\label{table:types}
+\begin{center}\small
+\def\arraystretch{1.2}
+\begin{tabular}{|p{4em}|p{10em}|p{7em}|} \hline
+\textbf{タイプ} & \textbf{特徴} & \textbf{主な生理反応パターン} \\ \hline \hline
+Aタイプ: \newline 古典的恐怖/驚愕反応型 & 生理反応と主観的体験が一致し,脅威に対し典型的な恐怖・驚愕反応を示す. & HRV低下, EMG上昇, EDA上昇が同時に発生. \\ \hline
+Bタイプ: \newline 精神的ショック/内面化型 & 身体的反応より内面的な精神的ストレスが顕著. 「恐怖」と「驚き」を区別して認識する. & EMG上昇は軽微だが, HRV低下とEDA上昇が顕著. \\ \hline
+Cタイプ: \newline 身体-認知不協和/挑戦型 & 極度の生理的ストレス反応を示すが,主観的な恐怖は低い. 体験を「課題」や「不快」として再解釈. & HRV・EMGが極端に反応するが,主観的恐怖の評価は低い. \\ \hline
+\end{tabular}
+\end{center}
+\vspace*{-3mm}
+\end{table}
+
+例えば,Cタイプの松本氏(test8)は,生理的に極度のストレス(HRV -66.2\%)を経験しながらも,主観的な「不快感」は低く(2/5),「集中度」は最大(5/5)と回答した. これは,恐怖体験を「高度な集中を要する挑戦課題」と捉えていたことを強く示唆する. 同じくCタイプの小山氏(test9)は,セッション中に最大の生理的ストレス(HRV -86.8\%)を記録した後,脱出成功時に感じた「感情の強度」が最大(5/5)であった. これは,極度のストレスからの解放感,すなわちカタルシスを経験した可能性を示しており,客観的なストレス指標が主観的な達成感の源泉となり得ることを示す興味深い事例である.
+
+これらの結果から,複数の生体信号と主観評価を組み合わせることで,単一の指標では捉えきれないユーザの複雑な内面状態を多角的に分析できる可能性が示された.
+
+\balance
+
+\section{まとめと今後の課題}
+
+本稿では,VRコンテンツ体験時におけるユーザの感情を,複数の生体センサを用いて推定する研究フレームワークを提案した. 予備実験の結果,提案手法が生理反応と主観評価の間の複雑な関係性を捉え,ユーザ体験を詳細に分析する上で有効であることが予備的に確認された.
+
+今後の課題として,まず予備実験の結果に基づき,特徴量や分析手法を洗練させた後,本実験と詳細な分析を行う(2025年10\textasciitilde11月). 最終的には,本研究の成果を,ユーザの感情状態に応じてコンテンツが動的に変化する適応型VRシステムの実現に繋げることを目指す.
+
+\begin{thebibliography}{99}
+
+\bibitem{Guixeres2020}
+J. Guixeres, et al.: Emotion Recognition in Immersive Virtual Reality: From Statistics to Affective Computing, \textit{Frontiers in Psychology}, Vol. 11, Article 1157, 2020.
+    
+\bibitem{Marin-Morales2018}
+J. Marín-Morales, et al.: Affective Computing in VR Environments using EEG and Heart Rate Variability, \textit{Sensors}, Vol. 18, No. 10, Article 3306, 2018.
+    
+\bibitem{Orozco-Mora2024}
+C.E. Orozco-Mora, et al.: Dynamic Difficulty Adaptation Based on Stress Detection for a VR Video Game: A Pilot Study, \textit{Electronics}, Vol. 13, No. 12, Article 2324, 2024.
+    
+\bibitem{Glancy2021}
+M. Glancy and C.S. Ang: VREED: Virtual Reality Emotion Recognition Dataset using Eye Tracking \& Physiological Measures, \textit{Proc. ACM IMWUT}, Vol. 5, No. 4, Article 178, pp. 1-20, 2021.
+
+\bibitem{Ogawa2014}
+小川健一, 杉本泰治: 視線計測によるストレス評価手法の検討, \textit{日本バーチャルリアリティ学会論文誌}, Vol. 19, No. 1, pp. 61-70, 2014. 
+
+\bibitem{Russell1980}
+J. A. Russell: A circumplex model of affect, \textit{Journal of Personality and Social Psychology}, Vol. 39, No. 6, pp. 1161-1178, 1980.
+
+\end{thebibliography}
+
+\end{document}

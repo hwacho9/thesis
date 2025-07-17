@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{Gao2018}
+Ming Gao, Xinlei Wang, Kui Wu, Andre Pradhana, Eftychios Sifakis, Cem Yuksel,
+  and Chenfanfu Jiang.
+\newblock {GPU} optimization of material point methods.
+\newblock {\em ACM Trans. Graph.}, 37(6):254:1--254:12, 2018.
+
+\bibitem{Okumura2017}
+奥村 晴彦 and 黒木 祐介.
+\newblock {\em LaTeX2$\epsilon$ 美文書作成入門 改訂第8版}.
+\newblock 技術評論社, 2020.
+
+\end{thebibliography}

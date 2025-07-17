@@ -1,0 +1,151 @@
+\usepackage[left=14mm,right=14mm,top=16mm,bottom=16mm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+%\usepackage[usenames]{color}
+%\usepackage[obeyspaces]{url}
+\usepackage{color}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+%\def\normalsize{\@setfontsize\normalsize\@ixpt{13pt}}
+%\def\small{\@setfontsize\small\@viipt{12pt}}
+%\def\Small{\@setsize\Small{4mm}\viiipt\@viiipt}
+%\def\scriptsize{\@setfontsize\scriptsize{6pt}\@viiipt}
+%\def\tiny{\@setfontsize\tiny\@vpt{6pt}}
+%\def\large{\@setfontsize\large\@xipt{18pt}}
+%\def\Large{\@setfontsize\Large\@xivpt{20pt}}
+%\def\LARGE{\@setfontsize\LARGE\@xviipt{24pt}}
+%\def\huge{\@setfontsize\huge\@xxpt\@xxvpt}
+%\def\Huge{\@setfontsize\Huge\@xxvpt{30pt}}
+
+\renewcommand{\baselinestretch}{0.85}
+
+\def\textfraction{.1}  
+\setcounter{topnumber}{5}
+\setcounter{dbltopnumber}{5}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\dbltopfraction}{.9}
+
+\def\intextsep{.5em}
+\def\textfloatsep{.5em}
+
+\def\maketitle{\par
+  \begingroup
+  \twocolumn[\@maketitle]
+  \thispagestyle{empty}
+  \let\maketitle\relax
+  \let\@maketitle\relax
+  \gdef\@affiliation{}
+  \gdef\@studentnumber{}
+  \endgroup
+}
+
+\def\affiliation#1{\gdef\@affiliation{#1}}
+\def\studentnumber#1{\gdef\@studentnumber{#1}}
+
+\def\@maketitle{%\newpage
+  \vskip .5em
+  \begin{center}
+    {\Large\textbf{\@title} \par} \vskip .8em 
+    {\large \lineskip .5em \@affiliation \hskip 1em
+      \@studentnumber \hskip .5em\@author \par} \vskip .8em 
+  \end{center}
+  \vskip .5em
+}
+
+\ModifyHeading{section}{font=\large\sffamily\gtfamily\bfseries}
+\ModifyHeading{section}{before_space=12pt,after_space=8pt}
+\ModifyHeading{subsection}{font=\normalsize\sffamily\gtfamily\bfseries}
+\ModifyHeading{subsection}{before_space=10pt,after_space=5pt}
+\SetBlockHeadingSpaces{
+{_section{before_space=12pt,after_space=8pt},_subsection{before_space=0pt,after_space=5pt}}
+}
+
+\jlreqsetup{
+%topmargin=14mm
+%caption_font=\LARGE
+}
+
+\setlength{\belowcaptionskip}{10pt}
+
+%\renewcommand{\section}{%
+%  \@startsection{section}{1}{\z@}%
+  %                {.2\Cvs \@plus .1\Cvs \@minus .1\Cvs}% 前アキ
+  %                {.1\Cvs \@plus .1\Cvs \@minus .1\Cvs}% 後アキ
+%                {.4\Cvs}%
+%                {.2\Cvs}%
+%                {\normalfont\large\headfont\raggedright}}
+
+%\renewcommand{\subsection}{%
+%  \@startsection{subsection}{2}{\z@}%
+  %                {.2\Cvs \@plus .1\Cvs \@minus .1\Cvs}% 前アキ
+  %                {.1\Cvs \@plus .1\Cvs \@minus .1\Cvs}% 後アキ
+%                {.1\Cvs}%
+%                {\z@}%
+%                {\normalfont\normalsize\headfont\raggedright}}
+
+\def\thebibliography#1{%
+  \def\subsection{\@startsection{subsection}{2}{\z@}
+    {.5\Cvs \@plus .2\Cdp \@minus .2\Cdp}
+    {.1\Cvs \@plus .1\Cdp \@minus .1\Cdp}{\sffamily\gtfamily\bfseries}}
+  \subsection*{参考文献}
+  \small\relax\baselineskip=3.75mm
+  \list{[\arabic{enumi}]}{\settowidth\labelwidth{■■}%
+    \leftmargin=1.5em% \leftmargin\labelwidth \advance\leftmargin\labelsep
+    \labelsep=.5em
+    \usecounter{enumi}}
+  \itemsep=\z@\parskip=\z@
+  \def\newblock{\hskip .11em plus .33em minus .07em}
+  \sloppy\clubpenalty-100\widowpenalty-100%% \clubpenalty4000\widowpenalty4000
+  \sfcode`\.=1000\relax}
+
+\def\endthebibliography{\endlist
+  \par
+  \vskip-\topsep
+  \vskip-\partopsep
+  \vskip-\parskip
+}
+
+\makeatletter
+\def\urlj{%
+\@ifnextchar[%% ]
+{\n@urlj}
+{\@urlj}
+}
+
+\def\n@urlj[#1]#2{%
+\normalfont 
+\if #11\relax
+入手先\\ \else%
+\fi
+\normalfont $\langle$\nobreak{#2}\nobreak$\rangle$}
+
+\def\@urlj#1{%
+\normalfont 入手先$\langle$\nobreak{#1}\nobreak$\rangle$}
+
+\def\urle{%
+\@ifnextchar[%% ]
+{\n@urle}
+{\@urle}
+}
+
+\def\n@urle[#1]#2{%
+\normalfont 
+\if #11\relax
+available \\ from \else%
+\if #12\relax
+available from \\ \else
+\fi\fi
+$\langle$\nobreak{#2}\nobreak$\rangle$}
+
+\def\@urle#1{%
+\normalfont available from $\langle$\nobreak{#1}\nobreak$\rangle$}
+
+\def\refdatej#1{\normalfont （参照{#1}）\<}
+\def\refdatee#1{\normalfont (accessed {#1})}
+
+\def\doi#1{\normalfont DOI: #1}
+\makeatother
