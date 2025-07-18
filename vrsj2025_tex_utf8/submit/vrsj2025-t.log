@@ -1,0 +1,3104 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  18 JUL 2025 20:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex
+(/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/platex/base/jarticle.cls
+
+/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/platex/base/jarticle.cls:16: LaTeX Error: This file needs format `pLaTeX2e'
+               but this is `LaTeX2e'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \NeedsTeXFormat{pLaTeX2e}
+                              
+The current input file will not be processed further,
+because it was written for some other flavor of TeX.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) (./vrsjj.sty) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 106.
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (./balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen143
+)
+\c@vrsjyear=\count196
+\c@vrsjmonth=\count197
+\c@vrsjnum=\count198
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count199
+\l__pdf_internal_box=\box52
+)
+No file vrsj2025-t.aux.
+\openout1 = `vrsj2025-t.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:36: LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \begin{document}
+                     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:37: Undefined control sequence.
+l.37 \small
+            %%% フォントのサイズを small (9 pt) に設定．
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\HeadComm ...5.5mm} \begin {center} \footnotesize 
+                                                  #1 \end {center} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: logo.eps Graphic file (type eps)
+<logo.eps>
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\ProcTitle ...-15.5mm} \begin {flushright} \small 
+                                                  \bf #1 \end {flushright} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\ProcTitle ...5mm} \begin {flushright} \small \bf 
+                                                  #1 \end {flushright} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 第 (U+7B2C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 回 (U+56DE)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 日 (U+65E5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 本 (U+672C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character バ (U+30D0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character チ (U+30C1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ャ (U+30E3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ル (U+30EB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character リ (U+30EA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ア (U+30A2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character リ (U+30EA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character テ (U+30C6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ィ (U+30A3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 会 (U+4F1A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 大 (U+5927)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 会 (U+4F1A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 論 (U+8AD6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 文 (U+6587)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 集 (U+96C6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character （ (U+FF08)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 年 (U+5E74)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 月 (U+6708)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ） (U+FF09)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\JTitle #1->\begin {center} \LARGE 
+                                   \bf \baselineskip =0.8\baselineskip #1 \e...
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\JTitle #1->\begin {center} \LARGE \bf 
+                                       \baselineskip =0.8\baselineskip #1 \e...
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character コ (U+30B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ン (U+30F3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character テ (U+30C6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ン (U+30F3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ツ (U+30C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 体 (U+4F53)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 験 (U+9A13)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 時 (U+6642)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character に (U+306B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character お (U+304A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character け (U+3051)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 生 (U+751F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 体 (U+4F53)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ・ (U+30FB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 行 (U+884C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 動 (U+52D5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 情 (U+60C5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 報 (U+5831)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character の (U+306E)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 統 (U+7D71)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 合 (U+5408)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character に (U+306B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 基 (U+57FA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character づ (U+3065)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character く (U+304F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character リ (U+30EA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ア (U+30A2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ル (U+30EB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character タ (U+30BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character イ (U+30A4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ム (U+30E0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 感 (U+611F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 情 (U+60C5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 推 (U+63A8)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 定 (U+5B9A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character フ (U+30D5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character レ (U+30EC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ム (U+30E0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ワ (U+30EF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ク (U+30AF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\JAuthor #1->\begin {center} \normalsize \rm 
+                                             #1 \end {center} \ifEAuthorBox ...
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 趙 (U+8D99)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 聖 (U+8056)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 化 (U+5316)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 61.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 61.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 井 (U+4E95)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 村 (U+6751)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 誠 (U+8AA0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 孝 (U+5B5D)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\EAuthor ...er} \vspace *{-4.5mm} \normalsize \rm 
+                                                  #1 \\ \vspace *{4.5mm} \en...
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\Affiliation ...{center} \vspace *{-3.0mm} \small 
+                                                  \rm #1 \end {center} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\Affiliation ...ter} \vspace *{-3.0mm} \small \rm 
+                                                  #1 \end {center} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 関 (U+95A2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 西 (U+897F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 院 (U+9662)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 大 (U+5927)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 理 (U+7406)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 工 (U+5DE5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 部 (U+90E8)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 〒 (U+3012)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 兵 (U+5175)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 庫 (U+5EAB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 県 (U+770C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 三 (U+4E09)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 田 (U+7530)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 市 (U+5E02)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 園 (U+5712)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 上 (U+4E0A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ケ (U+30B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 原 (U+539F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\Affiliation ...{center} \vspace *{-3.0mm} \small 
+                                                  \rm #1 \end {center} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\Affiliation ...ter} \vspace *{-3.0mm} \small \rm 
+                                                  #1 \end {center} 
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 関 (U+95A2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 西 (U+897F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 院 (U+9662)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 大 (U+5927)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 工 (U+5DE5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 部 (U+90E8)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 〒 (U+3012)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 兵 (U+5175)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 庫 (U+5EAB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 県 (U+770C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 三 (U+4E09)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 田 (U+7530)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 市 (U+5E02)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 学 (U+5B66)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 園 (U+5712)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 上 (U+4E0A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ケ (U+30B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 原 (U+539F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: Undefined control sequence.
+\Abstract ...{minipage}{140mm} \noindent {\textgt 
+                                                  {概要}: } #1 \end {minip...
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 概 (U+6982)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 要 (U+8981)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 本 (U+672C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 研 (U+7814)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 究 (U+7A76)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character で (U+3067)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character は (U+306F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character コ (U+30B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ン (U+30F3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character テ (U+30C6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ン (U+30F3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ツ (U+30C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 制 (U+5236)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 作 (U+4F5C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 者 (U+8005)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character が (U+304C)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 意 (U+610F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 図 (U+56F3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character す (U+3059)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 体 (U+4F53)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 験 (U+9A13)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character を (U+3092)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ユ (U+30E6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ザ (U+30B6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character に (U+306B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 提 (U+63D0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 供 (U+4F9B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character で (U+3067)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character き (U+304D)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character て (U+3066)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character い (U+3044)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character こ (U+3053)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character と (U+3068)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character を (U+3092)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 客 (U+5BA2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 観 (U+89B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 的 (U+7684)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character な (U+306A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 評 (U+8A55)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 価 (U+4FA1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character す (U+3059)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 手 (U+624B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 法 (U+6CD5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character の (U+306E)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 確 (U+78BA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 立 (U+7ACB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character を (U+3092)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 目 (U+76EE)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 的 (U+7684)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character と (U+3068)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character し (U+3057)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character て (U+3066)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 体 (U+4F53)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 験 (U+9A13)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 中 (U+4E2D)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character の (U+306E)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ユ (U+30E6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ザ (U+30B6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character の (U+306E)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 感 (U+611F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 情 (U+60C5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character を (U+3092)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character リ (U+30EA)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ア (U+30A2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ル (U+30EB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character タ (U+30BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character イ (U+30A4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ム (U+30E0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character で (U+3067)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 推 (U+63A8)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 定 (U+5B9A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character す (U+3059)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character フ (U+30D5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character レ (U+30EC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ム (U+30E0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ワ (U+30EF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ー (U+30FC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character ク (U+30AF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character を (U+3092)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 提 (U+63D0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 案 (U+6848)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character す (U+3059)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character る (U+308B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 皮 (U+76AE)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 膚 (U+819A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 電 (U+96FB)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 気 (U+6C17)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 活 (U+6D3B)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 動 (U+52D5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61: LaTeX Error: Unicode character 心 (U+5FC3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 ]
+      %%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 883 strings out of 473190
+ 15806 string characters out of 5704335
+ 402216 words of memory out of 5000000
+ 24196 multiletter control sequences out of 15000+600000
+ 558837 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,4n,65p,892b,242s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+/Users/chosunghwa/Desktop/授業/handout/vrsj2025_tex_utf8/submit/vrsj2025-t.tex:61:  ==> Fatal error occurred, no output PDF file produced!

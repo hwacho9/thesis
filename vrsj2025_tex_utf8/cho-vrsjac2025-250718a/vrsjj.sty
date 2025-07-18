@@ -1,0 +1,196 @@
+%  vrsjj.sty
+%
+%  LaTeX Style File for 
+%  Camera-ready Manuscripts for Proceedings of the VRSJ Annual Conference
+%
+%  April 10, 2013  Arranged by Megumi Nakao
+%  February 5, 2014  Arranged by Keita Suzuki, Aitech Institute of Technology
+%  February 19, 2015 Arranged by Yasuyuki Yanagida
+%
+\pagestyle{empty}
+
+%%% 1ページに含まれるテキストと図表のバランス上下限
+\renewcommand{\topfraction}{0.95}%
+\renewcommand{\bottomfraction}{0.95}%
+\renewcommand{\dbltopfraction}{0.95}%
+\renewcommand{\textfraction}{0.05}%
+\renewcommand{\floatpagefraction}{0.8}%
+\renewcommand{\dblfloatpagefraction}{0.8}%
+
+%%% 実行委員会テスト用：英文著者を左下に表示する
+\newif\ifEAuthorBox
+%\EAuthorBoxtrue
+\EAuthorBoxfalse
+
+%%% ページレイアウト
+\setlength{\headheight}{0mm}%
+\setlength{\topmargin}{0mm}%-6.4
+\setlength{\headheight}{0mm}%
+\setlength{\headsep}{0mm}%
+\setlength{\oddsidemargin}{-5.4mm}%
+\setlength{\evensidemargin}{\oddsidemargin}%
+\setlength{\textwidth}{170mm}%
+\setlength{\columnsep}{10mm}%
+\setlength{\textheight}{256mm}%
+
+%%% デフォルトの行間
+\renewcommand{\baselinestretch}{1.32}
+
+%%% 図表のキャンプション
+\def\fnum@figure{\small \bf 図\thefigure }%
+\def\fnum@table{\small \bf 表\thetable }%
+
+%%% 1ページ目ヘッダ，タイトル，著者など
+
+\newcommand{\ProcTitle}[1]{%学会名
+  {\protect \includegraphics*[width=20mm]{logo.eps}}
+  \vspace*{-15.5mm}
+  %\vspace*{-20mm}
+  \begin{flushright}
+  \small \bf #1 
+  \end{flushright}
+}%
+
+\newcommand{\HeadComm}[1]{%国際会議対策
+  \vspace*{-15.5mm}
+  \begin{center}
+  \footnotesize #1 
+  \end{center}
+}%
+
+\newcommand{\JTitle}[1]{%表題
+  \begin{center}
+    \LARGE \bf 
+    \baselineskip=0.8\baselineskip #1
+  \end{center}
+}%
+\newcommand{\ETitle}[1]{%英文表題
+  \begin{center}
+    \normalsize
+    \baselineskip=0.8\baselineskip #1
+  \end{center}
+}%
+\newcommand{\JAuthor}[1]{%著者
+  \begin{center}
+    \normalsize\rm #1
+  \end{center}
+  \ifEAuthorBox
+    \vspace{1ex}
+  \fi
+}%
+\ifEAuthorBox
+\newcommand{\EAuthor}[1]{%英文著者：ページ左下に入れる場合
+  \begingroup
+  \def\thefootnote{}
+  \footnotetext{\normalsize\rm #1}
+  \endgroup
+}%
+\else
+\newcommand{\EAuthor}[1]{%英文著者：和文著者の下
+  \begin{center}
+    \vspace*{-4.5mm}
+    \normalsize\rm #1 \\
+    \vspace*{4.5mm}
+  \end{center}
+}%
+\fi
+\newcommand{\Affiliation}[1]{%所属
+  \begin{center}
+    \vspace*{-3.0mm}
+    \small\rm #1
+  \end{center}
+}%
+%\newcommand{\Address}[1]{%住所 → Affiliationに含む
+%  \begin{center}
+%    \vspace*{-4.0mm}
+%    \small\rm #1
+%  \end{center}
+%}%
+\newcommand{\Abstract}[1]{%和文概要
+  \begin{center}
+    \vspace*{3.5mm}%
+    \begin{minipage}{140mm}
+      \noindent {\textgt {概要}: } #1
+    \end{minipage}
+  \end{center}
+  \vspace*{-5mm}
+}%
+%\newfont{\cmbxti}{cmbxti10 scaled 0900}
+\newcommand{\KeyWords}[1]{%キーワード
+  \begin{center}
+  {\textgt {キーワード}： }
+  \begin{minipage}{119mm}
+    {\noindent #1}
+  \end{minipage}
+  \vspace*{7.0mm}
+  \end{center}
+}%
+
+%%% 脚注の区切り線長さを1段分に（jarticle.clsの該当部分を変更）
+\renewcommand{\footnoterule}{%
+%  \kern-3\p@
+  \kern-5.4\p@
+  \hrule width 1\columnwidth
+%  \kern 2.6\p@}
+  \kern 5\p@}
+
+%%% 脚注をぶら下げインデントに
+\long\def\@makefntext#1{%
+\renewcommand{\baselinestretch}{0.9}%
+\parindent 1em\noindent
+\@hangfrom{\hbox to 0.5em{\hss$^{\@thefnmark}$}}#1}
+
+%%% 見出し
+\def\thesection{\arabic{section}.}
+\def\thesubsection {\thesection\arabic{subsection}}
+\def\thesubsubsection {\thesubsection.\arabic{subsubsection}}
+
+\def\section{
+  \@startsection
+    {section}
+    {1}
+    {\z@}
+%    {2.5ex plus 1ex minus 0.2ex}%%{3.5ex plus 1ex minus 0.2ex}
+    {2ex plus 1ex minus 0.2ex}%%{3.5ex plus 1ex minus 0.2ex}
+    {0.01ex}
+    {\normalsize \bf}}
+    %{\large\bf}}%{\Large\bf}}
+\def\subsection{
+  \@startsection
+    {subsection}
+    {2}
+    {\z@}
+    {0.01ex}%
+    {0.01ex}%
+    {\small\bf}}
+\def\subsubsection{%
+  \@startsection%
+    {subsubsection}%
+    {3}%
+    {\z@}%
+    {0.01ex}%
+    {0.01ex}%
+    {\small\bf}}%
+
+%%% 参考文献
+\def\@cite#1#2{[{#1\if@tempswa , #2\fi}]}
+\def\thebibliography#1{%
+  {%
+    \begin{center}
+      {\normalsize \bf 参考文献}
+      \vspace*{-2mm}
+    \end{center}
+  }%
+  \list{[\arabic{enumi}]}{%
+    \settowidth\labelwidth{[#1]}
+    \leftmargin\labelwidth
+    \parsep=-1.5\parsep
+    \advance\leftmargin\labelsep
+    \usecounter{enumi}
+  }%
+  \def\newblock{\hskip .11em plus .33em minus .07em}
+  \sloppy
+  \sfcode`\.=1000\relax
+}%
+\let\endthebibliography=\endlist
+ 

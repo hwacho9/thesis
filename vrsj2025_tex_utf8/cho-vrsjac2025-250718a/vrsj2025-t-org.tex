@@ -1,0 +1,327 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  日本バーチャルリアリティ学会大会論文集
+%  大会論文集投稿用原稿執筆要領（サンプル原稿）
+%
+%  Apr. 10, 2013  Arranged by Megumi Nakao
+%  Feb.  5, 2014  Arranged by Keita Suzuki, Aichi Institute of Technology
+%  Feb. 20, 2015  Arranged by Yasuyuki Yanagida
+%  Feb. 20, 2019  Arranged by Shoichi Hasegawa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{jarticle}
+%%% 本大会論文集固有のパラメータ，定義を読み込み．
+  \usepackage{vrsjj}
+%%% 図貼り付け用．必要に応じて，使用環境に適合するよう編集してください．
+  \usepackage[dvipdfmx]{graphicx}
+%%% 最終ページの高さを自動的に揃える場合，balanceパッケージを使用可．
+%%% multicolパッケージを使うと脚注が二段組でなくなるため，
+%%% 脚注の仕組みを利用している英文著者の表示と干渉します．
+  \usepackage{balance}
+
+  \special{pdf: pagesize width 210truemm height 297truemm} 
+  
+%%% ヘッダ用定義．
+\newcounter{vrsjyear}
+\newcounter{vrsjmonth}
+\newcounter{vrsjnum}
+
+\setcounter{vrsjyear}{2025}
+\setcounter{vrsjmonth}{9}
+\setcounter{vrsjnum}{\value{vrsjyear}}
+\addtocounter{vrsjnum}{-1995}
+
+%%% 行間の指定: \baselinestrechの値が1.32で1ページ50行に相当します．
+\renewcommand{\baselinestretch}{1.32}
+
+\begin{document}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small %%% フォントのサイズを small (9 pt) に設定．
+\twocolumn[%%%%%%%%%%%%%%%%%%%% []内が1段組部分．
+%%%【必須】
+\HeadComm{This article is a technical report without peer review, and its polished and/or extended version may be published elsewhere.}%
+%%% 【必須】ロゴとヘッダ．変更しないでください．
+\ProcTitle{第\arabic{vrsjnum}回日本バーチャルリアリティ学会大会論文集（\arabic{vrsjyear}年\arabic{vrsjmonth}月）}%
+%%%
+%%% 【必須】和文タイトル．
+\JTitle{VRコンテンツ体験時における生体・行動情報の統合に基づく\\リアルタイム感情推定フレームワーク}%
+%%% 【オプション】英文タイトル．英文タイトルを記載する場合のみ有効にしてください．
+\ETitle{A Real-Time Emotion Estimation Framework Based on Integration of Physiological and Behavioral Information During VR Content Experience}
+%%% 【必須】和文著者．
+\JAuthor{趙 聖化$^{1)}$, 井村 誠孝$^{2)}$}%
+%%% 【オプション】英文著者．
+\EAuthor{Sunghwa CHO$^{1)}$, Masahiro IIMURA$^{2)}$}
+%%% 【必須】和文所属．機関名と住所の間の改行はなくなりました
+\Affiliation{1) 関西学院大学 理工学部 (〒669-1330 兵庫県三田市学園上ケ原1, fqd69170@kwansei.ac.jp)}%
+\Affiliation{2) 関西学院大学 工学部 (〒669-1330 兵庫県三田市学園上ケ原1, m.imura@kwansei.ac.jp)}%
+
+%%% 【必須】和文要旨
+\Abstract{%
+本研究では, VRコンテンツ制作者が意図する体験をユーザーに提供できていることを客観的な評価する手法の確立を目的として, 体験中のユーザーの感情をリアルタイムで推定するフレームワークを提案する. 皮膚電気活動, 心電, 筋電といった生体信号を多角的に統合することで感情識別を実現する. Unityで制作したランダム迷路型VRホラーゲームを用いて, 体験者の生体信号の変化を統計的に分析し,集中・恐怖・驚き状態の生理的特徴を明らかにした. 結果分析では, VRの恐怖刺激時に心拍数の増加とHRVの低下, EDAの急激な上昇が観察され, 恐怖状態では交感神経系の活性化が顕著であることが確認された.
+}%
+\KeyWords{VR, 感情推定, 生体信号, 行動情報}%
+]%%%%%%%%%%%%%%%%%%%% 1段組部分終わり
+
+
+\section{はじめに}%%%%%%%%%%%%%%%%%%%%
+
+VRは伝統的な2D画面よりはるかに高い現存感と情緒的没入を引き出す. 消費者用HMDが急速に普及し, 恐怖,教育, リハビリなど多様な分野でVRコンテンツが製作・拡散しているが, ユーザー経験評価は依然としてアンケート・インタビューなど事後主観的報告に大きく依存している. このような方法は回想偏向と遅延時間によって体験中に発生する微細な感情変化をリアルタイムで捉えることができない. したがってVR環境でユーザー感情反応をリアルタイム・客観的に計測できる生体信号基盤評価技法が切実に要求される.
+
+生体信号は自律神経系の変化を直接反映するので, 使用者の状態を中断なく計測できる. 例えば, 皮膚電気活動(EDA)は情緒的覚醒を, 心電(ECG)は交感・副交感活動のバランスを, 筋電(EMG)は驚き・緊張を表す. 本研究では,HMDから得られるユーザーの行動と,EDA・ECG・EMGの複数の生体センサを統合し,VRコンテンツ体験中のユーザの集中,恐怖,驚きといった感情を実時間で推定するフレームワークを構築する.
+
+\section{関連研究}%%%%%%%%%%%%%%%%%%%%
+
+生体信号を活用した感情推定はEDA・HRV・EMGなどを利用し活発に研究されてきた. EDAは交感神経活動を直接反映し, 情動的覚醒度を定量化できる指標であり, HRV(心拍変動)は自律神経系のバランス指標としてストレスや情動の極性を評価する際に主に利用される. EMGは筋収縮の電気信号を捉えることで, 驚きや停止などの急激な筋反応を検出する[1, 2]. 複数の生体信号を組み合わせることで単一センサーと比較して推定精度が向上し, 視線や表情など非接触指標と融合して精度を高める試みも報告されている[3]. Marín-Moralesら[4]はEEGとHRVをサポートベクターマシン(SVM)に入力し, VRシーンごとの覚醒度と情動価値を同時に分類している. Orozco-Moraら[5]はVRゲームプレイ中に心拍数をモニタリングし, 動的難易度調整アルゴリズムを実装することで, ストレスレベルを一定範囲内に維持することで恐怖や興奮体験を最適化している. これらの先行研究は, VRコンテンツ内での生体信号に基づくフィードバックシステムがユーザー体験を向上させる可能性を示唆している.
+
+\section{実験}%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=80mm]{game1.png}
+  \end{center}
+  \vspace*{-6mm}
+  \caption{ゲームのシーン．}
+  \label{figure1}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=80mm]{game2.png}
+  \end{center}
+  \vspace*{-6mm}
+  \caption{ゲームのシーン2．}
+  \label{figure2}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=50mm]{figure3_eda.jpg}
+  \end{center}
+  % \vspace*{-2mm}
+  \caption{センサーの装着位置1．EDA}
+  \label{figure3}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=50mm]{logo.png}
+  \end{center}
+  \vspace*{-6mm}
+  \caption{センサーの装着位置2．ECG}
+  \label{figure4}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=50mm]{figure5_emg.jpg}
+  \end{center}
+  % \vspace*{-6mm}
+  \caption{センサーの装着位置3．EMG}
+  \label{figure5}
+\end{figure}
+
+本研究のフレームワークを構築するために, まずセンサー処理の順序とデータ収集・加工パイプラインを設計し, Unityで制作したランダム迷路型VRホラーゲームを活用して参加者の生体信号を収集・分析した. 
+
+本実験には平均年齢25歳の健康な男性6名が参加した.
+実験で使用したVRコンテンツはUnityエンジンで開発されたランダム迷路型脱出ホラーゲームであり, 1回のプレイを「セグメント」と定義し, 合計5つのセグメントで構成した. セグメントの間にはゾンビと遭遇するイベントが配置されており, ゾンビの出現有無や位置は毎回ランダムに決定される. このように地形やイベントが毎回異なるため, 参加者はプレイのたびに新たな恐怖を体験することになる(図\ref{figure1}, \ref{figure2}).
+
+ゲームの基本目標は出発地点から脱出地点まで到達することである. プレイ開始と同時に探索用BGMが再生され, 一定時間が経過すると迷路内の任意の位置にゾンビNPCがスポーンし, プレイヤーを追跡する. ゾンビが活動を開始すると, 脅威感を高める専用BGMがで再生され, いつどこから敵が近づいてくるかわからないという恐怖感が強まる. プレイヤーがゾンビと遭遇した場合は, 即座に逃走して回避しなければならない. もしゾンビに接触(捕まる)された場合,ゲームは即座に終了し, 脱出地点に到達した場合は成功としてセグメントが終了する.
+
+コンテンツ設計の意図は, 次の三つの心理状態を誘導・観察することにある. (i)迷路探索過程における持続的集中, (ii)追跡が差し迫った際に感じる予測不可能な恐怖, (iii)予想外の場所でゾンビに遭遇した際の急激な驚き. 
+
+生体信号の測定は以下の通り行った. ECG電極(IN+/IN−)は左胸部と右側腸骨稜に装着し, EDA電極は手のひら, EMG電極(IN+/IN−間隔20 mm)は前腕中央, リファレンス電極は肘の突出部に装着した. 図\ref{figure3}, \ref{figure4}, \ref{figure5}は各センサーの装着位置を模式化したものである. すべての信号は生体センサアプリ開発キットBITalinoを用いて1kHzで同期収集した.
+実験の概要は以下の通りである. 1名の参加者がVRコンテンツの1回のセグメントを行う間, 生体信号とVRイベントログを同時に記録した. コンテンツ進行中にゾンビ出現や脱出イベントをタイムスタンプとして記録し, 事後分析に活用した.
+
+\section{実験結果}%%%%%%%%%%%%%%%%%%%%
+
+\subsection{生体信号指標と感情解釈根拠}
+
+HRVは自律神経系均衡を反映する代表指標で, RMSSD(心拍変動標準偏差)が減少すれば交感神経が優勢でストレス・緊張・集中状態, 増加すれば副交感神経が優勢で弛緩・回復状態と解釈される\cite{bib06,bib07}. EDAは交感神経に支配される外分泌汗腺活動を測定し, SCR頻度増加は情緒的覚醒(恐怖・驚きなど)が高まることを意味する\cite{bib08,bib09}. EMGは筋肉の電気活動を記録して筋緊張を表す. RMS値の急激な上昇は驚き反射, 持続的上昇は長期的筋緊張を示唆する\cite{bib10,bib11}.
+
+
+3つの指標のベースラインに対する変化率(EDA, HRV, EMG)を算出した後,表3で示した相対的な閾値を段階的に適用して, 感情状態を判定する. 具体的には, HRVがベースラインの70％未満に低下し, EDAが(ベースライン×1.5)+1以上,EMGが(ベースライン×2.0)+0.01以上増加した場合は「恐怖／驚き」, HRVのみが70％未満に低下し,EDAが1.5倍以上上昇した場合は「緊張／警戒」, HRVが70–120％の範囲にあり,EDAが1.5倍未満の場合は「集中」, HRVが120％以上上昇した場合は「弛緩」と分類する. 上記の条件に明確に該当しない場合は「混合」状態として処理する. この階層的意思決定ルールは,個人ごとの安静状態を基準とすることでユーザー間の変動性を補正し, 5～20秒長の分析ウィンドウでも一貫した分類性能を確保する. 特にHRV30％低下基準(0.7×Baseline)はThayer \& Laneが提案した急性ストレス反応の閾値\cite{bib12}と国際HRV基準\cite{bib06}を統合して設定した. EDA50％増加閾値はBoucseinが提示した中等度覚醒基準\cite{bib08},EMG100％増加閾値はLang, P.Jの驚愕反射増幅研究\cite{bib11}に基づいている.
+
+ベースラインは,各参加者の個別の生理的基準値であり, ゲームセッション間の休憩区間(10秒以上)で測定したEDA(分あたりのピーク数), HRV, EMG(RMS)の平均値として計算した. セッション間の休憩区間がない場合は, 実験開始初期30秒をベースラインとして使用し, 最小5秒以上の区間のみを有効なベースラインとした.
+ 
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=80mm]{figure6_segment_comparison.png}
+  \end{center}
+  \vspace*{-6mm}
+  \caption{セグメント別生体信号変化．}
+  \label{figure6}
+\end{figure}
+
+\begin{figure}[tb]
+  \begin{center}
+    \includegraphics*[width=80mm]{figure7_temporal_progression.png}
+  \end{center}
+  \vspace*{-6mm}
+  \caption{各セグメント平均値の時系列．}
+    \label{figure7}
+\end{figure}
+
+\subsection{セグメント・イベント統合統計}
+\begin{table}[tb]
+\caption{セグメント・イベント統合統計}
+\label{table1}
+\begin{center}\footnotesize
+\def\arraystretch{1.1}
+\begin{tabular}{|c|c|c|c|c|c|}\hline 
+区分 & 数 & 恐怖 & 緊張 & 集中 & 混合 \\ \hline
+セグメント & 30 & 1 & 9 & 7 & 13 \\ \hline
+イベント & 19 & 3 & 7 & 4 & 4 \\ \hline
+\end{tabular}
+\end{center}
+\vspace*{-3mm}
+\end{table}
+
+VRコンテンツを5つのセグメントとゾンビ登場イベントに分けて分析した結果を表\ref{table1}に示す.
+セグメント（規則進行）は「混合」が最も多く, ゾンビ登場瞬間には「恐怖/驚き」・「緊張」比率が上昇した.
+
+\subsection{セグメント別生体信号変化 (6名平均 ± SD)}
+
+\setlength{\tabcolsep}{2pt}
+\begin{table}[tb]
+\begin{center}
+\caption{セグメント別生体信号変化}
+\label{table2}
+\scriptsize
+\begin{tabular}{|c|c|c|c|}\hline
+\textbf{セグメント} & \textbf{HRV変化 (\%)} & \textbf{EDA (\%)} & \textbf{EMG (\%)} \\
+\hline
+低覚醒セグメント (1–2) & −12 ± 5 & +8 ± 4 & +3 ± 6 \\
+\hline
+高覚醒セグメント (4–5) & −44 ± 7 & +148 ± 22 & +37 ± 18 \\
+\hline
+\end{tabular}
+\vspace*{-3mm}
+\end{center}
+\end{table}
+
+
+VRコンテンツを5つのセグメントに分けて各区間の平均HRV, EDA, EMG値およびベースライン対比変化率を整理した結果を表\ref{table2}に示す. 全般的に恐怖演出があるセグメントでHRVが減少し, EDAおよびEMG値が上昇する傾向が現れた. セグメント別生体信号変化は図\ref{figure6}に示す. セグメント4–5で交感神経活性(EDA増加)とHRV減少が同時に極大化されることを視覚的に確認できる. また図\ref{figure7}は各セグメント平均値を時系列で表し, コンテンツ進行に伴って覚醒が段階的に増加する様相を示す. 
+
+\subsection{ゾンビ登場 ±5秒生理反応 (19イベント平均)}
+
+最も強力な恐怖刺激であるゾンビ登場イベント前後の生体信号変化を比較した.イベント発生直前5秒区間と直後5秒区間の平均を計算した結果を表\ref{table3}に示す. 
+
+\begin{table}[htbp]
+\centering
+\caption{ゾンビ登場 ±5秒生理反応 (19イベント平均)}
+\label{table3}
+\small
+\begin{tabular}{|l|c|}
+\hline
+\textbf{生理指標} & \textbf{変化率 (\%)} \\
+\hline
+HR & +15 ± 6 \\
+\hline
+RMSSD & −44 ± 8 \\
+\hline
+EDA & +148 ± 30 \\
+\hline
+EMG & +37 ± 25 \\
+\hline
+\end{tabular}
+\end{table}
+
+ゾンビ登場後, 参加者の表\ref{table3}のように心拍数(HR)は平均約15\%増加し, EDAは平均30\%以上上昇した. 一方, HRV(RMSSD)はイベント後急激に減少(-20\%)し, 心拍がより規則的に変わることを示した. このような変化は驚き刺激に対する急激な交感神経反応を表し, 恐怖状況で心拍急増 \& HRV低下と発汗増加が同時に発生することを確認させる. EMGの場合, ゾンビ登場瞬間一部参加者で前腕筋EMG信号の頂点が観察され, 驚く筋反応を捉えた.
+
+\section{結果解釈および考察}%%%%%%%%%%%%%%%%%%%%
+
+HRVの減少とEDAの上昇は, VR恐怖刺激における代表的な交感神経指標であることを再確認した. EMG反応は個人ごとの特性により二つのパターンに分類された. (i)恐怖刺激直後にRMSが瞬間的に急上昇し, 数秒以内に正常レベルへ回復するタイプ, (ii)明確なスパイクがなくRMSが一定時間高く維持されるタイプである. リアルタイムシステム設計時には複数指標の統合が必須である. セグメントとゾンビイベント(急性刺激)は定性的反応パターンが異なり, 繰り返し曝露による感作・慣れの様相も確認された. これは提案したリアルタイム感情フレームワークにおいて, HRVとEDAの同時変化をトリガーとして用いることでユーザー状態を即座に検出し, フィードバックできる可能性を示唆している.
+\subsection{HRV指標の減少}
+
+恐怖刺激が発生した区間でHRV指標が有意に減少したことは, ストレス反応の生理的特徴として解釈される. HRV減少は交感神経系が優勢になり心拍リズムが規則的で速く変化する現象を反映し, これは恐怖状況で心臓が緊張により更に規則的に打つ結果と見ることができる. このようなHRV減少現象は既存研究\cite{bib13}でも高い覚醒度の否定的感情(恐怖等)で共通的に報告されており, 本研究結果がこれを再確認してくれる.
+
+\subsection{EDA反応の個人差}
+
+EDA信号は全般的に恐怖刺激時上昇したが, 個人差が大きい指標でもあった. したがって絶対的なEDA値よりはベースライン対比変化率が感情反応評価により有意であることが判明した. 一部参加者の場合, 実験室環境温度や体質的要因により初期EDA数値が高く現れたが, 例えば参加者5番は開始時から汗が出ていてEDA値が高かったが, 恐怖刺激後baseline対比82\%上昇を見せて最も大きな変化を記録した. 一方, 平素発汗分泌が少ない参加者は恐怖状況でもEDA変化幅が相対的に小さかった. このように人ごとに異なるEDA反応傾向を見せるため, 個人別補正と変化率指標活用が重要であることを確認した.
+
+\subsection{EMG信号と驚き反応}
+
+EMGの場合, 驚き刺激時大部分の参加者で短期頂点信号(spike)が現れ, 驚く筋肉反応をよく捉えた. 特に前腕筋EMGはVRコントローラーを握った手の微細な痙攣や力を入れる変化を感知し驚き反射を明らかにした. ただし一部参加者の場合, 驚き瞬間に筋肉活動がむしろ減少または停止するパターンも観察された. これは極度の恐怖を感じる時「体が凍りつく」凍結反応として解釈できる. すなわち, ある人は驚く時身をすくめて筋肉活動が急騰するが, また別の場合には瞬間的に体が固まってEMG変化がそれほど大きく現れないことがある. このような個人別恐怖反応差異は今後分析でより深く考慮されるべきである.
+
+\section{おわりに}%%%%%%%%%%%%%%%%%%%%
+
+本研究では,ランダム迷路型VRホラー体験においてHRV,EDA,EMG指標が恐怖・驚き刺激に敏感に反応することを確認した. 今後はサンプル数の拡大,長期曝露における適応分析,ゲームコントローラー入力,視線追跡など追加センサーの統合によって精度を高め,さらに蓄積したマルチモーダルデータを基盤として機械学習モデルを学習させ,リアルタイムフィードバックが可能なフレームワークへと拡張する予定である.
+
+%%% この\newpageは，最終ページの左右カラム高さを手動で調整する場合に挿入します．
+%%% balanceパッケージを使用すれば自動的に左右の高さを揃えられます．
+%\newpage
+
+%%% balance.styを使用する場合，最後の\sectionの直前に入れます．
+\balance
+
+%%%%%%%{参考文献}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{12}
+
+\bibitem{bib01}
+J. Guixeres et al.: 
+Assessing Virtual Reality Experiences with Physiological, Behavioral and Subjective Measures,
+Frontiers in Psychology, Vol.~11, pp.~1157, 2020.
+
+\bibitem{bib02}
+M. Glancy \& C. S. Ang: 
+The Role of Physiological Measures in Virtual Reality Gaming,
+Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, Vol.~5, No.~4, pp.~178, 2021.
+
+
+\bibitem{bib03}
+小川健一，杉本泰治：
+VR環境における生体信号を用いた感情推定手法の検討，
+日本バーチャルリアリティ学会論文誌，Vol.~19, No.~1, pp.~61--70, 2014.
+
+\bibitem{bib04}
+J. Marín‑Morales et al.: 
+Affective Computing in Virtual Reality: Emotion Recognition from Brain and Heartbeat Dynamics using Wearable Sensors,
+Sensors, Vol.~18, No.~10, pp.~3306, 2018.
+
+\bibitem{bib05}
+C. E. Orozco‑Mora et al.: 
+Real-Time Emotion Recognition Based on Physiological Signals for VR Gaming Applications,
+Electronics, Vol.~13, No.~12, pp.~2324, 2024.
+
+\bibitem{bib06}
+Task Force of The European Society of Cardiology \& The North American Society of Pacing and Electrophysiology: 
+Heart Rate Variability: Standards of Measurement, Physiological Interpretation, and Clinical Use,
+Circulation, Vol.~93, No.~5, pp.~1043--1065, 1996.
+
+\bibitem{bib07}
+G. G. Berntson et al.: 
+Heart rate variability: origins, methods, and interpretive caveats,
+Psychophysiology, Vol.~34, No.~6, pp.~623--648, 1997.
+
+\bibitem{bib08}
+W. Boucsein: 
+Electrodermal Activity, 2nd ed., 
+Springer, 2012.
+
+\bibitem{bib09}
+M. E. Dawson, A. M. Schell \& D. L. Filion: 
+The electrodermal system, 
+in Handbook of Psychophysiology, Cambridge University Press, pp.~159--181, 2007.
+
+\bibitem{bib10}
+J. T. Cacioppo et al.: 
+The psychophysiology of emotion,
+in Mind and Body, pp.~97--124, 1986.
+
+\bibitem{bib11}
+P. J. Lang, M. M. Bradley \& B. N. Cuthbert: 
+Emotion, attention, and the startle reflex,
+Psychological Review, Vol.~97, No.~3, pp.~377--395, 1990.
+
+\bibitem{bib12}
+J. F. Thayer \& R. D. Lane: 
+Claude Bernard and the heart–brain connection: Further elaboration of a model of neurovisceral integration,
+Neuroscience \& Biobehavioral Reviews, Vol.~33, No.~2, pp.~81--88, 2009.
+
+\bibitem{bib13}
+S. D. Kreibig: 
+Autonomic nervous system activity in emotion: A review,
+Biological Psychology, Vol.~84, No.~3, pp.~394--421, 2010.
+
+\end{thebibliography}
+
+\end{document}
