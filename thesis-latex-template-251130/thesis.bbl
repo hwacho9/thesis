@@ -1,0 +1,77 @@
+\begin{thebibliography}{10}
+
+\bibitem{MarinMorales2020}
+Javier Marín-Morales, Carmen Llinares, Jaime Guixeres, and Mariano Alcañiz.
+\newblock Emotion recognition in immersive virtual reality: From statistics to
+  affective computing.
+\newblock {\em Sensors}, Vol.~20, No.~18, p. 5163, 2020.
+
+\bibitem{OrozcoMora2024}
+C.~E. Orozco-Mora, R.~Q. Fuentes-Aguilar, and G.~Hernández-Melgarejo.
+\newblock Dynamic difficulty adaptation based on stress detection for a virtual
+  reality video game: A pilot study.
+\newblock {\em Electronics}, Vol.~13, No.~12, p. 2324, 2024.
+
+\bibitem{Liao2020DesignAE}
+D.~Liao, L.~Shu, G.~Liang, Y.~Li, et~al.
+\newblock Design and evaluation of affective virtual reality system based on
+  multimodal physiological signals and self-assessment manikin.
+\newblock {\em IEEE Journal of Electromagnetics, RF and Microwaves in Medicine
+  and Biology}, Vol.~4, No.~3, pp. 216--223, 2020.
+
+\bibitem{Dar2020}
+M.~N. Dar, M.~U. Akram, S.~G. Khawaja, and A.~N. Pujari.
+\newblock Cnn and lstm-based emotion charting using physiological signals.
+\newblock {\em Sensors}, Vol.~20, No.~16, p. 4551, 2020.
+
+\bibitem{Hinkle2019}
+L.~B. Hinkle, K.~K. Roudposhti, and V.~Metsis.
+\newblock Physiological measurement for emotion recognition in virtual reality.
+\newblock In {\em 2019 2nd International Conference on Data Intelligence and
+  Security (ICDIS)}, pp. 136--143, 2019.
+
+\bibitem{Pajic2025}
+D.~Pajić, S.~Sadiković, M.~Oljača, et~al.
+\newblock Risky behavior in virtual reality: The roles of personality,
+  environment, and physiology.
+\newblock {\em PLoS ONE}, Vol.~20, No.~1, p. e0316896, 2025.
+
+\bibitem{Lin2017}
+J.~H.~T. Lin.
+\newblock Fear in virtual reality (vr): Fear elements, coping reactions,
+  immediate and next-day fright responses toward a survival horror zombie
+  virtual reality game.
+\newblock {\em Computers in Human Behavior}, Vol.~72, pp. 350--361, 2017.
+
+\bibitem{Cimtay2020}
+Y.~Çimtay, E.~Ekmekcioglu, and S.~Çağlar Özhan.
+\newblock Cross-subject multimodal emotion recognition based on hybrid fusion.
+\newblock {\em IEEE Access}, Vol.~8, pp. 168865--168875, 2020.
+
+\bibitem{MarinMorales2018}
+J.~Marín-Morales, J.~L. Higuera-Trujillo, A.~Greco, J.~Guixeres, C.~Llinares,
+  E.~P. Scilingo, M.~Alcañiz, and G.~Valenza.
+\newblock Affective computing in virtual reality: Emotion recognition from
+  brain and heartbeat dynamics using wearable sensors.
+\newblock {\em Scientific Reports}, Vol.~8, No.~1, p. 13657, 2018.
+
+\bibitem{Arslan2024}
+E.~E. Arslan, M.~F. Akşahin, M.~Yilmaz, and H.~E. Ilgın.
+\newblock Towards emotionally intelligent virtual environments: Classifying
+  emotions through a biosignal-based approach.
+\newblock {\em Applied Sciences}, Vol.~14, No.~19, p. 8769, 2024.
+
+\bibitem{Dozio2022}
+N.~Dozio, et~al.
+\newblock A design methodology for affective virtual reality.
+\newblock {\em International Journal of Human-Computer Studies}, Vol. 162, p.
+  102791, 2022.
+
+\bibitem{Radiah2023}
+Radiah Rivu, Paula Prodan, Ville Mäkelä, Pascal Knierim, and Florian Alt.
+\newblock How are your participants feeling today? accounting for and assessing
+  emotions in virtual reality.
+\newblock In {\em MuC '23: Proceedings of Mensch und Computer 2023}, pp.
+  37--48, 2023.
+
+\end{thebibliography}

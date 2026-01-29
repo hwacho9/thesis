@@ -1,0 +1,232 @@
+\ProvidesPackage{hsi-thesis}[2025/11/30 v0.5]
+
+% page style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+
+% define %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\thesistype}[1]{
+  \if #1M \def\jtitlepage{\jmtitlepage} \else \def\jtitlepage{\jbtitlepage} \fi
+%  \if #1M \def\studentnumberhead{4702} \else \def\studentnumberhead{2701} \fi
+}
+
+\def\titlestr{title}
+\renewcommand{\title}[1]{
+  \def\titlestr{#1}
+}
+
+\def\authorstr{author}
+\renewcommand{\author}[1]{
+  \def\authorstr{#1}
+}
+
+\def\studentnumberstr{00000000}
+\newcommand{\studentnumber}[1]{
+%  \def\studentnumberstr{\studentnumberhead#1}
+  \def\studentnumberstr{#1}
+}
+
+\def\syearstr{2000}
+\newcommand{\syear}[1]{
+  \def\syearstr{#1}
+}
+
+\def\smonthstr{1}
+\newcommand{\smonth}[1]{
+  \def\smonthstr{#1}
+}
+
+\def\sdaystr{1}
+\newcommand{\sday}[1]{
+  \def\sdaystr{#1}
+}
+
+\def\mentorstr{}
+\def\mentortitlestr{}
+\newcommand{\mentor}[2]{
+  \def\mentorstr{#1}
+  \def\mentortitlestr{#2}
+}
+
+\def\datestr{\syearstr\,年\hspace{.3em}\nobreak%
+\smonthstr\,月\hspace{.3em}\nobreak\sdaystr\,日}
+
+\def\yearmonthstr{\syearstr\,年\hspace{.3em}\nobreak%
+\smonthstr\,月}
+
+\def\abstracttext{This is the abstract.}
+\newcommand{\abstract}[1]{
+  \def\abstracttext{#1}
+}
+
+\def\keywordsstr{keyword1, keyword2}
+\newcommand{\keywords}[1]{
+  \def\keywordsstr{#1}
+}
+
+% title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\jmtitlepage}{
+  \thispagestyle{empty}
+  \vspace*{10mm}
+  \begin{center}
+    \huge{理 工 学 研 究 科
+
+      \vspace*{12mm}
+
+      \yearmonthstr
+
+      \vspace*{12mm}
+      
+      卒 業 論 文}
+  \end{center}
+  \vspace*{32mm}
+  \begin{center}
+    \huge\textbf{\titlestr}
+  \end{center}
+  \vspace*{32mm}
+  \begin{center}
+    \huge{\studentnumberstr~~\authorstr}
+  \end{center}
+  \vspace*{3mm}
+  \begin{center}
+    \huge{(人間システム工学科)}
+  \end{center}
+  \clearpage
+}
+
+\newcommand{\jbtitlepage}{
+  \thispagestyle{empty}
+  \vspace*{30mm}
+  \begin{center}
+    \Large{卒業論文}
+  \end{center}
+  \vspace*{32mm}
+  \begin{center}
+    \Large\textbf{\titlestr}
+  \end{center}
+  \vspace*{32mm}
+  \begin{center}
+    \Large{
+      関西学院大学 理工学部 人間システム工学科
+
+      \vspace*{5mm}
+
+      \studentnumberstr~~\authorstr
+    }
+  \end{center}
+  \vspace*{32mm}
+  \begin{center}
+    \Large{\yearmonthstr}
+  \end{center}
+  \vspace*{15mm}
+  \begin{center}
+    \Large{指導教員~~\mentorstr~\mentortitlestr}
+  \end{center}
+  \clearpage
+}
+
+% abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\jabstractpage}{
+  \thispagestyle{empty}
+  \begin{center}
+    \Large\textbf{\titlestr}
+  \end{center}
+  \vspace*{5mm}
+  \begin{center}
+    \large{\authorstr}
+  \end{center}
+  \vspace*{5mm}
+  \begin{flushleft}
+    \textbf{内容梗概}
+  \end{flushleft}
+  \vspace*{2mm}
+  \par
+  \abstracttext
+  \vspace*{5mm}
+  \begin{flushleft}
+    \textbf{キーワード}
+  \end{flushleft}
+  \par
+  \keywordsstr
+  \clearpage
+}
+
+%typeout{acknowledgements}
+%\newcommand{\acknowledgements}{
+%        \newpage
+%%        \section*{謝辞\addcontentsline{toc}{section}{謝辞}}
+%        \chapter*{謝辞\@mkboth{謝 辞}{謝 辞}
+%          \addcontentsline{toc}{chapter}{\mbox{} 謝辞}}        
+%}
+\def\acknowledgements{
+  \newpage
+%        \section*{謝辞\addcontentsline{toc}{section}{謝辞}}
+  \chapter*{謝 辞}\markboth{謝 辞}{謝 辞}
+  \addcontentsline{toc}{chapter}{\mbox{} 謝辞}        
+}
+
+%%%
+%%% 参考文献
+%%%
+
+\def\thebibliography#1{\chapter*{参考文献}
+  \markboth{参 考 文 献}{参 考 文 献}
+  \addcontentsline{toc}{chapter}{\mbox{} 参考文献}
+%  \list{[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \list{[\arabic{enumi}]~}{\settowidth\labelwidth{[#1]~}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+ \let\endthebibliography=\endlist
+
+%%typeout{yet another reference}
+%\newcommand{\reference}{
+%  \newpage
+  %        \chapter*{参考文献}
+%  \addcontentsline{toc}{chapter}{\mbox{} 参考文献}
+%  \renewcommand{\bibname}{参考文献}
+%}
+
+%%%
+%%% 研究業績
+%%%
+%\newcommand{\papers}{
+%        \newpage
+%\chapter*{研究業績}\@mkboth{研究業績}{研究業績}
+%\addcontentsline{toc}{chapter}{\mbox{} 研究業績}
+%}
+
+\def\papers{\chapter*{研究業績}\markboth{研 究 業 績}{研 究 業 績}
+%\@mkboth{研 究 業 績}{研 究 業 績}
+ \addcontentsline{toc}{chapter}{\mbox{} 研究業績}
+}
+
+%%%
+%%% 付録
+%%%
+%typeout{appendix}
+\renewcommand{\appendix}{\par
+        \setcounter{section}{0}
+        \setcounter{subsection}{0}
+        \def\thesection{\Alph{section}}
+          \newpage
+%        \section*{付録\addcontentsline{toc}{section}{付録}}
+
+          \chapter*{付録}\markboth{付録}{付録}\addcontentsline{toc}{chapter}{\mbox{} 付録}
+%        \chapter*{付録}\markboth{付録}{付録}
+
+%        \addcontentsline{toc}{chapter}{\mbox{} 付録}
+}
+
+%
+% チェック用
+%
+
+\DeclareOption{check}{\renewcommand{\baselinestretch}{1.8}}
+\ProcessOptions\relax
+
