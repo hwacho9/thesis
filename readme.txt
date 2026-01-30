@@ -15,3 +15,9 @@ LuaLaTeX
 
 latexmk -pdflua handout.tex
 latexmk -pdflua handout.tex
+
+
+lualatex thesis.tex                             
+upbibtex thesis
+lualatex thesis.tex
+lualatex thesis.tex

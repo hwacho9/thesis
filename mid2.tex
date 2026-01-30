@@ -1,0 +1,86 @@
+\documentclass[paper=a4paper,fontsize=10pt,jafontscale=0.925,twocolumn]{jlreq}
+\usepackage{luatexja}
+\usepackage{lab-handout}
+
+% ここから上は変更しない
+
+\title{VRコンテンツ体験時における生体・行動情報の統合に基づく\\リアルタイム感情推定フレームワーク} % 自身の卒業研究/修士論文の予定表題に変更
+
+%以下は適切な所属を1つ選択
+%\affiliation{人間システム工学科 井村研究室} % 卒業研究(人間システム工学科)
+\affiliation{人間システム工学科 井村研究室} % 卒業研究(知能・機械工学課程)
+%\affiliation{人間システム工学専攻 井村研究室} % 修士論文
+
+\studentnumber{27020856} % 8桁の学籍番号
+\author{趙 聖化} % 姓名間の空白は半角で
+
+\graphicspath{{./figure/}} % 画像を置いておくフォルダ名
+
+\begin{document}
+
+\maketitle
+
+\section{はじめに}
+バーチャルリアリティ(VR)コンテンツは高い没入感を提供できるが，VR体験の評価は依然としてアンケートなど主観的報告に依存していることが多い．主観評価では，体験中に生じる微細な感情変化をリアルタイムで捉えることが困難である．本研究では，VRコンテンツ制作者が意図した体験をユーザーに提供できているか客観的に評価する手法の確立を目的とする．複数の生体・行動情報を統合し，体験中のユーザーが示す集中，恐怖，驚きなどの感情を実時間で推定するフレームワークの構築を目指す．
+
+\section{関連研究}
+生体信号を用いた感情推定の研究は活発に行われており，複数の生体信号を組み合わせることで単一のセンサより推定精度が向上することが報告されている\cite{Guixeres2020}．特にVR環境下では，脳波(EEG)と心拍変動(HRV)を用いて感情価と覚醒度を推定する研究\cite{Marin-Morales2018}や，心拍数に応じてゲームの難易度を動的に調整する試み\cite{Orozco-Mora2024}などがあり，本研究の実現可能性を裏付けている．しかし，多くの研究は特定の条件下での感情分類に留まっており，多様なVR体験に適用可能な汎用的なフレームワークはまだ確立されていない．
+
+\section{提案フレームワーク}
+本研究では，HMDと複数の外部生体センサを連携させ，VRコンテンツ体験中のユーザーの感情を実時間で解析するフレームワークを提案する．
+システムは，視線と瞳孔径を取得可能なHMDを中核とし，外部センサとして皮膚電気活動(EDA)，心電(ECG)，筋電(EMG)センサを連携させる．収集した各センサデータからは，EDAのピーク数，HRV指標(RMSSD)，EMG振幅といった特徴量をリアルタイムで抽出する．得られた特徴量を入力とし，機械学習モデルを用いて安静，警戒，恐怖・驚愕といった感情ラベルへ分類することで，ユーザーの状態を客観的に推定する．
+
+\section{予備実験による有効性の検証}
+提案フレームワークの基本的な有効性を検証するため，予備実験を実施した．
+
+\subsection{実験方法}
+ユーザーに恐怖や驚きといった感情を喚起させるため，統合型ゲーム開発環境Unityを用いて「ランダム迷路型VRホラーゲーム」を開発した．平均年齢25歳の健康な男性6名を対象とし，コンテンツ体験中のEDA，ECG，EMGの各信号を生体センサ開発キットBITalino(PLUX Biosignals)を用いてサンプリングレート1 kHzで同期収集した．
+
+\subsection{結果と分析}
+収集した生体信号を分析した結果，VR内の恐怖刺激に対しユーザーの生理的反応が大きく変化することが確認された(表\ref{table:zombie_event})．コンテンツ内で最も強い恐怖刺激であるゾンビ登場イベント後，参加者の心拍数(HR)は平均で約15％増し，EDAは平均148％と急激に上昇した．一方で，ストレス状態を反映するHRVのRMSSD値\cite{TaskForce1996}は平均44％と大幅に減少し，交感神経系が活性化したことが示された.
+
+\begin{table}[tp]
+ \centering
+ \caption{ゾンビ登場イベント前後5秒間の生理反応の変化率}
+ \begin{tabular}{l|c} \hline
+  生理指標 & 変化率(\%) \\ \hline
+  心拍数 (HR) & $+15 \pm 6$ \\
+  HRV (RMSSD) & $-44 \pm 8$ \\
+  皮膚電気活動 (EDA) & $+148 \pm 30$ \\
+  筋電 (EMG) & $+37 \pm 25$ \\ \hline
+ \end{tabular}
+ \label{table:zombie_event}
+\end{table}
+
+\subsection{考察}
+本実験により，HRVの減少とEDAの上昇は，VR恐怖刺激における代表的な交感神経指標であることを再確認した．一方で，EDAやEMGの反応には顕著な個人差が見られることも明らかになった．例えば，一部の参加者では驚きに対して筋肉が収縮するのではなく，逆に活動が停止する「凍結反応」と解釈できるパターンも観察された．
+本実験で観測された個人差は，単一の指標のみで感情を推定することの難しさを示唆している．したがって，複数の生体・行動情報を統合して総合的に判断する本研究のマルチモーダルアプローチの重要性が，実験的にも裏付けられたと言える．
+
+\section{まとめと今後の課題}
+本稿では，VR体験中のユーザーの感情を客観的に評価するフレームワーク構築の一環として実施した，予備実験の結果について述べた．実験により，VRホラーコンテンツが引き起こす恐怖・驚きといった感情が，HRV，EDA，EMGといった生体信号の変化として明確に捉えられることを確認した．
+
+今後の課題として，まず，より明確な感情を誘発する要因を組み込んだVRゲームを実装する．次に，より多くのユーザーを対象に実験を行い，計測されたデータを基盤として機械学習モデルの学習を行う．最終的には，HMDから取得できる視線追跡情報やコントローラの入力といった行動情報も統合し，リアルタイムで感情推定が可能なフレームワークを構築する．
+
+\begin{thebibliography}{9}
+% [수정됨] Guixeres2020: 사용자가 의도한 논문으로 수정되었습니다.
+% 원본은 저자/제목과 출판 정보(저널, 권, 호)가 서로 다른 논문을 가리키는 오류가 있었습니다.
+% "Emotion Recognition in Immersive Virtual Reality..." 논문의 정확한 출판 정보로 대체되었습니다.
+\bibitem{Guixeres2020}
+J. Marín-Morales, C. Llinares, J. Guixeres, and M. Alcañiz: Emotion Recognition in Immersive Virtual Reality: From Statistics to Affective Computing, Sensors, Vol. 20, No. 18, pp. 5163, 2020.
+
+% [수정됨] Marin-Morales2018: 저널명 및 출판 정보가 수정되었습니다.
+% 원본의 저널명 'Sensors'는 'Scientific Reports'의 오기였습니다.
+% 올바른 저널명, 권, 논문 번호로 수정되었습니다.
+\bibitem{Marin-Morales2018}
+J. Marín-Morales, J. L. Higuera-Trujillo, A. Greco, J. Guixeres, C. Llinares, E. P. Scilingo, M. Alcañiz, and G. Valenza: Affective Computing in Virtual Reality: Emotion Recognition from Brain and Heartbeat Dynamics using Wearable Sensors, Scientific Reports, Vol. 8, No. 1, pp. 13657, 2018.
+
+% [정확함] Orozco-Mora2024: 이 항목은 모든 정보가 정확하여 수정하지 않았습니다.
+\bibitem{Orozco-Mora2024}
+C. E. Orozco-Mora et al.: Dynamic Difficulty Adaptation Based on Stress Detection for a Virtual Reality Video Game: A Pilot Study, Electronics, Vol. 13, No. 12, pp. 2324, 2024.
+
+% [정확함] TaskForce1996: 이 항목은 모든 정보가 정확하여 수정하지 않았습니다.
+\bibitem{TaskForce1996}
+Task Force of The European Society of Cardiology and The North American Society of Pacing and Electrophysiology: Heart Rate Variability: Standards of Measurement, Physiological Interpretation, and Clinical Use, Circulation, Vol. 93, No. 5, pp. 1043–1065, 1996.
+\end{thebibliography}
+
+\end{document}

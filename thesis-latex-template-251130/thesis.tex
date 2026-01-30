@@ -238,6 +238,52 @@ Radiahら(2023)は仮想環境のレイアウト,色彩,音,装飾,天候とい�
 
 \chapter{提案手法}
 
+本研究では、VR環境における没入感を阻害することなく、ユーザの内面的な感情状態を客観的に把握するためのリアルタイム感情推定フレームワークを提案する。本フレームワークは、高精度生体信号センサとVR HMD (Head Mounted Display) の行動ログを統合し、感情状態を多角的に分析する \cite{MarinMorales2020}。
+
+\section{システムアーキテクチャおよびデータ同期}
+提案システムは、Unityエンジンをクライアント、Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている。Unityエンジンは、\texttt{BitalinoController.cs}スクリプトを通じて、実験時点ごとのイベント（Phase開始・終了、アイテム獲得、ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する。
+Pythonサーバモジュールは、受信した文字列マーカーをイベントログとして記録すると同時に、BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる。この同期メカニズムを通じて、異なるデータストリーム間の時間軸を一致させ、精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}。
+
+\section{ハードウェアインターフェースおよびセンサ構成}
+ユーザの身体反応測定のためにBITalino (r)evolution Board Kitを使用し、各センサチャンネルは以下のように構成した。
+\begin{itemize}
+\item EMG (Channel A1): 右側前腕部の筋腹 (Muscle belly) に付着し、筋肉の電気的活動および緊張度を測定する。
+\item EDA (Channel A2): 右手のひらに電極を付着し、皮膚伝導度の変化を測定する \cite{Hinkle2019}。
+\item ECG (Channel A3): 胸部および腸骨稜に電極を配置し、心電図信号を測定する。
+\end{itemize}
+仮想現実の実装にはMeta Quest Pro HMDを活用した。
+
+\section{生体信号の前処理および数値変換モデル}
+BITalinoセンサから収集される生データ (Raw ADC) を物理的意味を持つ単位に変換するため、以下のような伝達関数 (Transfer Function) を適用する。本システムの動作電圧 $V_{CC}$ は3.3V、ADC解像度 $n$ は10ビットを基準とする。
+
+\subsection{心電図 (ECG) および筋電図 (EMG) の変換と前処理}
+$$ECG(V) = \left( \frac{ADC}{2^n - 1} - 0.5 \right) \times \frac{V_{CC}}{G_{ECG}}$$
+$$EMG(mV) = \left( \frac{ADC}{2^n} - 0.5 \right) \times V_{CC} \times \frac{1000}{G_{EMG}}$$
+ここで、$G_{ECG}=1100$、$G_{EMG}=1009$ を適用する。変換された信号は以下のように前処理される。
+\begin{itemize}
+\item ECG: 0.5--40 Hz 帯域通過フィルタ (BPF) を適用した後、R-peak検出を実行する。
+\item EMG: 20--450 Hz 帯域通過フィルタリング後、整流 (Rectification) および包絡線抽出 (Envelope extraction) を通じて筋肉緊張度を算出する。
+\end{itemize}
+
+\subsection{皮膚電気活動 (EDA) の変換と前処理}
+$$EDA(\mu S) = \frac{ADC}{2^n} \times \frac{V_{CC}}{0.132}$$
+EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後、緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する。
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.8\textwidth]{system_flow.png}
+\caption{提案システムのデータフロー図およびTCP同期メカニズム}
+\label{fig:system_flow}
+\end{figure}
+
+\section{特徴抽出 (Feature Extraction)}
+前処理された各信号から感情推定に有効な時系列特徴量を抽出した。これは「モデル中心 (Model-specific)」アプローチの核心段階であり、以下の特徴量を算出した \cite{Shu2018}。
+\begin{itemize}
+\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し、自律神経系反応を分析する。
+\item EMG特徴: 筋肉活動の強度を定量化するため、平均電圧、最大電圧、そしてRMS (Root Mean Square) 電圧を算出する。
+\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと、特定刺激による反応回数である\textbf{SCRパルス数 (SCR Peaks)}を抽出する \cite{Hinkle2019,Shu2018}。
+\end{itemize}
+
 \chapter{実験}
 本章では,提案したVR基盤マルチモーダル感情推定フレームワークを検証するために遂行した予備実験の設計と手順を提示する.
 具体的に実験環境と装備構成,Phase 0--3で構成された刺激シナリオ,

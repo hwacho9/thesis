@@ -74,4 +74,9 @@ Radiah Rivu, Paula Prodan, Ville Mäkelä, Pascal Knierim, and Florian Alt.
 \newblock In {\em MuC '23: Proceedings of Mensch und Computer 2023}, pp.
   37--48, 2023.
 
+\bibitem{Shu2018}
+L.~Shu, J.~Xie, M.~Yang, Z.~Li, Z.~Li, D.~Liao, X.~Xu, and X.~Yang.
+\newblock A review of emotion recognition using physiological signals.
+\newblock {\em Sensors}, Vol.~18, No.~7, p. 2074, 2018.
+
 \end{thebibliography}
