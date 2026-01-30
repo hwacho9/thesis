@@ -147,6 +147,11 @@ VRコンテンツの感情的効果を客観的に評価する手法を確立す
 (i) 主観的な操作や偽装が困難であり,
 (ii) 自律神経系および中枢神経系の反応を直接捉えることができるという点で
 客観性と再現性に優れている \cite{MarinMorales2020}.
+
+顔表情や音声などの物理的信号は社会的な文脈に応じて意図的に抑制・加工が可能であるが,
+心電図(ECG),皮膚電気活動(EDA),筋電図(EMG)などは自律神経系(ANS)によって不随意(Involuntary)に制御されるため,
+ユーザの本質的な内的状態を高い信頼性で反映する \cite{Shu2018}.   
+
 特にVR環境ではHMDの装着により顔領域の可視性が制限され,
 伝統的な表情認識手法の適用が困難であるが,
 心電図(ECG),皮膚電気活動(EDA),筋電図(EMG),脳波(EEG)などの信号は,
@@ -238,36 +243,49 @@ Radiahら(2023)は仮想環境のレイアウト,色彩,音,装飾,天候とい�
 
 \chapter{提案手法}
 
-本研究では、VR環境における没入感を阻害することなく、ユーザの内面的な感情状態を客観的に把握するためのリアルタイム感情推定フレームワークを提案する。本フレームワークは、高精度生体信号センサとVR HMD (Head Mounted Display) の行動ログを統合し、感情状態を多角的に分析する \cite{MarinMorales2020}。
+本研究では,VR環境における没入感を阻害することなく,ユーザの内面的な感情状態を客観的に把握するためのリアルタイム感情推定フレームワークを提案する。本フレームワークは,高精度生体信号センサとVR HMD (Head Mounted Display) の行動ログを統合し,感情状態を多角的に分析する \cite{MarinMorales2020}。
 
 \section{システムアーキテクチャおよびデータ同期}
-提案システムは、Unityエンジンをクライアント、Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている。Unityエンジンは、\texttt{BitalinoController.cs}スクリプトを通じて、実験時点ごとのイベント（Phase開始・終了、アイテム獲得、ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する。
-Pythonサーバモジュールは、受信した文字列マーカーをイベントログとして記録すると同時に、BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる。この同期メカニズムを通じて、異なるデータストリーム間の時間軸を一致させ、精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}。
+提案システムは,Unityエンジンをクライアント,Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている。Unityエンジンは,\texttt{BitalinoController.cs}スクリプトを通じて,実験時点ごとのイベント（Phase開始・終了,アイテム獲得,ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する。
+Pythonサーバモジュールは,受信した文字列マーカーをイベントログとして記録すると同時に,BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる。この同期メカニズムを通じて,異なるデータストリーム間の時間軸を一致させ,精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}。
 
 \section{ハードウェアインターフェースおよびセンサ構成}
-ユーザの身体反応測定のためにBITalino (r)evolution Board Kitを使用し、各センサチャンネルは以下のように構成した。
+ユーザの身体反応測定のためにBITalino (r)evolution Board Kitを使用し,各センサチャンネルは以下のように構成した。
 \begin{itemize}
-\item EMG (Channel A1): 右側前腕部の筋腹 (Muscle belly) に付着し、筋肉の電気的活動および緊張度を測定する。
-\item EDA (Channel A2): 右手のひらに電極を付着し、皮膚伝導度の変化を測定する \cite{Hinkle2019}。
-\item ECG (Channel A3): 胸部および腸骨稜に電極を配置し、心電図信号を測定する。
+\item EMG (Channel A1): 右腕でREF電極を電気的に中立的な骨部位 (bone region) に付着し, IN+およびIN$-$電極を筋繊維方向に整列されるように筋腹 (Muscle belly) の上に20 mm間隔で付着して,筋肉の電気的活動および緊張度を測定する。
+\item EDA (Channel A2): 右手のひらに電極を付着し,皮膚伝導度の変化を測定する \cite{Hinkle2019}。
+\item ECG (Channel A3): REF電極を腸骨稜 (iliac crest) に付着し, IN+およびIN$-$電極を胸部に付着して,心電図信号を測定する。
 \end{itemize}
+センサ付着後には電極接触安定化のために必要な手順を遂行した。
 仮想現実の実装にはMeta Quest Pro HMDを活用した。
 
+\begin{figure}[htbp]
+  \centering
+  \begin{tabular}{ccc}
+    % \includegraphics[width=0.3\linewidth]{emg_sensor.png} &
+    % \includegraphics[width=0.3\linewidth]{eda_sensor.png} &
+    % \includegraphics[width=0.3\linewidth]{ecg_sensor.png} \\
+    (a) EMGセンサ付着位置 & (b) EDAセンサ付着位置 & (c) ECGセンサ付着位置
+  \end{tabular}
+  \caption{各生体センサの付着位置}
+  \label{fig:sensor_locations}
+\end{figure}
+
 \section{生体信号の前処理および数値変換モデル}
-BITalinoセンサから収集される生データ (Raw ADC) を物理的意味を持つ単位に変換するため、以下のような伝達関数 (Transfer Function) を適用する。本システムの動作電圧 $V_{CC}$ は3.3V、ADC解像度 $n$ は10ビットを基準とする。
+BITalinoセンサから収集される生データ (Raw ADC) を物理的意味を持つ単位に変換するため,以下のような伝達関数 (Transfer Function) を適用する。本システムの動作電圧 $V_{CC}$ は3.3V,ADC解像度 $n$ は10ビットを基準とする。
 
 \subsection{心電図 (ECG) および筋電図 (EMG) の変換と前処理}
 $$ECG(V) = \left( \frac{ADC}{2^n - 1} - 0.5 \right) \times \frac{V_{CC}}{G_{ECG}}$$
 $$EMG(mV) = \left( \frac{ADC}{2^n} - 0.5 \right) \times V_{CC} \times \frac{1000}{G_{EMG}}$$
-ここで、$G_{ECG}=1100$、$G_{EMG}=1009$ を適用する。変換された信号は以下のように前処理される。
+ここで,$G_{ECG}=1100$,$G_{EMG}=1009$ を適用する。変換された信号は以下のように前処理される。
 \begin{itemize}
-\item ECG: 0.5--40 Hz 帯域通過フィルタ (BPF) を適用した後、R-peak検出を実行する。
-\item EMG: 20--450 Hz 帯域通過フィルタリング後、整流 (Rectification) および包絡線抽出 (Envelope extraction) を通じて筋肉緊張度を算出する。
+\item ECG: 0.5--40 Hz 帯域通過フィルタ (BPF) を適用した後,R-peak検出を実行する。
+\item EMG: 20--450 Hz 帯域通過フィルタリング後,整流 (Rectification) および包絡線抽出 (Envelope extraction) を通じて筋肉緊張度を算出する。
 \end{itemize}
 
 \subsection{皮膚電気活動 (EDA) の変換と前処理}
 $$EDA(\mu S) = \frac{ADC}{2^n} \times \frac{V_{CC}}{0.132}$$
-EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後、緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する。
+EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する。
 
 \begin{figure}[htbp]
 \centering
@@ -277,11 +295,11 @@ EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後、緩やか
 \end{figure}
 
 \section{特徴抽出 (Feature Extraction)}
-前処理された各信号から感情推定に有効な時系列特徴量を抽出した。これは「モデル中心 (Model-specific)」アプローチの核心段階であり、以下の特徴量を算出した \cite{Shu2018}。
+前処理された各信号から感情推定に有効な時系列特徴量を抽出した。これは「モデル中心 (Model-specific)」アプローチの核心段階であり,以下の特徴量を算出した \cite{Shu2018}。
 \begin{itemize}
-\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し、自律神経系反応を分析する。
-\item EMG特徴: 筋肉活動の強度を定量化するため、平均電圧、最大電圧、そしてRMS (Root Mean Square) 電圧を算出する。
-\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと、特定刺激による反応回数である\textbf{SCRパルス数 (SCR Peaks)}を抽出する \cite{Hinkle2019,Shu2018}。
+\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し,自律神経系反応を分析する。
+\item EMG特徴: 筋肉活動の強度を定量化するため,平均電圧,最大電圧,そしてRMS (Root Mean Square) 電圧を算出する。
+\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと,特定刺激による反応回数である\textbf{SCRパルス数 (SCR Peaks)}を抽出する \cite{Hinkle2019,Shu2018}。
 \end{itemize}
 
 \chapter{実験}
@@ -318,17 +336,6 @@ VR使用経験があり心血管系または精神科的疾患がないと自己
 参加者はMeta Quest Pro HMDを装着し,
 両手コントローラを使用して座った姿勢でVRコンテンツを体験した.
 生体信号測定のためにBITalino(PLUX Biosignals)生体信号収集キットを使用した.
-電極付着位置は以下の通りである.
-EDA電極は右手のひらに付着した.
-ECGはREF電極を腸骨稜(iliac crest)に付着し,
-IN+およびIN$-$電極を胸部に付着した.
-EMGは右腕でREF電極を電気的に中立的な
-骨部位(bone region)に付着し,
-IN+およびIN$-$電極を筋繊維方向に整列されるように
-筋腹(muscle belly)の上に20 mm間隔で付着した.
-センサ付着後には電極接触安定化のために必要な手順を遂行し,
-すべての装備連結が終わった後,
-参加者がVR環境および操作に慣れるように約5分間の適応時間を提供した.
 
 \subsection{刺激シナリオ}
 
@@ -344,6 +351,23 @@ Phase 2(恐怖/警戒)では暗い屋敷内部のマップを探索し
 Phase 3(恐怖・驚き強化)ではPhase 2と同一マップで
 敵(ゾンビ)追跡演出を活性化し即時的脅威刺激を提供することで,
 高い覚醒と強い恐怖/驚き反応を誘導する.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tabular}{cc}
+    % \includegraphics[width=0.45\linewidth]{phase0_base.png} &
+    % \includegraphics[width=0.45\linewidth]{phase1_go_green.png} \\
+    (a) Phase 0: ベースライン測定 (安定) & (b) Phase 1: Go課題 (緑のボール・射撃) \\[2ex]
+    % \includegraphics[width=0.45\linewidth]{phase1_nogo_red.png} &
+    % \includegraphics[width=0.45\linewidth]{phase2_beaker.png} \\
+    (c) Phase 1: No-Go課題 (赤のボール・待機) & (d) Phase 2: アイテム探索 (ビーカー収集) \\[2ex]
+    % \includegraphics[width=0.45\linewidth]{phase2_zombie_hide.png} &
+    % \includegraphics[width=0.45\linewidth]{phase3_zombie_chase.png} \\
+    (e) Phase 2: 潜んでいるゾンビの発見 & (f) Phase 3: ゾンビによる追跡 (恐怖・驚き)
+  \end{tabular}
+  \caption{各実験フェーズにおけるVR環境およびタスク画面の例}
+  \label{fig:vr_phases}
+\end{figure}
 
 \subsection{データ収集}
 

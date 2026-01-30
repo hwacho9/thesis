@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  30 JAN 2026 16:18
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  30 JAN 2026 16:37
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1353,34 +1353,34 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 
 [6
 
-](load cache: extra_lmmono10-regular.luc)
+](load cache: extra_lmmono10-regular.luc)(load cache: extra_lmsans9-regular.luc)
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 260.
+(Font)              scaled to size 8.27992pt on input line 270.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 260.
-LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <12> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 260.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 260.
-LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <12> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 260.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 260.
-
-
-[7](load cache: extra_lmsans9-regular.luc)
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.27992pt on input line 275.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.27992pt on input line 275.
+(Font)              scaled to size 8.27992pt on input line 270.
 LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <8.99994> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 275.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 270.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.27992pt on input line 275.
+(Font)              scaled to size 8.27992pt on input line 270.
 LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <8.99994> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 275.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 270.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.27992pt on input line 275.
+(Font)              scaled to size 8.27992pt on input line 270.
+
+
+[7]
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 278.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 278.
+LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <12> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 278.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 278.
+LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <12> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 278.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 278.
 
 
 [8]
@@ -1444,16 +1444,16 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 13074 strings out of 475506
- 244638,794899 words of node,token memory allocated
+ 13078 strings out of 475506
+ 244640,794899 words of node,token memory allocated
  2129 words of node memory still in use:
    11 hlist, 2 vlist, 6 rule, 2 glue, 92 kern, 2 glyph, 489 attribute, 51 glue_s
 pec, 56 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:46,2:61221,3:544,4:543,5:382,6:60,7:6520,8:37,9:2860,10:48,11:
+   avail lists: 1:46,2:63717,3:544,4:542,5:382,6:60,7:6520,8:37,9:2872,10:48,11:
 490
- 35661 multiletter control sequences out of 65536+600000
+ 35665 multiletter control sequences out of 65536+600000
  143 fonts using 65689655 bytes
- 125i,6n,128p,1837b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,8n,128p,1837b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/opentype/public/
 newtx/TeXGyreTermesX-Italic.otf></opt/homebrew/Cellar/texlive/20250308_1/share/t
 exmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/opt/homebrew/Cellar/te
@@ -1472,7 +1472,7 @@ fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive/20250308_1/shar
 e/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></opt/homebrew/Cellar/texlive/2
 0250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cel
 lar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on thesis.pdf (27 pages, 322106 bytes).
+Output written on thesis.pdf (27 pages, 326513 bytes).
 
 PDF statistics: 164 PDF objects out of 1000 (max. 8388607)
  106 compressed objects within 2 object streams
