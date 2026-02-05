@@ -7,7 +7,7 @@
 \usepackage{bm}
 \usepackage{url}
 
-\graphicspath{{./figure/}}
+\graphicspath{{./img/}}
 
 % スタイルファイルを1つ選択する(先頭の % を外す) %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -53,7 +53,7 @@ VR体験中の感情をリアルタイム推定するフレームワークを提
 これらマルチモーダルな情報を統合して恐怖・驚き・集中などの感情状態を識別することで,
 VRコンテンツの感情的効果をリアルタイムに評価可能なシステムを構築した.
 
-(ここはまだ仮説)
+(ここはまだ仮説 これから書きます)
 提案手法の有効性を検証するため,
 Unityを用いたVRホラーコンテンツで被験者実験を行った.
 その結果,恐怖刺激に対してEDAが急激に上昇し,
@@ -100,7 +100,7 @@ VR体験の効果やユーザの感情反応を評価する際には,
 しかし,主観的な評価には回答者のバイアスや記憶の曖昧さが影響する上,
 体験中の瞬間瞬間の感情変化を捉えることはできない.
 また,評価のために体験を中断してその場で質問を行うことは没入感の阻害につながるため,
-リアルタイムでユーザの感情状態を検出することは極めて困難である.
+リアルタイムでユーザの感情状態を検出することは困難である.
 
 この問題に対し,工学的アプローチとして,
 ユーザの生体信号や行動データを用いて感情状態を客観的に推定する方法が注目されている.
@@ -125,7 +125,7 @@ VR体験中のユーザの感情状態をリアルタイムに推定するフレ
 VRコンテンツの感情的効果を客観的に評価する手法を確立することである.
 具体的には,EDA,HRV,EMGといった生体センサ情報と,
 コントローラの操作ログを同時に取得し,
-これらをUnity上のVRコンテンツのイベントと同期させることで,
+収集したデータをUnity上のVRコンテンツのイベントと同期させることで,
 恐怖・驚き・集中といった感情状態を識別するためのデータセットを構築する.
 構築したデータを用いて機械学習モデルを訓練し,
 マルチモーダルな特徴量に基づくリアルタイム感情推定を実現することを目指す.
@@ -164,9 +164,9 @@ VRコンテンツの感情的効果を客観的に評価する手法を確立す
 運動・発話・姿勢変化やサイバーシックネス(VR酔い)などの要因によっても変動するため,
 実験設計段階での統制と信号処理(アーティファクト除去,ベースライン補正)が不可欠である \cite{MarinMorales2020}.
 
-近年の深層学習技術の発展は,生体信号の複雑な非線形パターンの学習に寄与している.
+深層学習技術の発展は,生体信号の複雑な非線形パターンの学習に寄与している.
 Darら(2020)は,14チャンネルEEGの不規則な構造的特性を反映するために,
-これを$81 \times 128$サイズの2次元画像にマッピングして空間的特徴を抽出する2D-CNNアーキテクチャを提案した \cite{Dar2020}.
+EEG信号を$81 \times 128$サイズの2次元画像にマッピングして空間的特徴を抽出する2D-CNNアーキテクチャを提案した \cite{Dar2020}.
 また,ECGとGSR信号に対しては,1D-CNNとLSTMを結合して信号の局所的な時間的特徴と長期的な依存関係を同時に学習することで,
 感情状態を精密に識別できることを実証した \cite{Dar2020}.
 
@@ -198,7 +198,7 @@ VR内でも頭部や手の移動速度が瞬間的に低下する時系列パタ
 異なる2つ以上のデータソースを結合して対象の状態を推定する方法であり,
 感情認識分野でも複数の信号を融合することで性能向上を図る研究が増加している.
 単一の生体信号や単一の行動指標だけでは得られる情報に限界があるが,
-これらを相互補完的に結合すれば,より正確で堅牢な感情分類が可能になるためである.
+複数の指標を相互補完的に結合すれば,より正確で堅牢な感情分類が可能になるためである.
 
 生体信号を用いた感情推定研究は活発に行われており,
 複数の生体信号を組み合わせることで単一センサーよりも推定精度が向上することが報告されている \cite{MarinMorales2020, Cimtay2020}.
@@ -208,10 +208,10 @@ VR内でも頭部や手の移動速度が瞬間的に低下する時系列パタ
 
 このようなマルチモーダルアプローチの優位性は,大規模データセットを用いた実験を通じても証明されている.
 Darら(2020)はEEG,ECG,GSR信号を統合し,AMIGOSデータセットで99.0\%,DREAMERデータセットで90.8\%の感情分類精度を達成した \cite{Dar2020}.
-これは単一モダリティを使用した場合よりも飛躍的に高い数値であり,
+この精度は単一モダリティを使用した場合よりも飛躍的に高い数値であり,
 異なる生体信号が感情の多様な側面を相互補完的に説明していることを示唆している \cite{Dar2020}.
 
-近年では,Arslanら(2024)がECGとGSR信号に統計的特徴選択手法を結合して97.78\%の高い精度を記録している \cite{Arslan2024}
+Arslanら(2024)がECGとGSR信号に統計的特徴選択手法を結合して97.78\%の高い精度を記録している \cite{Arslan2024}
 
 しかし,多くの研究が特定の条件下での感情分類に留まっており,
 多様なVR体験や個人ごとの生理的偏差を包括できる汎用的なフレームワークは未だ確立されていないのが実情である.
@@ -228,10 +228,10 @@ Darら(2020)はEEG,ECG,GSR信号を統合し,AMIGOSデータセットで99.0\%,D
 VRは従来のメディアよりも強力な没入感を提供し,恐怖や驚きなどの反応を誘発するのに最適化されている \cite{Liao2020DesignAE}.
 恐怖研究では,ジャンプスケア要素や照明,音などを活用した環境デザインが主に用いられ \cite{Dozio2022},
 Radiahら(2023)が提案した「EmotionEditor」のようなツールボックスは,
-仮想環境の5つの次元をリアルタイムで制御し,実験の体系性を高めてくれる \cite{Radiah2023}.
+バーチャル環境の5つの次元をリアルタイムで制御し,実験の体系性を高める \cite{Radiah2023}.
 
-Radiahら(2023)は仮想環境のレイアウト,色彩,音,装飾,天候という5つの次元のデザイン空間を提案し,
-これをリアルタイムで制御してユーザの感情を誘発および評価できる「EmotionEditor」ツールボックスを開発した \cite{Radiah2023}.
+Radiahら(2023)はバーチャル環境のレイアウト,色彩,音,装飾,天候という5つの次元のデザイン空間を提案し,
+各次元のデザインをリアルタイムで制御してユーザの感情を誘発および評価できる「EmotionEditor」ツールボックスを開発した \cite{Radiah2023}.
 このようなツールは実験設計の体系性を高め,研究者が意図した感情状態をより精密に誘導できるようにする \cite{Radiah2023}.
 
 ラベリング手法は大きく分けて,客観的イベントベースのラベリングと主観的自己報告ラベリングに区別される.
@@ -243,28 +243,28 @@ Radiahら(2023)は仮想環境のレイアウト,色彩,音,装飾,天候とい�
 
 \chapter{提案手法}
 
-本研究では,VR環境における没入感を阻害することなく,ユーザの内面的な感情状態を客観的に把握するためのリアルタイム感情推定フレームワークを提案する。本フレームワークは,高精度生体信号センサとVR HMD (Head Mounted Display) の行動ログを統合し,感情状態を多角的に分析する \cite{MarinMorales2020}。
+本研究では,VR環境における没入感を阻害することなく,ユーザの内面的な感情状態を客観的に把握するためのリアルタイム感情推定フレームワークを提案する.本フレームワークは,高精度生体信号センサとVR HMD (Head Mounted Display) の行動ログを統合し,感情状態を多角的に分析する \cite{MarinMorales2020}.
 
 \section{システムアーキテクチャおよびデータ同期}
-提案システムは,Unityエンジンをクライアント,Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている。Unityエンジンは,\texttt{BitalinoController.cs}スクリプトを通じて,実験時点ごとのイベント（Phase開始・終了,アイテム獲得,ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する。
-Pythonサーバモジュールは,受信した文字列マーカーをイベントログとして記録すると同時に,BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる。この同期メカニズムを通じて,異なるデータストリーム間の時間軸を一致させ,精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}。
+提案システムは,Unityエンジンをクライアント,Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている.Unityエンジンは,\texttt{BitalinoController.cs}スクリプトを通じて,実験時点ごとのイベント（Phase開始・終了,アイテム獲得,ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する.
+Pythonサーバモジュールは,受信した文字列マーカーをイベントログとして記録すると同時に,BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる.この同期メカニズムを通じて,異なるデータストリーム間の時間軸を一致させ,精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}.
 
 \section{ハードウェアインターフェースおよびセンサ構成}
-ユーザの身体反応測定のためにBITalino (r)evolution Board Kitを使用し,各センサチャンネルは以下のように構成した。
+ユーザの身体反応測定のためにBITalino (r)evolution Board Kitを使用し,各センサチャンネルは以下のように構成する.
 \begin{itemize}
-\item EMG (Channel A1): 右腕でREF電極を電気的に中立的な骨部位 (bone region) に付着し, IN+およびIN$-$電極を筋繊維方向に整列されるように筋腹 (Muscle belly) の上に20 mm間隔で付着して,筋肉の電気的活動および緊張度を測定する。
-\item EDA (Channel A2): 右手のひらに電極を付着し,皮膚伝導度の変化を測定する \cite{Hinkle2019}。
-\item ECG (Channel A3): REF電極を腸骨稜 (iliac crest) に付着し, IN+およびIN$-$電極を胸部に付着して,心電図信号を測定する。
+\item EMG (Channel A1): 右腕でREF電極を電気的に中立的な骨部位 (bone region) に付着し, IN+およびIN$-$電極を筋繊維方向に整列されるように筋腹 (Muscle belly) の上に20 mm間隔で付着して,筋肉の電気的活動および緊張度を測定する.
+\item EDA (Channel A2): 右手のひらに電極を付着し,皮膚伝導度の変化を測定する \cite{Hinkle2019}.
+\item ECG (Channel A3): REF電極を腸骨稜 (iliac crest) に付着し, IN+およびIN$-$電極を胸部に付着して,心電図信号を測定する.
 \end{itemize}
-センサ付着後には電極接触安定化のために必要な手順を遂行した。
-仮想現実の実装にはMeta Quest Pro HMDを活用した。
+センサ付着後には電極接触安定化のために必要な手順を遂行した.
+バーチャルリアリティの実装にはMeta Quest Pro HMDを活用した.
 
 \begin{figure}[htbp]
   \centering
   \begin{tabular}{ccc}
-    % \includegraphics[width=0.3\linewidth]{emg_sensor.png} &
-    % \includegraphics[width=0.3\linewidth]{eda_sensor.png} &
-    % \includegraphics[width=0.3\linewidth]{ecg_sensor.png} \\
+    \includegraphics[width=0.3\linewidth]{EMG.jpg} &
+    \includegraphics[width=0.3\linewidth]{EDA.jpg} &
+    \includegraphics[width=0.3\linewidth]{ECG.png} \\
     (a) EMGセンサ付着位置 & (b) EDAセンサ付着位置 & (c) ECGセンサ付着位置
   \end{tabular}
   \caption{各生体センサの付着位置}
@@ -272,20 +272,20 @@ Pythonサーバモジュールは,受信した文字列マーカーをイベン�
 \end{figure}
 
 \section{生体信号の前処理および数値変換モデル}
-BITalinoセンサから収集される生データ (Raw ADC) を物理的意味を持つ単位に変換するため,以下のような伝達関数 (Transfer Function) を適用する。本システムの動作電圧 $V_{CC}$ は3.3V,ADC解像度 $n$ は10ビットを基準とする。
+BITalinoセンサから収集される生データ (Raw ADC) を物理的意味を持つ単位に変換するため,以下のような伝達関数 (Transfer Function) を適用する.本システムの動作電圧 $V_{CC}$ は3.3V,ADC解像度 $n$ は10ビットを基準とする.
 
 \subsection{心電図 (ECG) および筋電図 (EMG) の変換と前処理}
 $$ECG(V) = \left( \frac{ADC}{2^n - 1} - 0.5 \right) \times \frac{V_{CC}}{G_{ECG}}$$
 $$EMG(mV) = \left( \frac{ADC}{2^n} - 0.5 \right) \times V_{CC} \times \frac{1000}{G_{EMG}}$$
-ここで,$G_{ECG}=1100$,$G_{EMG}=1009$ を適用する。変換された信号は以下のように前処理される。
+ここで,$G_{ECG}=1100$,$G_{EMG}=1009$ を適用する.変換された信号は以下のように前処理される.
 \begin{itemize}
-\item ECG: 0.5--40 Hz 帯域通過フィルタ (BPF) を適用した後,R-peak検出を実行する。
-\item EMG: 20--450 Hz 帯域通過フィルタリング後,整流 (Rectification) および包絡線抽出 (Envelope extraction) を通じて筋肉緊張度を算出する。
+\item ECG: 0.5--40 Hz 帯域通過フィルタ (BPF) を適用した後,R-peak検出を実行する.
+\item EMG: 20--450 Hz 帯域通過フィルタリング後,整流 (Rectification) および包絡線抽出 (Envelope extraction) を通じて筋肉緊張度を算出する.
 \end{itemize}
 
 \subsection{皮膚電気活動 (EDA) の変換と前処理}
 $$EDA(\mu S) = \frac{ADC}{2^n} \times \frac{V_{CC}}{0.132}$$
-EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する。
+EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する.
 
 \begin{figure}[htbp]
 \centering
@@ -295,11 +295,11 @@ EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やか�
 \end{figure}
 
 \section{特徴抽出 (Feature Extraction)}
-前処理された各信号から感情推定に有効な時系列特徴量を抽出した。これは「モデル中心 (Model-specific)」アプローチの核心段階であり,以下の特徴量を算出した \cite{Shu2018}。
+前処理された各信号から感情推定に有効な時系列特徴量を抽出する.特徴抽出は「モデル中心 (Model-specific)」アプローチの核心段階であり,以下の特徴量を算出する \cite{Shu2018}.
 \begin{itemize}
-\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し,自律神経系反応を分析する。
-\item EMG特徴: 筋肉活動の強度を定量化するため,平均電圧,最大電圧,そしてRMS (Root Mean Square) 電圧を算出する。
-\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと,特定刺激による反応回数である\textbf{SCRパルス数 (SCR Peaks)}を抽出する \cite{Hinkle2019,Shu2018}。
+\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し,自律神経系反応を分析する.
+\item EMG特徴: 筋肉活動の強度を定量化するため,平均電圧,最大電圧,そしてRMS (Root Mean Square) 電圧を算出する.
+\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと,特定刺激による反応回数である\textbf{SCRパルス数 (SCR Peaks)}を抽出する \cite{Hinkle2019,Shu2018}.
 \end{itemize}
 
 \chapter{実験}
@@ -317,7 +317,7 @@ EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やか�
 提案した収集・同期システムを通じて生体信号および行動/イベント反応の変化を
 捕捉できるか確認することに目的がある.
 さらに収集されたマルチモーダルデータを活用して感情状態分類の可能性を初期評価し,
-後続実験およびモデル改善点を導出する.
+追加実験およびモデル改善点を導出する.
 本研究の仮説は「VRコンテンツで誘発された恐怖/驚きおよび緊張状態は
 生体信号(EDA,ECG,EMGなど)の有意な変化として現れ,
 生体信号と行動/イベント情報を総合した特徴はユーザの感情状態を
@@ -351,19 +351,26 @@ Phase 2(恐怖/警戒)では暗い屋敷内部のマップを探索し
 Phase 3(恐怖・驚き強化)ではPhase 2と同一マップで
 敵(ゾンビ)追跡演出を活性化し即時的脅威刺激を提供することで,
 高い覚醒と強い恐怖/驚き反応を誘導する.
+また,各フェーズおよびイベントの状況に応じて異なるBGMおよび効果音を使用した.
+Phase 2の探索パートでは不気味で静かな環境音を再生し緊張感を高め,
+アイテム獲得時には通知音を鳴らした.
+Phase 3でゾンビが登場し追跡が始まると,テンポの速い緊迫した追跡用BGMに切り替えることで,
+聴覚的刺激による恐怖と焦燥感を増幅させた.
 
 \begin{figure}[htbp]
   \centering
   \begin{tabular}{cc}
-    % \includegraphics[width=0.45\linewidth]{phase0_base.png} &
-    % \includegraphics[width=0.45\linewidth]{phase1_go_green.png} \\
+    \includegraphics[width=0.45\linewidth]{phase0_baseline.png} &
+    \includegraphics[width=0.45\linewidth]{phase1_go.png} \\
     (a) Phase 0: ベースライン測定 (安定) & (b) Phase 1: Go課題 (緑のボール・射撃) \\[2ex]
-    % \includegraphics[width=0.45\linewidth]{phase1_nogo_red.png} &
-    % \includegraphics[width=0.45\linewidth]{phase2_beaker.png} \\
+    \includegraphics[width=0.45\linewidth]{phase1_nogo.png} &
+    \includegraphics[width=0.45\linewidth]{phase2_item.png} \\
     (c) Phase 1: No-Go課題 (赤のボール・待機) & (d) Phase 2: アイテム探索 (ビーカー収集) \\[2ex]
-    % \includegraphics[width=0.45\linewidth]{phase2_zombie_hide.png} &
-    % \includegraphics[width=0.45\linewidth]{phase3_zombie_chase.png} \\
-    (e) Phase 2: 潜んでいるゾンビの発見 & (f) Phase 3: ゾンビによる追跡 (恐怖・驚き)
+    \includegraphics[width=0.45\linewidth]{phase2_zombie.png} &
+    \includegraphics[width=0.45\linewidth]{phase2_map.png} \\
+    (e) Phase 2: 潜んでいるゾンビの発見 & (f) Phase 2: 屋敷内部の暗い環境 \\[2ex]
+    \multicolumn{2}{c}{\includegraphics[width=0.45\linewidth]{phase3_trace.png}} \\
+    \multicolumn{2}{c}{(g) Phase 3: ゾンビによる追跡 (恐怖・驚き)}
   \end{tabular}
   \caption{各実験フェーズにおけるVR環境およびタスク画面の例}
   \label{fig:vr_phases}

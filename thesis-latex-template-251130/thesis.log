@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  30 JAN 2026 16:37
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  5 FEB 2026 14:51
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1353,7 +1353,23 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 
 [6
 
-](load cache: extra_lmmono10-regular.luc)(load cache: extra_lmsans9-regular.luc)
+](load cache: extra_lmmono10-regular.luc)
+<./img/EMG.jpg, id=47, 274.02374pt x 205.76875pt>
+File: ./img/EMG.jpg Graphic file (type jpg)
+<use ./img/EMG.jpg>
+Package luatex.def Info: ./img/EMG.jpg  used on input line 265.
+(luatex.def)             Requested size: 132.48111pt x 99.48373pt.
+<./img/EDA.jpg, id=48, 275.0275pt x 205.76875pt>
+File: ./img/EDA.jpg Graphic file (type jpg)
+<use ./img/EDA.jpg>
+Package luatex.def Info: ./img/EDA.jpg  used on input line 266.
+(luatex.def)             Requested size: 132.48111pt x 99.12267pt.
+<./img/ECG.png, id=49, 289.08pt x 204.5241pt>
+File: ./img/ECG.png Graphic file (type png)
+<use ./img/ECG.png>
+Package luatex.def Info: ./img/ECG.png  used on input line 267.
+(luatex.def)             Requested size: 132.48111pt x 93.72957pt.
+(load cache: extra_lmsans9-regular.luc)
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
 (Font)              scaled to size 8.27992pt on input line 270.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
@@ -1366,9 +1382,6 @@ LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <8.99994> not available
 (Font)              Font shape `JY3/gt/m/n' tried instead on input line 270.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 8.27992pt on input line 270.
-
-
-[7]
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 278.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
@@ -1383,7 +1396,45 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 278.
 
 
-[8]
+[7]
+
+[8<./img/EMG.jpg><./img/EDA.jpg><./img/ECG.png>]
+<./img/phase0_baseline.png, id=62, 955.57pt x 473.77pt>
+File: ./img/phase0_baseline.png Graphic file (type png)
+<use ./img/phase0_baseline.png>
+Package luatex.def Info: ./img/phase0_baseline.png  used on input line 363.
+(luatex.def)             Requested size: 198.71829pt x 98.51869pt.
+<./img/phase1_go.png, id=63, 918.43124pt x 459.7175pt>
+File: ./img/phase1_go.png Graphic file (type png)
+<use ./img/phase1_go.png>
+Package luatex.def Info: ./img/phase1_go.png  used on input line 364.
+(luatex.def)             Requested size: 198.71829pt x 99.46164pt.
+<./img/phase1_nogo.png, id=64, 888.31876pt x 453.695pt>
+File: ./img/phase1_nogo.png Graphic file (type png)
+<use ./img/phase1_nogo.png>
+Package luatex.def Info: ./img/phase1_nogo.png  used on input line 366.
+(luatex.def)             Requested size: 198.71829pt x 101.48853pt.
+<./img/phase2_item.png, id=65, 625.1355pt x 373.99725pt>
+File: ./img/phase2_item.png Graphic file (type png)
+<use ./img/phase2_item.png>
+Package luatex.def Info: ./img/phase2_item.png  used on input line 367.
+(luatex.def)             Requested size: 198.71829pt x 118.88261pt.
+<./img/phase2_zombie.png, id=66, 898.35625pt x 568.1225pt>
+File: ./img/phase2_zombie.png Graphic file (type png)
+<use ./img/phase2_zombie.png>
+Package luatex.def Info: ./img/phase2_zombie.png  used on input line 369.
+(luatex.def)             Requested size: 198.71829pt x 125.6635pt.
+<./img/phase2_map.png, id=67, 1036.87375pt x 556.0775pt>
+File: ./img/phase2_map.png Graphic file (type png)
+<use ./img/phase2_map.png>
+Package luatex.def Info: ./img/phase2_map.png  used on input line 370.
+(luatex.def)             Requested size: 198.71829pt x 106.5722pt.
+<./img/phase3_trace.png, id=68, 984.67876pt x 504.88625pt>
+File: ./img/phase3_trace.png Graphic file (type png)
+<use ./img/phase3_trace.png>
+Package luatex.def Info: ./img/phase3_trace.png  used on input line 372.
+(luatex.def)             Requested size: 198.71829pt x 101.88452pt.
+
 
 [9
 
@@ -1391,9 +1442,9 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 
 [10]
 
-[11
-
-]
+[11<./img/phase0_baseline.png><./img/phase1_go.png><./img/phase1_nogo.png><./img
+/phase2_item.png><./img/phase2_zombie.png><./img/phase2_map.png><./img/phase3_tr
+ace.png>]
 
 [12
 
@@ -1403,11 +1454,17 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 
 [14
 
-] (./thesis.bbl
+]
 
 [15]
 
 [16
+
+] (./thesis.bbl
+
+[17]
+
+[18
 
 ]
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
@@ -1424,19 +1481,19 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 7.
 )
 
-[17]
-
-[18
-
-]
-
 [19]
 
 [20
 
 ]
 
-[21] (./thesis.aux)
+[21]
+
+[22
+
+]
+
+[23] (./thesis.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1444,16 +1501,16 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 13078 strings out of 475506
- 244640,794899 words of node,token memory allocated
- 2129 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 92 kern, 2 glyph, 489 attribute, 51 glue_s
-pec, 56 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:46,2:63717,3:544,4:542,5:382,6:60,7:6520,8:37,9:2872,10:48,11:
+ 13198 strings out of 475506
+ 244635,794899 words of node,token memory allocated
+ 2153 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 92 kern, 2 glyph, 500 attribute, 51 glue_s
+pec, 57 attribute_list, 1 write, 14 user_defined nodes
+   avail lists: 1:46,2:63700,3:544,4:542,5:382,6:61,7:6520,8:37,9:2872,10:48,11:
 490
- 35665 multiletter control sequences out of 65536+600000
+ 35755 multiletter control sequences out of 65536+600000
  143 fonts using 65689655 bytes
- 125i,8n,128p,1837b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,128p,1837b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/opentype/public/
 newtx/TeXGyreTermesX-Italic.otf></opt/homebrew/Cellar/texlive/20250308_1/share/t
 exmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/opt/homebrew/Cellar/te
@@ -1472,10 +1529,10 @@ fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive/20250308_1/shar
 e/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></opt/homebrew/Cellar/texlive/2
 0250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cel
 lar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on thesis.pdf (27 pages, 326513 bytes).
+Output written on thesis.pdf (29 pages, 4970707 bytes).
 
-PDF statistics: 164 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+PDF statistics: 188 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
