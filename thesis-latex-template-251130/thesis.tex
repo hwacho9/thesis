@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{url}
+\usepackage{multirow}
 
 \graphicspath{{./img/}}
 
@@ -253,59 +254,330 @@ Radiahらは,バーチャル環境のレイアウト,色彩,音,装飾,天候と
 
 
 \section{生体信号の前処理および数値変換モデル}
-BITalinoセンサから収集される生データを物理的意味を持つ単位に変換するため,以下のような変換を行うを適用する.整体信号取得システムの動作電圧を $V_{CC}$ は3.3V,ADC解像度を $n$ は10ビットを基準とする.
+BITalinoセンサから収集される生データを物理的意味を持つ単位に変換するため,以下のような変換を行うを適用する.
+整体信号取得システムの動作電圧を $V_{CC}$ ,ADC解像度を $n$ ビットとする.
 
 \subsection{心電図 (ECG) および筋電図 (EMG) の変換と前処理}
 $$ECG(V) = \left( \frac{ADC}{2^n - 1} - 0.5 \right) \times \frac{V_{CC}}{G_{ECG}}$$
 $$EMG(mV) = \left( \frac{ADC}{2^n} - 0.5 \right) \times V_{CC} \times \frac{1000}{G_{EMG}}$$
-ここで,$G_{ECG}=1100$,$G_{EMG}=1009$ を適用する.変換された信号は以下のように前処理される.
+変換された信号は以下のように前処理される.
 \begin{itemize}
 \item ECG: 0.5--40 Hz 帯域通過フィルタを適用した後,R-peak検出を実行する.
 \item EMG: 20--450 Hz 帯域通過フィルタリング後,整流および包絡線抽出を通じて筋肉緊張度を算出する.
 \end{itemize}
 
 \subsection{皮膚電気活動 (EDA) の変換と前処理}
+皮膚導電率は、以下の関数を用いてマイクロジーメンス(μS)単位に変換される。
 $$EDA(\mu S) = \frac{ADC}{2^n} \times \frac{V_{CC}}{0.132}$$
+本公式の分母の $0.132$ は EDA センサーの回路設計に基づく伝達関数の定数である.
 EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic, トニック) 成分と特定の刺激による急激な変化を表すSCR (Phasic, ファージック) 成分に分解して処理する.
 
-\begin{figure}[htbp]
-\centering
-% \includegraphics[width=0.8\textwidth]{system_flow.png}
-\caption{提案システムのデータフロー図およびTCP同期メカニズム}
-\label{fig:system_flow}
-\end{figure}
+\paragraph{SCL (Skin Conductance Level, Tonic):}
+皮膚コンダクタンスの基底レベルを意味する長期的なトニック反応(Tonic level)である. SCLは背景覚醒レベルを反映し, 心理的ストレスや環境的要因によって数十秒から数分にわたって緩やかに変化する特性を持つ. 一般的に一定区間の皮膚コンダクタンス信号の平均または中央値として算出され, 自律神経系緊張度の基底状態を表す指標として活用される.
 
+\paragraph{SCR (Skin Conductance Response, Phasic):}
+特定のイベント(Event)や刺激に対する反応として現れる短期的かつ急激な位相性反応(Phasic response)である. 刺激直後約1\textendash5秒以内にコンダクタンスが急激に増加し, 該当刺激に対する神経生理学的覚醒度を直接的に反映する. SCR振幅($SCR_{amp}$)は反応の最大値($SC_{peak}$)と反応開始時点のレベル($SC_{onset}$)の差として定義され, 以下のように算出する.
+$$SCR_{amp} = SC_{peak} - SC_{onset}$$
+
+
+
+% \section{特徴抽出}
+% \begin{itemize}
+% \item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し,自律神経系反応を分析する.
+% \item EMG特徴: 筋肉活動の強度を定量化するため,平均電圧,最大電圧,そしてRMS (Root Mean Square) 電圧を算出する.
+% \item EDA特徴: 全般的な覚醒レベルを表す平均SCLと,特定刺激による反応回数であるSCRパルス数 (SCR Peaks)を抽出する \cite{Hinkle2019,Shu2018}.
+% \end{itemize}
 \section{特徴抽出}
-前処理された各信号から感情推定に有効な時系列特徴量を抽出する.特徴抽出は「モデル中心 (Model-specific)」アプローチの核心段階であり,以下の特徴量を算出する \cite{Shu2018}.
+前処理された各信号から感情推定に有効な時系列特徴量を抽出する.本研究では,感情状態を反映する生理学的指標として以下の特徴量を算出する \cite{Shu2018}.
+
+\begin{table}[t]
+\centering
+\caption{抽出された生理学的特徴量の一覧}
+\label{tab:features}
+\begin{tabular}{llll}
+\hline
+\textbf{信号} & \textbf{特徴量} & \textbf{単位} & \textbf{生理学的意義} \\
+\hline
+\multirow{7}{*}{ECG} 
+& 心拍数 (HR) & bpm & 全般的な覚醒水準 \\
+& RMSSD & ms & 副交感神経活動 \\
+& SDNN & ms & 全体的HRV (交感+副交感) \\
+& pNN50 & \% & 副交感神経活動比率 \\
+& LFパワー & ms$^2$ & 交感+副交感神経活動 \\
+& HFパワー & ms$^2$ & 副交感神経活動 \\
+& LF/HF比 & - & 自律神経バランス (ストレス指標) \\
+\hline
+\multirow{3}{*}{EMG} 
+& 平均電圧 & $\mu$V & 筋緊張の基礎水準 \\
+& 最大電圧 & $\mu$V & 筋活動のピーク強度 \\
+& RMS電圧 & $\mu$V & 筋活動エネルギー \\
+\hline
+\multirow{2}{*}{EDA} 
+& 平均SCL & $\mu$S & 基礎的覚醒水準 \\
+& SCRパルス数 & 回 & 刺激に対する反応頻度 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{ECG特徴}
+心電図から心拍数および心拍変動（HRV）指標を抽出し，自律神経系反応を分析する．
+
+\subsubsection{時間領域HRV指標}
 \begin{itemize}
-\item ECG特徴: 平均心拍数 (HR) および心拍変動指標であるRMSSDを抽出し,自律神経系反応を分析する.
-\item EMG特徴: 筋肉活動の強度を定量化するため,平均電圧,最大電圧,そしてRMS (Root Mean Square) 電圧を算出する.
-\item EDA特徴: 全般的な覚醒レベルを表す平均SCLと,特定刺激による反応回数であるSCRパルス数 (SCR Peaks)を抽出する \cite{Hinkle2019,Shu2018}.
+\item 平均心拍数 (HR): 1分間あたりの心拍数（bpm）
+\item RMSSD: 連続するRR間隔の差分の二乗平均平方根であり，副交感神経の活動指標として広く用いられる．
+\begin{equation}
+\mathrm{RMSSD} = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} (RR_{i+1} - RR_i)^2}
+\end{equation}
+\item SDNN: NN間隔の標準偏差であり，交感・副交感神経の両方を含む全体的なHRV指標である．
+\begin{equation}
+\mathrm{SDNN} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (RR_i - \overline{RR})^2}
+\end{equation}
+\item pNN50: 連続するRR間隔の差が50ms以上である割合（\%）であり，副交感神経活動を反映する．
 \end{itemize}
 
-\section{ユーザーの入力・イベント}
+\subsubsection{周波数領域HRV指標}
+RR間隔時系列をFFTにより周波数領域に変換し,パワースペクトル密度を算出する \cite{TaskForce1996}．
+\begin{itemize}
+\item LFパワー (0.04-0.15 Hz): 交感神経と副交感神経の両方の活動を反映
+\item HFパワー (0.15-0.40 Hz): 副交感神経活動（呼吸性洞性不整脈）を反映
+\item LF/HF比: 自律神経系バランス指標．値が高いほどストレス状態を示す
+\begin{equation}
+\mathrm{LF/HF} = \frac{\int_{0.04}^{0.15} PSD(f) df}{\int_{0.15}^{0.40} PSD(f) df}
+\end{equation}
+\end{itemize}
+
+\subsection{EMG特徴}
+筋肉活動の強度を定量化するため，以下の特徴量を算出する．
+\begin{itemize}
+\item 平均電圧，最大電圧 ($\mu$V)
+\item RMS電圧: 筋活動の全体的なエネルギー量
+\begin{equation}
+\mathrm{RMS} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}
+\end{equation}
+\end{itemize}
+
+\subsection{EDA特徴}
+\begin{itemize}
+\item 平均SCL ($\mu$S): 基礎的な覚醒水準を示す皮膚電気伝導度の平均値
+\item SCRパルス数: 刺激に対する一過性反応の回数 \cite{Hinkle2019}
+\end{itemize}
+
+\section{ユーザ入力およびイベントログの活用}
+本提案手法では, 生体信号のみならず, VR環境内でのユーザの行動(入力)とシステム側で発生するイベントを統合的に解析することで, 感情推定の精度と解釈性を向上させる.
+
+\subsection{ユーザ入力 (User Input)}
+VRコントローラの操作ログとHMDのトラッキングデータを取得し, ユーザの能動的な行動を分析する.
+\begin{itemize}
+    \item \textbf{トリガー・ボタン入力}: Phase 1での射撃課題(Right Trigger)や, Phase 2での懐中電灯操作(Left Trigger)およびアイテム収集(Ray/Trigger)など, 意図的なインタラクションを記録する.
+    \item \textbf{トラッキングデータ (Position/Rotation)}: HMDおよびコントローラの6自由度(6DoF)データを記録する. これにより, 驚き刺激に対する瞬発的な回避動作や, 強い恐怖に直面した際の身体硬直(Freezing)反応などの行動的特徴を抽出することが可能となる. 特にPhase 3では, プレイヤーの視線ベクトルとゾンビの位置関係から「直視(Gaze)」イベントを判定するために活用される.
+\end{itemize}
+
+\subsection{システムイベント (System Events)}
+VRコンテンツの進行状況や特定の刺激発生タイミングをイベントマーカーとして記録し, 生体信号の文脈(Context)として活用する.
+\begin{itemize}
+    \item \textbf{フェーズ遷移}: \texttt{PHASE1\_TASK\_START}, \texttt{PHASE3\_START} など, 実験フェーズの切り替わりを記録し, ベースラインとの比較やフェーズごとの状態推定に使用する.
+    \item \textbf{タスク・イベント}: Phase 1の試行開始(\texttt{P1\_TRIAL\_ONSET\_GO}), Phase 2のアイテム獲得(\texttt{P2\_PIECE\_n}), Phase 3のゾンビ接近(\texttt{P3\_ZOMBIE\_NEAR\_n})など, 感情変化のトリガーとなる瞬間を特定する.
+    \item \textbf{環境変化}: ドアの開閉(\texttt{DOOR\_OPEN})やBGMの切り替えタイミングなどを記録し, 環境要因によるストレス変化を分析する.
+\end{itemize}
+
+\subsection{統合解析 (Integration)}
+収集された生体信号(EDA, ECG, EMG)とイベントログは, 共通のタイムスタンプおよびサンプルインデックス(\texttt{sample\_index})を用いて厳密に同期される. これにより, 「ゾンビが接近した瞬間」や「アイテムを発見した瞬間」など, 特定の感情生起イベント直後の生理反応(SCRのピーク, 心拍数の急上昇など)をセグメン테ーションし, イベントと生体反応の因果関係を明確にした分析が可能となる.
 
 \chapter{実装}
-BITalinoセンサから収集される生データを物理的意味を持つ単位に変換するため,以下のような変換を行うを適用する.整体信号取得システムの動作電圧を $V_{CC}$ は3.3V,ADC解像度を $n$ は10ビットを基準とする.
+本章では、提案されたシステムを実際に実装した過程を具体的に記述する.
+使用したハードウェアとソフトウェア環境を紹介し,各モジュールの具体的な実装方法を説明する.
+
+\section{開発環境およびシステム構成}
+本研究におけるVRコンテンツの実装および実行環境はUnityを基盤としており,HMDにはMeta Quest Proを使用した.
+言語およびシステム構成は以下の通りである.
+\begin{itemize}
+\item Unity側: C\# (VRコンテンツ/イベント発生, TCPクライアント)
+\item Python側: TCPサーバ + BITalinoデータ収集/ロギングモジュール
+\end{itemize}
+Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプロジェクト内の主要通信スクリプトは \texttt{BitalinoController.cs},Python側は \texttt{bitalino\_unity\_server.py} として役割を分離した.
 
 
-\section{システムアーキテクチャおよびデータ同期}
-提案システムは,Unityエンジンをクライアント,Python分析モジュールをサーバとするTCPソケット通信アーキテクチャに基づいている.Unityエンジンは,スクリプトを通じて,実験時点ごとのイベント（Phase開始・終了,アイテム獲得,ゾンビ接近など）を文字列コマンドマーカー形式でPythonサーバにリアルタイム送信する.
-Pythonサーバモジュールは,受信した文字列マーカーをイベントログとして記録すると同時に,BITalinoセンサから収集される生体信号のサンプルインデックス (Sample Index) と整列させる.この同期メカニズムを通じて,異なるデータストリーム間の時間軸を一致させ,精巧なマルチモーダルデータセットを構築する \cite{OrozcoMora2024}.
+\section{ハードウェア構成}
+\subsection{VR HMD: Meta Quest Pro}
+本実験では,Meta Quest Proをヘッドマウントディスプレイとして使用した.被験者は両手のコントローラを用いてVR空間内を移動し,特定のインタラクション（ドアの開閉,アイテム取得など）を行うことで,システムへの入力と行動データの収集を行った.
 
-バーチャルリアリティの実装にはMeta Quest Pro HMDを活用した.
+\subsection{BITalinoセンサシステム}
+被験者の生理的反応を測定するためにBITalino (r)evolutionボードを使用した.BITalinoデバイスはEMG,ECG,EDAなどのアナログ生体信号を測定し,これを10-bit ADCを通じてデジタル化して出力する.データのサンプリング周波数は1000 Hzに設定した.
 
-\begin{figure}[htbp]
+収集された各センサのデジタル値は専用センサデータシートに提示された変換公式を通じて物理的単位に換算される.本研究では,前述の提案手法（第3章）で示した数式を用いて各信号の変換処理を行う.具体的なシステムパラメータは以下の通りである.
+\begin{itemize}
+\item 動作電圧 ($V_{CC}$): 3.3 V
+\item ADC解像度 ($n$): 10-bit ($0 \sim 1023$)
+\item センサ別ゲイン定数 (Gain): BITalino (r)evolution センサの製造元(PLUX Biosignals)公式データシートに定義された固有値を適用した.
+  \begin{itemize}
+  \item 心電図 (ECG): $G_{ECG} = 1100$
+  \item 筋電図 (EMG): $G_{EMG} = 1009$
+  \end{itemize}
+\end{itemize}
+
+\subsection{センサチャンネル構成および付着位置}
+各センサの付着位置および構成は,第3章(3.2節)で提案した手法に準拠する.具体的なセンサの装着状況を図 \ref{fig:sensor_locations} に示す.
+
+\begin{figure}[t]
   \centering
   \begin{tabular}{ccc}
     \includegraphics[width=0.3\linewidth]{EMG.jpg} &
     \includegraphics[width=0.3\linewidth]{EDA.jpg} &
     \includegraphics[width=0.3\linewidth]{ECG.png} \\
-    (a) EMGセンサ付着位置 & (b) EDAセンサ付着位置 & (c) ECGセンサ付着位置
+    (a) EMGセンサ付着位置 (Channel A1) & (b) EDAセンサ付着位置 (Channel A2) & (c) ECGセンサ付着位置 (Channel A3)
   \end{tabular}
   \caption{各生体センサの付着位置}
   \label{fig:sensor_locations}
 \end{figure}
+
+\section{ソフトウェア構成}
+\section{システムアーキテクチャおよびデータ同期}
+
+本システムは,Unity 2022.3 LTSとPython分析サーバー間の非同期TCP/IPソケット通信を基盤として構築した.各モジュールの役割とデータフローを整理した図を \ref{fig:system_flow} に示す.
+
+\subsection{Unity\textendash Python間TCP同期設計}
+本システムの核心は,Unityで発生するイベントタイミングをPythonサーバに伝達し,Pythonが同時に読み取っているBITalinoサンプルストリームと結合(同期)する構造にある.
+Unity側では \texttt{BitalinoController.cs}で \texttt{TcpClient} を用いてローカルのPythonサーバに接続し,Phase開始/終了および主要イベント発生時に文字列コマンドを送信する.送信方式は \texttt{writer.WriteLine(cmd)} 形式で改行ベースのメッセージ境界を使用して実装した.
+送信コマンドの例は以下の通りである: \texttt{START}, \texttt{STOP}, \texttt{PHASE0\_BASELINE\_START/END}, \texttt{PHASE1\_TASK\_START}, \texttt{P1\_TRIAL\_ONSET\_GO}, \texttt{PHASE2\_SCENE\_START}, \texttt{P2\_PIECE\_1\textasciitilde4}, \texttt{PHASE3\_START}, \texttt{P3\_ZOMBIE\_NEAR\_1/2}, \texttt{P3\_ZOMBIE\_LOOK\_1}, \texttt{DOOR\_OPEN}, \texttt{EXPERIMENT\_END} など.
+\texttt{BitalinoController.cs} は実験全体で共通して使用される通信モジュールであるため,シングルトンおよび \texttt{DontDestroyOnLoad} 形式で維持されるように設計し,シーン転換時にも接続状態を保存する.
+
+Python側はTCPサーバとして動作し,Unityから受信したコマンドをイベントログとして記録すると同時に,BITalino装置から生体信号サンプルを持続的に読み取り保存する.特に \texttt{START} 受信時にBITalino接続および測定を開始し,UnityコマンドをイベントCSVとして記録する.
+
+\subsection{イベントログフォーマットと時間同期方式}
+イベントログは以下のようなCSVフォーマットで記録する.
+\begin{center}
+\texttt{unix\_time, sample\_index, label}
+\end{center}
+ここで \texttt{sample\_index} はBITalino側のサンプルインデックス(または内部カウンタ)で,生理データとUnityイベントを同一時間軸にマッピングする核心キーとして使用する.
+Unityイベントは「いつ発生したか」をコマンドで伝達し,Pythonは該当コマンドを受信した時点の \texttt{sample\_index} を共に記録することで,以後の分析段階で生体信号(EDA/ECG/EMG)とイベント(ジャンプスケア/ゾンビ接近/ドア開放など)の整列が可能になる.
+
+\begin{figure}[t]
+  \centering
+  \fbox{
+    \begin{minipage}{0.9\textwidth}
+      \centering
+      \textbf{System Architecture \& Data Flow} \\[1em]
+      \begin{tabular}{c c c}
+        \textbf{Unity (VR Client)} & $\xrightarrow{\text{TCP Socket}}$ & \textbf{Python (Analysis Server)} \\
+        \fbox{\begin{minipage}{3.5cm}\centering
+          VR Environment \\
+          (Meta Quest Pro) \\
+          \vspace{0.5em}
+          Event Triggers \\
+          User Input
+        \end{minipage}} & & \fbox{\begin{minipage}{3.5cm}\centering
+          Data Synchronization \\
+          Signal Processing \\
+          Feature Extraction
+        \end{minipage}} \\
+        & & $\downarrow \text{Sync}$ \\
+        & & \fbox{\begin{minipage}{3.5cm}\centering
+          \textbf{BITalino Sensors} \\
+          (ECG, EMG, EDA) \\
+          \vspace{0.5em}
+          Bio-signals @ 1kHz
+        \end{minipage}}
+      \end{tabular}
+    \end{minipage}
+  }
+  \caption{提案システムのデータフロー図およびTCP同期メカニズム}
+  \label{fig:system_flow}
+\end{figure}
+
+\section{Unity側のシステム構成}
+
+Unityプロジェクトでは実験の各Phase（第0相 $\sim$ 第3相）に対応するマネージャスクリプト（例：\texttt{Phase0Manager},\texttt{Phase1Manager},\texttt{Phase23Manager} など）を作成し,イベント発生時の処理を制御した.
+
+\subsection{BitalinoController.csの設計}
+Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本スクリプトはシングルトンパターンで実装され,シーン転換が発生しても破棄されない特性を持つ.
+\begin{itemize}
+\item \textbf{TCP接続確立}: 実験開始時,Pythonサーバへの接続を試みる.
+\item \textbf{イベントマーカー送信}: VR空間で発生する全ての意味的イベント(Phase転換,アイテム獲得,敵接近など)を文字列コマンドで構成し,\texttt{writer.WriteLine(cmd)} を通じて即時送信する.ネットワーク遅延を最小化するため,非同期スレッドで処理される.
+\end{itemize}
+
+\subsection{コンテンツ設計の基本コンセプト}
+本研究で制作したVRコンテンツは,特定の感情状態(集中,恐怖,驚き)を意図的かつ自然に誘発するように設計されたホラーアドベンチャーゲームである.コンテンツはUnityで開発され,暗い屋敷を探索しながらアイテムを収集する「探索型ホラー」形式を採用した.この形式はプレイヤーの自発的行動(探索)と,システム側の予期せぬ介入(ジャンプスケア)を結合することで,多様な感情スペクトルをカバーするのに適している.
+
+\subsection{4段階実験フェーズ構成}
+本研究で制作したVRコンテンツは「ランダム迷路型VRホラーゲーム」で構成され, 感情状態を段階的に誘導するためにPhase 0\textendash3の順次構造で設計した.
+また, 各フェーズおよびイベントの状況に応じて異なるBGMおよび効果音を使用した. Phase 2の探索パートでは不気味で静かな環境音を再生し緊張感を高め, アイテム獲得時には通知音を鳴らした. Phase 3でゾンビが登場し追跡が始まると, テンポの速い緊迫した追跡用BGMに切り替えることで, 聴覚的刺激による恐怖と焦燥感を増幅させた.
+実験は生理信号の変化を正確に測定するため,以下の4つのフェーズに分割して進行する.
+
+\subsubsection{Phase 0: ベースライン (Baseline)}
+\begin{itemize}
+\item \textbf{目的}: 参加者の安静時生理指標の基準値を確保する.
+\item \textbf{環境}: 刺激のない静的な環境で安定した状態で60秒間維持を行い基準(baseline)生理値を確保する(図 \ref{fig:phase0}).
+\end{itemize}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\linewidth]{phase0_baseline.png}
+  \caption{Phase 0: ベースライン測定 (安定)}
+  \label{fig:phase0}
+\end{figure}
+この期間のデータは,個人差の大きいEDA・HRVの変化量を正規化するための基準($Baseline$)として使用される.
+
+\subsubsection{Phase 1: 集中課題 (Focus / Go/No-Go Task)}
+\begin{itemize}
+\item \textbf{目的}: 恐怖・驚きの影響がない状態で「純粋集中」状態の生理データを取得する.
+\item \textbf{環境}: 明るいラボ(実験室)風のトレーニングルーム.
+\item \textbf{メカニズム}: 恐怖要素を排除した反応抑制課題(Go/No-Go)を遂行させる. 正面に現れる緑の球体(Go)には射撃(トリガー)反応,赤の球体(No-Go)には反応しない抑制課題(図 \ref{fig:phase1}).約30回の試行がランダム間隔で繰り返される.
+\item \textbf{ラベリング}: \texttt{P1\_TRIAL\_ONSET\_GO} などのマーカーで課題遂行中の認知負荷と集中状態を記録する.
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\linewidth]{phase1_go.png} &
+    \includegraphics[width=0.45\linewidth]{phase1_nogo.png} \\
+    (a) Go課題 (緑のボール・射撃) & (b) No-Go課題 (赤のボール・待機)
+  \end{tabular}
+  \caption{Phase 1: 集中課題 (Go/No-Go Task)}
+  \label{fig:phase1}
+\end{figure}
+
+\subsubsection{Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}
+\begin{itemize}
+\item \textbf{目的}: 視野制限と音響演出で持続的恐怖(不安)を誘発する.
+\item \textbf{環境}: 暗い屋敷内部(図 \ref{fig:phase2} (a)).
+\item \textbf{制約}: 光源は左手トリガーを押している間のみ点灯する懐中電灯に制限される.
+\item \textbf{課題}: 屋敷内に隠された4つのビーカー(ピース)を収集する(図 \ref{fig:phase2} (b)).収集個数に応じて環境が段階的に変化する. 不確実性と緊張を累積させ, 環境音, 効果音, 照明などの演出を通じて恐怖・警戒状態を誘導する.
+  \begin{itemize}
+  \item 1\textendash2個目: 微細な環境音の変化.
+  \item 3個目: 遠くから聞こえる不吉な悲鳴/物体落下音(ジャンプスケア前兆).
+  \item 4個目: 収集完了と同時にPhase 3強制移動マーカーが送信される.
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\linewidth]{phase2_map.png} &
+    \includegraphics[width=0.45\linewidth]{phase2_item.png} \\
+    (a) 屋敷内部の暗い環境 & (b) アイテム探索 (ビーカー収集)
+  \end{tabular}
+  \caption{Phase 2: 屋敷探索と予期不安}
+  \label{fig:phase2}
+\end{figure}
+
+\subsubsection{Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}
+\begin{itemize}
+\item \textbf{目的}: 強い恐怖と特定対象に対する驚き反応を誘発する.
+\item \textbf{メカニズム}: Phase 2と同一マップで敵(ゾンビ)追跡演出を活性化し即時的脅威刺激を提供することで, 高い覚醒と強い恐怖/驚き反応を誘導する. 知能型ゾンビAIがプレイヤーを追跡する(図 \ref{fig:phase3} (b)).ゾンビは一定距離内に接近すると停止して威嚇し(図 \ref{fig:phase3} (a)),再び接近を試みる2段階近接ロジック(\texttt{P3\_ZOMBIE\_NEAR\_1}, \texttt{P3\_ZOMBIE\_NEAR\_2})を持つ.
+\item \textbf{終了条件}: プレイヤーが特定のドアを開けて脱出するか,ゾンビと一定回数接触すると \texttt{EXPERIMENT\_END} となり全データが保存される.
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\linewidth]{phase2_zombie.png} &
+    \includegraphics[width=0.45\linewidth]{phase3_trace.png} \\
+    (a) 潜んでいるゾンビの発見 & (b) ゾンビによる追跡 (恐怖・驚き)
+  \end{tabular}
+  \caption{Phase 3: ゾンビ追跡と驚き}
+  \label{fig:phase3}
+\end{figure}
+
 
 
 
@@ -333,7 +605,7 @@ Pythonサーバモジュールは,受信した文字列マーカーをイベン�
 \subsection{参加者}
 
 予備実験には6名の被験者が参加した.
-参加者は平均年齢25歳の健康な成人男性で,
+参加者は平均年齢28歳の健康な成人男性で,
 VR使用経験があり心血管系または精神科的疾患がないと自己報告された.
 すべての参加者は事前に実験手順と目的についての説明を聞いて同意書を作成し,
 実験中いつでも中断を要請する権利があることを告知された.
@@ -352,7 +624,7 @@ VRコンテンツは「ランダム迷路型VRホラーゲーム」で構成さ�
 感情状態を段階的に誘導するためにPhase 0--3の順次構造で設計した.
 Phase 0(安定)では刺激のない静的な環境で
 安定した状態で60秒間維持を行い基準(baseline)生理値を確保する.
-Phase 1(集中)では恐怖要素を排除した規則基盤課題(Go/No-Go)を遂行させ,
+Phase 1(集中)では恐怖要素を排除した反応抑制課題(Go/No-Go)を遂行させ,
 「集中」状態データを収集する.
 Phase 2(恐怖/警戒)では暗い屋敷内部のマップを探索し
 アイテムを収集するようにして不確実性と緊張を累積させ,
@@ -366,26 +638,8 @@ Phase 2の探索パートでは不気味で静かな環境音を再生し緊張�
 Phase 3でゾンビが登場し追跡が始まると,テンポの速い緊迫した追跡用BGMに切り替えることで,
 聴覚的刺激による恐怖と焦燥感を増幅させた.
 
-\begin{figure}[htbp]
-  \centering
-  \begin{tabular}{cc}
-    \includegraphics[width=0.45\linewidth]{phase0_baseline.png} &
-    \includegraphics[width=0.45\linewidth]{phase1_go.png} \\
-    (a) Phase 0: ベースライン測定 (安定) & (b) Phase 1: Go課題 (緑のボール・射撃) \\[2ex]
-    \includegraphics[width=0.45\linewidth]{phase1_nogo.png} &
-    \includegraphics[width=0.45\linewidth]{phase2_map.png} \\
-    (c) Phase 1: No-Go課題 (赤のボール・待機) & (d) Phase 2: 屋敷内部の暗い環境 \\[2ex]
-    \includegraphics[width=0.45\linewidth]{phase2_item.png} &
-    \includegraphics[width=0.45\linewidth]{phase2_zombie.png} \\
-    (e) Phase 2: アイテム探索 (ビーカー収集) & (f) Phase 2: 潜んでいるゾンビの発見 \\[2ex]
-    \multicolumn{2}{c}{\includegraphics[width=0.45\linewidth]{phase3_trace.png}} \\
-    \multicolumn{2}{c}{(g) Phase 3: ゾンビによる追跡 (恐怖・驚き)}
-  \end{tabular}
-  \caption{各実験フェーズにおけるVR環境およびタスク画面の例}
-  \label{fig:vr_phases}
-\end{figure}
 
-\begin{table}[htbp]
+\begin{table}[t]
   \caption{実験フェーズの構成と誘導される感情状態}
   \label{tab:experiment_phases}
   \centering
@@ -421,7 +675,7 @@ VRインタラクション情報はUnityでタイムタグと共に記録した.
 
 \subsection{ラベリング}
 
-感情ラベルはPhase/イベント基盤と自己報告基盤を並行する.
+収集された月経データには、システムが自動付与する「客観的ラベル」と、参加者の事後報告に基づく「主観的ラベル」を併用する.
 まずPhase 0--3区間および主要イベントマーカー
 (例：P1 trialオンセット,P2アイテム獲得,P3ゾンビ近接/正面凝視など)を基準に
 前後一定時間(todo:具体的に何秒？)ウィンドウを定義して該当区間の正解ラベル候補として使用する.
@@ -440,7 +694,7 @@ VRインタラクション情報はUnityでタイムタグと共に記録した.
 \subsection{参加者別主観的恐怖度変化}
 アンケートは7点リカート尺度 (1: 全く怖くない $\sim$ 7: 非常に怖い) を使用し,実験の進行順序 (探索 $\rightarrow$ ビーカー収集 $\rightarrow$ ゾンビ遭遇 $\rightarrow$ 追跡) に伴う感情変化を追跡した.
 
-\begin{table}[htbp]
+\begin{table}[t]
   \caption{実験後アンケート回答結果の要約}
   \label{tab:survey_results}
   \centering

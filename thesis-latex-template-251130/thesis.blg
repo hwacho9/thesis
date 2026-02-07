@@ -3,9 +3,10 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: junsrt.bst
 Database file #1: reference.bib
+Warning--I didn't find a database entry for "TaskForce1996"
 You've used 13 entries,
             2270 wiz_defined-function locations,
-            634 strings with 6899 characters,
+            636 strings with 6925 characters,
 and the built_in function-call counts, 5277 in all, are:
 = -- 419
 > -- 175
@@ -45,3 +46,4 @@ while$ -- 36
 width$ -- 15
 write$ -- 145
 is.kanji.str$ -- 178
+(There was 1 warning)

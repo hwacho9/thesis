@@ -1,3 +1,6 @@
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 提案システムのデータフロー図およびTCP同期メカニズム}}{8}{}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{9}{}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 各実験フェーズにおけるVR環境およびタスク画面の例}}{12}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{12}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 提案システムのデータフロー図およびTCP同期メカニズム}}{13}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Phase 0: ベースライン測定 (安定)}}{14}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Phase 1: 集中課題 (Go/No-Go Task)}}{15}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Phase 2: 屋敷探索と予期不安}}{15}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Phase 3: ゾンビ追跡と驚き}}{16}{}%

@@ -38,44 +38,77 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}ハードウェアインターフェースおよびセンサ構成}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}生体信号の前処理および数値変換モデル}{7}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}心電図 (ECG) および筋電図 (EMG) の変換と前処理}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}皮膚電気活動 (EDA) の変換と前処理}{7}{}\protected@file@percent }
 \citation{Shu2018}
-\citation{Hinkle2019}
-\citation{Shu2018}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces 提案システムのデータフロー図およびTCP同期メカニズム}}{8}{}\protected@file@percent }
-\newlabel{fig:system_flow}{{3.1}{8}{}{figure.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces 抽出された生理学的特徴量の一覧}}{8}{}\protected@file@percent }
+\newlabel{tab:features}{{3.1}{8}{}{table.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}皮膚電気活動 (EDA) の変換と前処理}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SCL (Skin Conductance Level, Tonic):}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SCR (Skin Conductance Response, Phasic):}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}特徴抽出}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}ユーザーの入力・イベント}{8}{}\protected@file@percent }
-\citation{OrozcoMora2024}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第4章}実装}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}システムアーキテクチャおよびデータ同期}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{9}{}\protected@file@percent }
-\newlabel{fig:sensor_locations}{{4.1}{9}{}{figure.4.1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {第5章}実験}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}実験設計および方法}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}実験目標}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}参加者}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}実験環境}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}刺激シナリオ}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces 各実験フェーズにおけるVR環境およびタスク画面の例}}{12}{}\protected@file@percent }
-\newlabel{fig:vr_phases}{{5.1}{12}{}{figure.5.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces 実験フェーズの構成と誘導される感情状態}}{13}{}\protected@file@percent }
-\newlabel{tab:experiment_phases}{{5.1}{13}{}{table.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}データ収集}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.6}ラベリング}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {第6章}実験結果}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}主観的感情評価分析}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}参加者別主観的恐怖度変化}{15}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces 実験後アンケート回答結果の要約}}{15}{}\protected@file@percent }
-\newlabel{tab:survey_results}{{6.1}{15}{}{table.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}主観的反応の類型化}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{没入型恐怖反応群 (Immersion-Fear Group):}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{認知失敗群 (Cognitive Failure Group):}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{選択的認知群 (Selective Perception Group):}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {第7章}考察}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {第8章}結論}{19}{}\protected@file@percent }
+\citation{TaskForce1996}
+\citation{Hinkle2019}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}ECG特徴}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1.1}時間領域HRV指標}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1.2}周波数領域HRV指標}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}EMG特徴}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}EDA特徴}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}ユーザ入力およびイベントログの活用}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}ユーザ入力 (User Input)}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}システムイベント (System Events)}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}統合解析 (Integration)}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {第4章}実装}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}開発環境およびシステム構成}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}ハードウェア構成}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}VR HMD: Meta Quest Pro}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}BITalinoセンサシステム}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{12}{}\protected@file@percent }
+\newlabel{fig:sensor_locations}{{4.1}{12}{}{figure.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}センサチャンネル構成および付着位置}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}ソフトウェア構成}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}システムアーキテクチャおよびデータ同期}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Unity\textendash Python間TCP同期設計}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}イベントログフォーマットと時間同期方式}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces 提案システムのデータフロー図およびTCP同期メカニズム}}{13}{}\protected@file@percent }
+\newlabel{fig:system_flow}{{4.2}{13}{}{figure.4.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Unity側のシステム構成}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}BitalinoController.csの設計}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}コンテンツ設計の基本コンセプト}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Phase 0: ベースライン測定 (安定)}}{14}{}\protected@file@percent }
+\newlabel{fig:phase0}{{4.3}{14}{}{figure.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}4段階実験フェーズ構成}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3.1}Phase 0: ベースライン (Baseline)}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3.2}Phase 1: 集中課題 (Focus / Go/No-Go Task)}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3.3}Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Phase 1: 集中課題 (Go/No-Go Task)}}{15}{}\protected@file@percent }
+\newlabel{fig:phase1}{{4.4}{15}{}{figure.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Phase 2: 屋敷探索と予期不安}}{15}{}\protected@file@percent }
+\newlabel{fig:phase2}{{4.5}{15}{}{figure.4.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3.4}Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}{15}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Phase 3: ゾンビ追跡と驚き}}{16}{}\protected@file@percent }
+\newlabel{fig:phase3}{{4.6}{16}{}{figure.4.6}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第5章}実験}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}実験設計および方法}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}実験目標}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}参加者}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}実験環境}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}刺激シナリオ}{17}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces 実験フェーズの構成と誘導される感情状態}}{18}{}\protected@file@percent }
+\newlabel{tab:experiment_phases}{{5.1}{18}{}{table.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}データ収集}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.6}ラベリング}{18}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces 実験後アンケート回答結果の要約}}{19}{}\protected@file@percent }
+\newlabel{tab:survey_results}{{6.1}{19}{}{table.6.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第6章}実験結果}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}主観的感情評価分析}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}参加者別主観的恐怖度変化}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}主観的反応の類型化}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{没入型恐怖反応群 (Immersion-Fear Group):}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{認知失敗群 (Cognitive Failure Group):}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{選択的認知群 (Selective Perception Group):}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {第7章}考察}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {第8章}結論}{23}{}\protected@file@percent }
 \bibdata{reference}
-\@writefile{toc}{\contentsline {chapter}{\mbox  {} 謝辞}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\mbox  {} 謝辞}{25}{}\protected@file@percent }
 \bibcite{MarinMorales2020}{1}
 \bibcite{OrozcoMora2024}{2}
 \bibcite{Shu2018}{3}
@@ -90,8 +123,8 @@
 \bibcite{Dozio2022}{12}
 \bibcite{Radiah2023}{13}
 \bibstyle{junsrt}
-\@writefile{toc}{\contentsline {chapter}{\mbox  {} 参考文献}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\mbox  {} 付録}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}本文と直接関係ない知識}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\mbox  {} 研究業績}{27}{}\protected@file@percent }
-\gdef \@abspage@last{33}
+\@writefile{toc}{\contentsline {chapter}{\mbox  {} 参考文献}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\mbox  {} 付録}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}本文と直接関係ない知識}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\mbox  {} 研究業績}{31}{}\protected@file@percent }
+\gdef \@abspage@last{37}

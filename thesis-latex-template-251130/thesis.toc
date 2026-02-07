@@ -8,30 +8,56 @@
 \contentsline {section}{\numberline {3.1}ハードウェアインターフェースおよびセンサ構成}{7}{}%
 \contentsline {section}{\numberline {3.2}生体信号の前処理および数値変換モデル}{7}{}%
 \contentsline {subsection}{\numberline {3.2.1}心電図 (ECG) および筋電図 (EMG) の変換と前処理}{7}{}%
-\contentsline {subsection}{\numberline {3.2.2}皮膚電気活動 (EDA) の変換と前処理}{7}{}%
+\contentsline {subsection}{\numberline {3.2.2}皮膚電気活動 (EDA) の変換と前処理}{8}{}%
+\contentsline {paragraph}{SCL (Skin Conductance Level, Tonic):}{8}{}%
+\contentsline {paragraph}{SCR (Skin Conductance Response, Phasic):}{8}{}%
 \contentsline {section}{\numberline {3.3}特徴抽出}{8}{}%
-\contentsline {section}{\numberline {3.4}ユーザーの入力・イベント}{8}{}%
-\contentsline {chapter}{\numberline {第4章}実装}{9}{}%
-\contentsline {section}{\numberline {4.1}システムアーキテクチャおよびデータ同期}{9}{}%
-\contentsline {chapter}{\numberline {第5章}実験}{11}{}%
-\contentsline {section}{\numberline {5.1}実験設計および方法}{11}{}%
-\contentsline {subsection}{\numberline {5.1.1}実験目標}{11}{}%
-\contentsline {subsection}{\numberline {5.1.2}参加者}{11}{}%
-\contentsline {subsection}{\numberline {5.1.3}実験環境}{11}{}%
-\contentsline {subsection}{\numberline {5.1.4}刺激シナリオ}{11}{}%
-\contentsline {subsection}{\numberline {5.1.5}データ収集}{13}{}%
-\contentsline {subsection}{\numberline {5.1.6}ラベリング}{13}{}%
-\contentsline {chapter}{\numberline {第6章}実験結果}{15}{}%
-\contentsline {section}{\numberline {6.1}主観的感情評価分析}{15}{}%
-\contentsline {subsection}{\numberline {6.1.1}参加者別主観的恐怖度変化}{15}{}%
-\contentsline {subsection}{\numberline {6.1.2}主観的反応の類型化}{15}{}%
-\contentsline {paragraph}{没入型恐怖反応群 (Immersion-Fear Group):}{15}{}%
-\contentsline {paragraph}{認知失敗群 (Cognitive Failure Group):}{15}{}%
-\contentsline {paragraph}{選択的認知群 (Selective Perception Group):}{15}{}%
-\contentsline {chapter}{\numberline {第7章}考察}{17}{}%
-\contentsline {chapter}{\numberline {第8章}結論}{19}{}%
-\contentsline {chapter}{\mbox {} 謝辞}{21}{}%
-\contentsline {chapter}{\mbox {} 参考文献}{23}{}%
-\contentsline {chapter}{\mbox {} 付録}{25}{}%
-\contentsline {section}{\numberline {A}本文と直接関係ない知識}{25}{}%
-\contentsline {chapter}{\mbox {} 研究業績}{27}{}%
+\contentsline {subsection}{\numberline {3.3.1}ECG特徴}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.1}時間領域HRV指標}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}周波数領域HRV指標}{9}{}%
+\contentsline {subsection}{\numberline {3.3.2}EMG特徴}{9}{}%
+\contentsline {subsection}{\numberline {3.3.3}EDA特徴}{9}{}%
+\contentsline {section}{\numberline {3.4}ユーザ入力およびイベントログの活用}{10}{}%
+\contentsline {subsection}{\numberline {3.4.1}ユーザ入力 (User Input)}{10}{}%
+\contentsline {subsection}{\numberline {3.4.2}システムイベント (System Events)}{10}{}%
+\contentsline {subsection}{\numberline {3.4.3}統合解析 (Integration)}{10}{}%
+\contentsline {chapter}{\numberline {第4章}実装}{11}{}%
+\contentsline {section}{\numberline {4.1}開発環境およびシステム構成}{11}{}%
+\contentsline {section}{\numberline {4.2}ハードウェア構成}{11}{}%
+\contentsline {subsection}{\numberline {4.2.1}VR HMD: Meta Quest Pro}{11}{}%
+\contentsline {subsection}{\numberline {4.2.2}BITalinoセンサシステム}{11}{}%
+\contentsline {subsection}{\numberline {4.2.3}センサチャンネル構成および付着位置}{12}{}%
+\contentsline {section}{\numberline {4.3}ソフトウェア構成}{12}{}%
+\contentsline {section}{\numberline {4.4}システムアーキテクチャおよびデータ同期}{12}{}%
+\contentsline {subsection}{\numberline {4.4.1}Unity\textendash Python間TCP同期設計}{12}{}%
+\contentsline {subsection}{\numberline {4.4.2}イベントログフォーマットと時間同期方式}{12}{}%
+\contentsline {section}{\numberline {4.5}Unity側のシステム構成}{13}{}%
+\contentsline {subsection}{\numberline {4.5.1}BitalinoController.csの設計}{13}{}%
+\contentsline {subsection}{\numberline {4.5.2}コンテンツ設計の基本コンセプト}{13}{}%
+\contentsline {subsection}{\numberline {4.5.3}4段階実験フェーズ構成}{14}{}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}Phase 0: ベースライン (Baseline)}{14}{}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}Phase 1: 集中課題 (Focus / Go/No-Go Task)}{14}{}%
+\contentsline {subsubsection}{\numberline {4.5.3.3}Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}{14}{}%
+\contentsline {subsubsection}{\numberline {4.5.3.4}Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}{15}{}%
+\contentsline {chapter}{\numberline {第5章}実験}{17}{}%
+\contentsline {section}{\numberline {5.1}実験設計および方法}{17}{}%
+\contentsline {subsection}{\numberline {5.1.1}実験目標}{17}{}%
+\contentsline {subsection}{\numberline {5.1.2}参加者}{17}{}%
+\contentsline {subsection}{\numberline {5.1.3}実験環境}{17}{}%
+\contentsline {subsection}{\numberline {5.1.4}刺激シナリオ}{17}{}%
+\contentsline {subsection}{\numberline {5.1.5}データ収集}{18}{}%
+\contentsline {subsection}{\numberline {5.1.6}ラベリング}{18}{}%
+\contentsline {chapter}{\numberline {第6章}実験結果}{19}{}%
+\contentsline {section}{\numberline {6.1}主観的感情評価分析}{19}{}%
+\contentsline {subsection}{\numberline {6.1.1}参加者別主観的恐怖度変化}{19}{}%
+\contentsline {subsection}{\numberline {6.1.2}主観的反応の類型化}{19}{}%
+\contentsline {paragraph}{没入型恐怖反応群 (Immersion-Fear Group):}{19}{}%
+\contentsline {paragraph}{認知失敗群 (Cognitive Failure Group):}{19}{}%
+\contentsline {paragraph}{選択的認知群 (Selective Perception Group):}{19}{}%
+\contentsline {chapter}{\numberline {第7章}考察}{21}{}%
+\contentsline {chapter}{\numberline {第8章}結論}{23}{}%
+\contentsline {chapter}{\mbox {} 謝辞}{25}{}%
+\contentsline {chapter}{\mbox {} 参考文献}{27}{}%
+\contentsline {chapter}{\mbox {} 付録}{29}{}%
+\contentsline {section}{\numberline {A}本文と直接関係ない知識}{29}{}%
+\contentsline {chapter}{\mbox {} 研究業績}{31}{}%
