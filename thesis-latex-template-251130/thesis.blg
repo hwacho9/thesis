@@ -4,46 +4,46 @@ The top-level auxiliary file: thesis.aux
 The style file: junsrt.bst
 Database file #1: reference.bib
 Warning--I didn't find a database entry for "TaskForce1996"
-You've used 13 entries,
+You've used 16 entries,
             2270 wiz_defined-function locations,
-            636 strings with 6925 characters,
-and the built_in function-call counts, 5277 in all, are:
-= -- 419
-> -- 175
-< -- 32
-+ -- 67
-- -- 54
-* -- 281
-:= -- 608
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 13
+            657 strings with 7464 characters,
+and the built_in function-call counts, 6246 in all, are:
+= -- 500
+> -- 199
+< -- 38
++ -- 77
+- -- 61
+* -- 333
+:= -- 725
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 357
-empty$ -- 442
-format.name$ -- 108
-if$ -- 1330
+cite$ -- 16
+duplicate$ -- 419
+empty$ -- 531
+format.name$ -- 122
+if$ -- 1568
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 13
-newline$ -- 68
-num.names$ -- 13
-pop$ -- 70
+int.to.str$ -- 16
+missing$ -- 15
+newline$ -- 83
+num.names$ -- 16
+pop$ -- 84
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 319
+skip$ -- 370
 stack$ -- 0
-substring$ -- 254
-swap$ -- 169
-text.length$ -- 32
+substring$ -- 310
+swap$ -- 191
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 36
-width$ -- 15
-write$ -- 145
-is.kanji.str$ -- 178
+while$ -- 45
+width$ -- 18
+write$ -- 178
+is.kanji.str$ -- 211
 (There was 1 warning)

@@ -79,4 +79,21 @@ Radiah Rivu, Paula Prodan, Ville Mäkelä, Pascal Knierim, and Florian Alt.
 \newblock In {\em MuC '23: Proceedings of Mensch und Computer 2023}, pp.
   37--48, 2023.
 
+\bibitem{Benedek2010}
+Mathias Benedek and Christian Kaernbach.
+\newblock A continuous measure of phasic electrodermal activity.
+\newblock {\em Journal of Neuroscience Methods}, Vol. 190, No.~1, pp. 80--91,
+  2010.
+
+\bibitem{Braithwaite2013}
+Jason~J. Braithwaite, Derrick~G. Watson, Robert Jones, and Mickey Rowe.
+\newblock A guide for analysing electrodermal activity (eda) \& skin
+  conductance responses (scrs) for psychological experiments.
+\newblock Technical report, University of Birmingham, 2013.
+
+\bibitem{Kreibig2010}
+Sylvia~D. Kreibig.
+\newblock Autonomic nervous system activity in emotion: A review.
+\newblock {\em Biological Psychology}, Vol.~84, No.~3, pp. 394--421, 2010.
+
 \end{thebibliography}
