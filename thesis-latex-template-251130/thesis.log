@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  8 FEB 2026 01:53
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  8 FEB 2026 04:54
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1309,13 +1309,15 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
 
 
 
-])
+]
+
+[4])
 \tf@toc=\write3
 
 \openout3 = thesis.toc
 
 
-[4](load cache: extra_lmsans12-regular.luc)
+[5](load cache: extra_lmsans12-regular.luc)
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
 (Font)              scaled to size 12.87997pt on input line 83.
 LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <14> not available
@@ -1332,7 +1334,7 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 \openout4 = thesis.lot
 
 
-[5
+[6
 
 ] (./thesis.lof)
 \tf@lof=\write5
@@ -1340,14 +1342,16 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 \openout5 = thesis.lof
 
 
-[6
+[7
 
 ]
 
-[1
+[8
 
 
 ]
+
+[1]
 
 [2
 
@@ -1414,17 +1418,17 @@ LaTeX Warning: Citation `TaskForce1996' on page 9 undefined on input line 340.
 Missing character: There is no 테 (U+D14C) in font file:HaranoAjiMincho-Regular
 .otf:-kern;jfm=jlreq!
 ]
-<./img/EMG.jpg, id=64, 274.02374pt x 205.76875pt>
+<./img/EMG.jpg, id=70, 274.02374pt x 205.76875pt>
 File: ./img/EMG.jpg Graphic file (type jpg)
 <use ./img/EMG.jpg>
 Package luatex.def Info: ./img/EMG.jpg  used on input line 425.
 (luatex.def)             Requested size: 132.48111pt x 99.48373pt.
-<./img/EDA.jpg, id=65, 275.0275pt x 205.76875pt>
+<./img/EDA.jpg, id=71, 275.0275pt x 205.76875pt>
 File: ./img/EDA.jpg Graphic file (type jpg)
 <use ./img/EDA.jpg>
 Package luatex.def Info: ./img/EDA.jpg  used on input line 426.
 (luatex.def)             Requested size: 132.48111pt x 99.12267pt.
-<./img/ECG.png, id=66, 289.08pt x 204.5241pt>
+<./img/ECG.png, id=72, 289.08pt x 204.5241pt>
 File: ./img/ECG.png Graphic file (type png)
 <use ./img/ECG.png>
 Package luatex.def Info: ./img/ECG.png  used on input line 427.
@@ -1452,17 +1456,17 @@ LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
 
 
 [13]
-<./img/phase0_baseline.png, id=77, 955.57pt x 473.77pt>
+<./img/phase0_baseline.png, id=84, 955.57pt x 473.77pt>
 File: ./img/phase0_baseline.png Graphic file (type png)
 <use ./img/phase0_baseline.png>
 Package luatex.def Info: ./img/phase0_baseline.png  used on input line 514.
 (luatex.def)             Requested size: 264.96222pt x 131.3679pt.
-<./img/phase1_go.png, id=78, 918.43124pt x 459.7175pt>
+<./img/phase1_go.png, id=85, 918.43124pt x 459.7175pt>
 File: ./img/phase1_go.png Graphic file (type png)
 <use ./img/phase1_go.png>
 Package luatex.def Info: ./img/phase1_go.png  used on input line 531.
 (luatex.def)             Requested size: 198.71829pt x 99.46164pt.
-<./img/phase1_nogo.png, id=79, 888.31876pt x 453.695pt>
+<./img/phase1_nogo.png, id=86, 888.31876pt x 453.695pt>
 File: ./img/phase1_nogo.png Graphic file (type png)
 <use ./img/phase1_nogo.png>
 Package luatex.def Info: ./img/phase1_nogo.png  used on input line 532.
@@ -1470,22 +1474,22 @@ Package luatex.def Info: ./img/phase1_nogo.png  used on input line 532.
 
 
 [14<./img/phase0_baseline.png>]
-<./img/phase2_map.png, id=84, 1036.87375pt x 556.0775pt>
+<./img/phase2_map.png, id=91, 1036.87375pt x 556.0775pt>
 File: ./img/phase2_map.png Graphic file (type png)
 <use ./img/phase2_map.png>
 Package luatex.def Info: ./img/phase2_map.png  used on input line 555.
 (luatex.def)             Requested size: 198.71829pt x 106.5722pt.
-<./img/phase2_item.png, id=85, 625.1355pt x 373.99725pt>
+<./img/phase2_item.png, id=92, 625.1355pt x 373.99725pt>
 File: ./img/phase2_item.png Graphic file (type png)
 <use ./img/phase2_item.png>
 Package luatex.def Info: ./img/phase2_item.png  used on input line 556.
 (luatex.def)             Requested size: 198.71829pt x 118.88261pt.
-<./img/phase2_zombie.png, id=86, 898.35625pt x 568.1225pt>
+<./img/phase2_zombie.png, id=93, 898.35625pt x 568.1225pt>
 File: ./img/phase2_zombie.png Graphic file (type png)
 <use ./img/phase2_zombie.png>
 Package luatex.def Info: ./img/phase2_zombie.png  used on input line 573.
 (luatex.def)             Requested size: 198.71829pt x 125.6635pt.
-<./img/phase3_trace.png, id=87, 984.67876pt x 504.88625pt>
+<./img/phase3_trace.png, id=94, 984.67876pt x 504.88625pt>
 File: ./img/phase3_trace.png Graphic file (type png)
 <use ./img/phase3_trace.png>
 Package luatex.def Info: ./img/phase3_trace.png  used on input line 574.
@@ -1504,18 +1508,18 @@ Overfull \hbox (9.87039pt too wide) in paragraph at lines 643--656
  [][][][] 
  []
 
-<img/fig1_continuous_data.png, id=104, 1004.19165pt x 715.11165pt>
+<img/fig1_continuous_data.png, id=110, 1004.19165pt x 715.11165pt>
 File: img/fig1_continuous_data.png Graphic file (type png)
 <use img/fig1_continuous_data.png>
 Package luatex.def Info: img/fig1_continuous_data.png  used on input line 694.
 (luatex.def)             Requested size: 441.59923pt x 314.4646pt.
-<img/fig2a_phase_comparison_raw.png, id=105, 1148.73164pt x 715.11165pt>
+<img/fig2a_phase_comparison_raw.png, id=111, 1148.73164pt x 715.11165pt>
 File: img/fig2a_phase_comparison_raw.png Graphic file (type png)
 <use img/fig2a_phase_comparison_raw.png>
 Package luatex.def Info: img/fig2a_phase_comparison_raw.png  used on input line
  703.
 (luatex.def)             Requested size: 441.59923pt x 274.89873pt.
-<img/fig2b_preprocessed_overview.png, id=106, 1148.73164pt x 859.65166pt>
+<img/fig2b_preprocessed_overview.png, id=112, 1148.73164pt x 859.65166pt>
 File: img/fig2b_preprocessed_overview.png Graphic file (type png)
 <use img/fig2b_preprocessed_overview.png>
 Package luatex.def Info: img/fig2b_preprocessed_overview.png  used on input lin
@@ -1526,7 +1530,7 @@ e 710.
 [18]
 
 [19<./img/fig1_continuous_data.png>]
-<img/fig3_event_window.png, id=114, 1004.19165pt x 426.03165pt>
+<img/fig3_event_window.png, id=120, 1004.19165pt x 426.03165pt>
 File: img/fig3_event_window.png Graphic file (type png)
 <use img/fig3_event_window.png>
 Package luatex.def Info: img/fig3_event_window.png  used on input line 748.
@@ -1611,65 +1615,113 @@ LaTeX Font Info:    Font shape `LMX/ntxexx/b/n' will be
 (Font)              scaled to size 4.94998pt on input line 749.
 
 
+LaTeX Warning: Reference `tab:questionnaire' on page 20 undefined on input line
+ 754.
+
+
+
 [20<./img/fig2a_phase_comparison_raw.png>]
 
 [21<./img/fig2b_preprocessed_overview.png><./img/fig3_event_window.png>]
-<img/fig6_phase_mean.png, id=124, 713.3049pt x 569.84895pt>
+<img/fig6_phase_mean.png, id=130, 713.3049pt x 569.84895pt>
 File: img/fig6_phase_mean.png Graphic file (type png)
 <use img/fig6_phase_mean.png>
-Package luatex.def Info: img/fig6_phase_mean.png  used on input line 801.
+Package luatex.def Info: img/fig6_phase_mean.png  used on input line 830.
 (luatex.def)             Requested size: 397.4366pt x 317.51332pt.
-<img/fig4_phase_boxplot.png, id=125, 1004.19165pt x 570.2103pt>
+<img/fig4_phase_boxplot.png, id=131, 1004.19165pt x 570.2103pt>
 File: img/fig4_phase_boxplot.png Graphic file (type png)
 <use img/fig4_phase_boxplot.png>
-Package luatex.def Info: img/fig4_phase_boxplot.png  used on input line 808.
+Package luatex.def Info: img/fig4_phase_boxplot.png  used on input line 837.
 (luatex.def)             Requested size: 441.59923pt x 250.74539pt.
-<img/fig5_subject_variation.png, id=126, 859.65166pt x 569.84895pt>
-File: img/fig5_subject_variation.png Graphic file (type png)
-<use img/fig5_subject_variation.png>
-Package luatex.def Info: img/fig5_subject_variation.png  used on input line 821
-.
-(luatex.def)             Requested size: 441.59923pt x 292.73206pt.
-<img/fig7_subject_heatmap.png, id=127, 700.65765pt x 569.84895pt>
-File: img/fig7_subject_heatmap.png Graphic file (type png)
-<use img/fig7_subject_heatmap.png>
-Package luatex.def Info: img/fig7_subject_heatmap.png  used on input line 828.
-(luatex.def)             Requested size: 397.4366pt x 323.24345pt.
 
 
 [22]
 
 [23<./img/fig6_phase_mean.png>]
+<img/fig5_subject_variation.png, id=140, 859.65166pt x 569.84895pt>
+File: img/fig5_subject_variation.png Graphic file (type png)
+<use img/fig5_subject_variation.png>
+Package luatex.def Info: img/fig5_subject_variation.png  used on input line 850
+.
+(luatex.def)             Requested size: 441.59923pt x 292.73206pt.
+<img/fig7_subject_heatmap.png, id=141, 700.65765pt x 569.84895pt>
+File: img/fig7_subject_heatmap.png Graphic file (type png)
+<use img/fig7_subject_heatmap.png>
+Package luatex.def Info: img/fig7_subject_heatmap.png  used on input line 857.
+(luatex.def)             Requested size: 397.4366pt x 323.24345pt.
 
-[24<./img/fig4_phase_boxplot.png><./img/fig5_subject_variation.png>]
 
-[25<./img/fig7_subject_heatmap.png>]
+[24<./img/fig4_phase_boxplot.png>]
 
-[26
+[25<./img/fig5_subject_variation.png>]
+
+[26<./img/fig7_subject_heatmap.png>]
+
+[27
 
 ]
 
-[27]
-
-[28
-
-]
+[28]
 
 [29]
+<img/fig11_model_comparison.png, id=163, 860.013pt x 425.9112pt>
+File: img/fig11_model_comparison.png Graphic file (type png)
+<use img/fig11_model_comparison.png>
+Package luatex.def Info: img/fig11_model_comparison.png  used on input line 104
+1.
+(luatex.def)             Requested size: 397.4366pt x 196.82486pt.
+<img/fig8_confusion_matrices.png, id=164, 1076.823pt x 711.6186pt>
+File: img/fig8_confusion_matrices.png Graphic file (type png)
+<use img/fig8_confusion_matrices.png>
+Package luatex.def Info: img/fig8_confusion_matrices.png  used on input line 10
+52.
+(luatex.def)             Requested size: 441.59923pt x 291.83066pt.
 
-[30
+
+[30]
+
+[31<./img/fig11_model_comparison.png>]
+<img/fig9_feature_importance.png, id=172, 859.5312pt x 570.4512pt>
+File: img/fig9_feature_importance.png Graphic file (type png)
+<use img/fig9_feature_importance.png>
+Package luatex.def Info: img/fig9_feature_importance.png  used on input line 10
+71.
+(luatex.def)             Requested size: 397.4366pt x 263.77731pt.
+<img/fig10_subject_accuracy.png, id=173, 859.5312pt x 425.4294pt>
+File: img/fig10_subject_accuracy.png Graphic file (type png)
+<use img/fig10_subject_accuracy.png>
+Package luatex.def Info: img/fig10_subject_accuracy.png  used on input line 109
+1.
+(luatex.def)             Requested size: 353.28072pt x 174.8621pt.
+
+
+[32<./img/fig8_confusion_matrices.png>]
+
+[33<./img/fig9_feature_importance.png>]
+
+[34<./img/fig10_subject_accuracy.png>]
+
+[35
 
 ]
 
-[31]
+[36]
 
-[32
+[37]
+
+[38
+
+]
+
+[39]
+
+[40
 
 ] (./thesis.bbl
 
-[33]
+[41]
 
-[34
+[42
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
@@ -1684,11 +1736,11 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 7.
 
 
-[35])
+[43])
 
-[36]
+[44]
 
-[37
+[45
 
 ] (./thesis.aux)
  ***********
@@ -1702,14 +1754,14 @@ LaTeX Warning: There were undefined references.
 )
 
 Here is how much of LuaTeX's memory you used:
- 13532 strings out of 475506
- 244637,794899 words of node,token memory allocated
- 2823 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 130 kern, 2 glyph, 720 attribute, 51 glue_
-spec, 77 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:47,2:60316,3:687,4:677,5:446,6:84,7:7200,8:45,9:2944,10:47,11:
+ 13582 strings out of 475506
+ 244624,794899 words of node,token memory allocated
+ 3550 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 182 kern, 1 penalty, 2 glyph, 932 attribut
+e, 51 glue_spec, 97 attribute_list, 1 write, 14 user_defined nodes
+   avail lists: 1:38,2:61847,3:869,4:759,5:446,6:97,7:7200,8:45,9:2944,10:48,11:
 550
- 35967 multiletter control sequences out of 65536+600000
+ 36005 multiletter control sequences out of 65536+600000
  233 fonts using 79898775 bytes
  125i,23n,128p,1837b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/opentype/public/
@@ -1730,10 +1782,10 @@ fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive/20250308_1/shar
 e/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></opt/homebrew/Cellar/texlive/2
 0250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cel
 lar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on thesis.pdf (43 pages, 7827011 bytes).
+Output written on thesis.pdf (53 pages, 8214431 bytes).
 
-PDF statistics: 248 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+PDF statistics: 287 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
