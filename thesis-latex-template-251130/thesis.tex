@@ -27,8 +27,8 @@
 \thesistype{M} % 修士論文はM 卒業論文はB
 
 \title{VRコンテンツ体験時における生体情報に\\基づくリアルタイム感情推定フレームワーク} % あなたの論文のタイトルをここに書く
-\author{趙 聖化} % 名字と名前の間は *半角* スペースを入れる．
-\studentnumber{27020856} % 8桁で書く．
+\author{趙 聖化} % 名字と名前の間は *半角* スペースを入れる.
+\studentnumber{27020856} % 8桁で書く.
 
 \syear{2026} % 提出日
 \smonth{3}
@@ -54,19 +54,12 @@ VR体験中の感情をリアルタイム推定するフレームワークを提
 マルチモーダルな情報を統合して恐怖・驚き・集中などの感情状態を識別することで,
 VRコンテンツの感情的効果をリアルタイムに評価可能なシステムを構築する.
 
-(ここはまだ仮説 これから書きます)
-提案手法の有効性を検証するため,
-Unityを用いたVRホラーコンテンツで被験者実験を行った.
-その結果,恐怖刺激に対してEDAが急激に上昇し,
-HRV指標の低下やEMG信号の変化が確認された.
-また,被験者間で生体反応の大きさに個人差が見られ,
-恐怖時に動作が一時停止するフリーズ反応（すくみ反応）も一部で観測された.
-得られた知見は,生体・行動情報に基づくリアルタイム感情推定の有効性を示しており,
-VR体験の客観的評価手法として本フレームワークが有用である可能性を示唆する.
+提案手法の有効性を検証するため,Unityで実装したVRホラーコンテンツを用いて予備的な被験者実験(6名,計8セッション)を実施した.BITalinoによりEDA,ECG,EMGを1 kHzで計測し,UnityイベントをTCP通信で同期記録した結果,探索・追跡フェーズでSCLおよびEMGの上昇傾向が確認された.
+心拍系指標には個人差が大きく,恐怖時のフリーズ反応が一部で観測された.また,抽出特徴量に基づく機械学習によりPhase分類が可能であることを確認し(Random Forest,Accuracy 67.7\%),本フレームワークがリアルタイム感情推定に向けた基盤になり得ることを示した.
 }
 
 \keywords{
-アフェクティブコンピューティング, 生理心理学, マルチモーダルデータ融合
+アフェクティブコンピューティング, 生理心理学, マルチモーダルデータ融合, 生体信号, 行動情報, リアルタイム感情推定, イベント同期, バーチャルリアリティ
 }
 
 % 本体 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,13 +103,13 @@ VR体験の効果やユーザの感情反応を評価する際には,
 恐怖や驚きにより覚醒度が高まるとき顕著な上昇を示す.
 心電図(Electrocardiogram; ECG)から得られる心拍変動(Heart Rate Variability; HRV)は
 副交感神経と交感神経のバランスを示す指標であり,
-一般にストレス下ではHRVが低下する傾向が知られている\cite{MarinMorales2020, OrozcoMora2024}.
+一般にストレス下ではHRVは低下する傾向にある\cite{MarinMorales2020, OrozcoMora2024}.
 さらに,筋電図(Electromyography; EMG)は筋肉の活動を測定する手法で,
 驚いた際の瞬発的な筋反応や持続的な筋緊張度の変化を捉えることができる.
 
 また,コントローラの操作頻度や動作の変化も感情反応の指標となり得る.
 たとえば,突発的な驚き刺激に対して咄嗟に操作が乱れる,
-あるいは強い恐怖に直面して一時的に操作が止まる「すくみ（Freezing）」といった現象が考えられる.
+あるいは強い恐怖に直面して一時的に操作が止まる「すくみ(Freezing)」といった現象が考えられる.
 以上のように,生体情報と行動情報の双方をマルチモーダルに取得・分析することで,
 単一の指標では捉えきれないユーザの内面的な感情変化をより正確に推定できると期待される.
 
@@ -131,9 +124,7 @@ VRコンテンツの感情的効果を客観的に評価する手法を確立す
 構築したデータを用いて機械学習モデルを訓練し,
 マルチモーダルな特徴量に基づくリアルタイム感情推定を実現することを目指す.
 
-本論文の構成は以下の通りである. 第2章では関連研究について述べる. 第3章では提案手法であるマルチモーダル感情推定フレームワークについて説明する. 第4章ではシステムの実装詳細について述べ, 第5章では被験者実験の設計と手順を説明する. 第6章では実験結果と考察を示し, 最後に第7章で本論文を総括する.
-
-
+本論文の構成は以下の通りである.第2章では,生体信号に基づく感情推定とVR環境における行動分析に関する関連研究を検討する.第3章では,本研究で提案するマルチモーダル感情推定フレームワークの設計と生体信号処理アルゴリズムについて説明する.第4章では,システムのハードウェアおよびソフトウェアの実装詳細を記述し,第5章では,提案システムの有効性を検証するための被験者実験の設計および手順について論じる.第6章では,実験を通じて得られた主観的および客観的データの分析結果と機械学習モデルの性能を提示する.第7章では,実験結果の生理学的意義と技術的限界および今後の発展方向について考察し,最後に第8章で本研究の結論を述べる.
 
 \chapter{関連研究}
 
@@ -204,18 +195,18 @@ VR内でも頭部や手の移動速度が瞬間的に低下する時系列パタ
 複数の指標を相互補完的に結合することで,より正確で堅牢な感情分類が可能になる.
 
 生体信号を用いた感情推定研究は活発に行われており,
-複数の生体信号を組み合わせることで単一センサーよりも推定精度が向上することが報告されている \cite{MarinMorales2020, Cimtay2020}.
-特にVR環境下では,脳波(EEG)と心拍変動(HRV)を用いて感情価と覚醒度を推定する研究 \cite{MarinMorales2018}や,
+複数の生体信号を組み合わせることで単一センサよりも推定精度が向上することが報告されている \cite{MarinMorales2020, Cimtay2020}.
+特にVR環境下では,脳波(EEG)と心拍変動を用いて感情価と覚醒度を推定する研究 \cite{MarinMorales2018}や,
 ユーザの心拍数反応に応じてゲームの難易度をリアルタイムかつ動的に調整する試み \cite{OrozcoMora2024}などがあり,
-これは生体情報とコンテンツ間の密接な相互作用である「アフェクティブ・ループ」の実現可能性を裏付けている.
+生体情報とコンテンツ間の密接な相互作用である「アフェクティブ・ループ」の実現可能性を裏付けている.
 
 このようなマルチモーダルアプローチの優位性は,大規模データセットを用いた実験を通じても証明されている.
-Darら(2020)はEEG,ECG,GSR信号を統合し,AMIGOSデータセットで99.0\%, DREAMERデータセットで90.8\%の感情分類精度を達成した \cite{Dar2020}.
+DarらはEEG,ECG,GSR信号を統合し,AMIGOSデータセットで99.0\%, DREAMERデータセットで90.8\%の感情分類精度を達成している \cite{Dar2020}.
 この精度は単一モダリティを使用した場合よりも飛躍的に高い数値であり,
 異なる生体信号が感情の多様な側面を相互補完的に説明していることを示唆している \cite{Dar2020}.
 
-Arslanら(2024)は,ECGとGSR信号に統計的特徴選択手法を結合して97.78\%の高い精度を記録した \cite{Arslan2024}.
-彼らは興奮,幸福,不安,平穏,悲しみの5つの感情状態を分類したが,一部の感情間の境界が曖昧であり,
+Arslanらは,ECGとGSR信号に統計的特徴選択手法を結合して97.78\%の高い精度を記録している \cite{Arslan2024}.
+彼らは興奮,幸福,不安,平穏,悲しみの5つの感情状態を分類しているが,一部の感情間の境界が曖昧であり,
 新規ユーザへの一般化に限界があることも報告している \cite{Arslan2024}.
 多くの研究が特定の条件下での感情分類に留まっており,
 多様なVR体験や個人ごとの生理的偏差を包括できる汎用的なフレームワークは未だ確立されていないのが実情である.
@@ -229,7 +220,7 @@ Arslanら(2024)は,ECGとGSR信号に統計的特徴選択手法を結合して9
 VRは従来のメディアよりも強力な没入感を提供し,恐怖や驚きなどの反応を誘発するのに最適化されている \cite{Liao2020DesignAE}.
 恐怖研究では,ジャンプスケア要素や照明,音などを活用した環境デザインが主に用いられ \cite{Dozio2022},
 Radiahらは,バーチャル環境のレイアウト,色彩,音,装飾,天候という5つの次元のデザイン空間を提案し,
-各次元のデザインをリアルタイムで制御してユーザの感情を誘発および評価できる``EmotionEditor'' ツールボックスを開発した \cite{Radiah2023}.
+各次元のデザインをリアルタイムで制御してユーザの感情を誘発および評価できる``EmotionEditor'' ツールボックスを開発している \cite{Radiah2023}.
 このようなツールは実験設計の体系性を高め,研究者が意図した感情状態をより精密に誘導できるようにする.
 
 ラベリング手法は大きく分けて,客観的イベントベースのラベリングと主観的自己報告ラベリングに区別される.
@@ -250,7 +241,7 @@ Radiahらは,バーチャル環境のレイアウト,色彩,音,装飾,天候と
 \item EDA : 右手のひらに電極を付着し,皮膚伝導度の変化を測定する \cite{Hinkle2019}.
 \item ECG : REF電極を腸骨稜 (iliac crest) に付着し, IN+およびIN$-$電極を胸部に付着して,心電図信号を測定する.
 \end{itemize}
-センサ付着後には電極接触安定化のために必要な手順を遂行した.
+センサ付着後には電極接触安定化のために必要な手順を実施する.
 
 
 \section{生体信号の前処理および数値変換モデル}
@@ -269,7 +260,7 @@ $$EMG(mV) = \left( \frac{ADC}{2^n} - 0.5 \right) \times V_{CC} \times \frac{1000
 \subsection{皮膚電気活動 (EDA) の変換と前処理}
 皮膚導電率は, 以下の関数を用いてマイクロジーメンス ($\mu$S) 単位に変換される.
 $$EDA(\mu S) = \frac{ADC}{2^n} \times \frac{V_{CC}}{0.132}$$
-本公式の分母の $0.132$ は EDA センサーの回路設計に基づく伝達関数の定数である.
+本公式の分母の $0.132$ は EDA センサの回路設計に基づく伝達関数の定数である.
 EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic) 成分と特定の刺激による急激な変化を表すSCR (Phasic) 成分に分解して処理する.
 
 \paragraph{SCL (Skin Conductance Level, Tonic):}
@@ -296,10 +287,10 @@ $$SCR_{amp} = SC_{peak} - SC_{onset}$$
 \label{tab:features}
 \begin{tabular}{llll}
 \hline
-\textbf{信号} & \textbf{特徴量} & \textbf{単位} & \textbf{生理学的意義} \\
+信号 & 特徴量 & 単位 & 生理学的意義 \\
 \hline
 \multirow{7}{*}{ECG} 
-& 心拍数 (HR) & bpm & 全般的な覚醒水準 \\
+& 心拍数 & bpm & 全般的な覚醒水準 \\
 & RMSSD & ms & 副交感神経活動 \\
 & SDNN & ms & 全体的HRV (交感+副交感) \\
 & pNN50 & \% & 副交感神経活動比率 \\
@@ -320,47 +311,39 @@ $$SCR_{amp} = SC_{peak} - SC_{onset}$$
 \end{table}
 
 \subsection{ECG特徴}
-心電図から心拍数および心拍変動（HRV）指標を抽出し，自律神経系反応を分析する．
+心電図から心拍数および心拍変動指標を抽出し,自律神経系反応を分析する.
 
 \subsubsection{時間領域HRV指標}
 \begin{itemize}
-\item 平均心拍数 (HR): 1分間あたりの心拍数（bpm）
-\item RMSSD: 連続するRR間隔の差分の二乗平均平方根であり，副交感神経の活動指標として広く用いられる．
-\begin{equation}
-\mathrm{RMSSD} = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} (RR_{i+1} - RR_i)^2}
-\end{equation}
-\item SDNN: NN間隔の標準偏差であり，交感・副交感神経の両方を含む全体的なHRV指標である．
-\begin{equation}
-\mathrm{SDNN} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (RR_i - \overline{RR})^2}
-\end{equation}
-\item pNN50: 連続するRR間隔の差が50ms以上である割合（\%）であり，副交感神経活動を反映する．
+\item \textbf{平均心拍数}: 1分間あたりの心拍数 (bpm)
+\item \textbf{RMSSD}: 連続するRR間隔の差分の二乗平均平方根であり, 副交感神経の活動指標として広く用いられる.
+$$RMSSD = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} (RR_{i+1} - RR_i)^2}$$
+\item \textbf{SDNN}: NN間隔の標準偏差であり, 交感・副交感神経の両方を含む全体的なHRV指標である.
+$$SDNN = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (RR_i - \overline{RR})^2}$$
+\item \textbf{pNN50}: 連続するRR間隔の差が50 ms以上である割合 (\%) であり, 副交感神経活動を反映する.
 \end{itemize}
 
 \subsubsection{周波数領域HRV指標}
-RR間隔時系列をFFTにより周波数領域に変換し,パワースペクトル密度を算出する \cite{TaskForce1996}．
+RR間隔時系列をFFTにより周波数領域に変換し,パワースペクトル密度を算出する \cite{TaskForce1996}.
 \begin{itemize}
-\item LFパワー (0.04-0.15 Hz): 交感神経と副交感神経の両方の活動を反映
-\item HFパワー (0.15-0.40 Hz): 副交感神経活動（呼吸性洞性不整脈）を反映
-\item LF/HF比: 自律神経系バランス指標．値が高いほどストレス状態を示す
-\begin{equation}
-\mathrm{LF/HF} = \frac{\int_{0.04}^{0.15} PSD(f) df}{\int_{0.15}^{0.40} PSD(f) df}
-\end{equation}
+\item \textbf{LFパワー} (0.04--0.15 Hz): 交感神経と副交感神経の両方の活動を反映
+\item \textbf{HFパワー} (0.15--0.40 Hz): 副交感神経活動 (呼吸性洞性不整脈) を反映
+\item \textbf{LF/HF比}: 自律神経系バランス指標. 値が高いほどストレス状態を示す
+$$LF/HF = \frac{\int_{0.04}^{0.15} PSD(f) df}{\int_{0.15}^{0.40} PSD(f) df}$$
 \end{itemize}
 
 \subsection{EMG特徴}
-筋肉活動の強度を定量化するため，以下の特徴量を算出する．
+筋肉活動の強度を定量化するため,以下の特徴量を算出する.
 \begin{itemize}
-\item 平均電圧，最大電圧 ($\mu$V)
-\item RMS電圧: 筋活動の全体的なエネルギー量
-\begin{equation}
-\mathrm{RMS} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}
-\end{equation}
+\item \textbf{平均電圧, 最大電圧} ($\mu$V)
+\item \textbf{RMS電圧}: 筋活動の全体的なエネルギー量
+$$RMS = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
 \end{itemize}
 
 \subsection{EDA特徴}
 \begin{itemize}
-\item 平均SCL ($\mu$S): 基礎的な覚醒水準を示す皮膚電気伝導度の平均値
-\item SCRパルス数: 刺激に対する一過性反応の回数 \cite{Hinkle2019}
+\item \textbf{平均SCL} ($\mu$S): 基礎的な覚醒水準を示す皮膚電気伝導度の平均値
+\item \textbf{SCRパルス数}: 刺激に対する一過性反応の回数 \cite{Hinkle2019}
 \end{itemize}
 
 \section{ユーザ入力およびイベントログの活用}
@@ -369,23 +352,23 @@ RR間隔時系列をFFTにより周波数領域に変換し,パワースペク�
 \subsection{ユーザ入力 (User Input)}
 VRコントローラの操作ログとHMDのトラッキングデータを取得し, ユーザの能動的な行動を分析する.
 \begin{itemize}
-    \item \textbf{トリガー・ボタン入力}: Phase 1での射撃課題(Right Trigger)や, Phase 2での懐中電灯操作(Left Trigger)およびアイテム収集(Ray/Trigger)など, 意図的なインタラクションを記録する.
-    \item \textbf{トラッキングデータ (Position/Rotation)}: HMDおよびコントローラの6自由度(6DoF)データを記録する. これにより, 驚き刺激に対する瞬発的な回避動作や, 強い恐怖に直面した際の身体硬直(Freezing)反応などの行動的特徴を抽出することが可能となる. 特にPhase 3では, プレイヤーの視線ベクトルとゾンビの位置関係から「直視(Gaze)」イベントを判定するために活用される.
+    \item トリガー・ボタン入力: Phase 1での射撃課題(Right Trigger)や, Phase 2での懐中電灯操作およびアイテム収集(Ray/Trigger)など, 意図的なインタラクションを記録する.
+    \item トラッキングデータ (Position/Rotation): HMDおよびコントローラの6自由度(6DoF)データを記録する. トラッキングデータにより, 驚き刺激に対する瞬発的な回避動作や, 強い恐怖に直面した際の身体硬直(Freezing)反応などの行動的特徴を抽出することが可能となる. 特にPhase 3では, プレイヤーの視線ベクトルとゾンビの位置関係から「直視(Gaze)」イベントを判定するために活用される.
 \end{itemize}
 
 \subsection{システムイベント (System Events)}
 VRコンテンツの進行状況や特定の刺激発生タイミングをイベントマーカーとして記録し, 生体信号の文脈(Context)として活用する.
 \begin{itemize}
-    \item \textbf{フェーズ遷移}: \texttt{PHASE1\_TASK\_START}, \texttt{PHASE3\_START} など, 実験フェーズの切り替わりを記録し, ベースラインとの比較やフェーズごとの状態推定に使用する.
-    \item \textbf{タスク・イベント}: Phase 1の試行開始(\texttt{P1\_TRIAL\_ONSET\_GO}), Phase 2のアイテム獲得(\texttt{P2\_PIECE\_n}), Phase 3のゾンビ接近(\texttt{P3\_ZOMBIE\_NEAR\_n})など, 感情変化のトリガーとなる瞬間を特定する.
-    \item \textbf{環境変化}: ドアの開閉(\texttt{DOOR\_OPEN})やBGMの切り替えタイミングなどを記録し, 環境要因によるストレス変化を分析する.
+\item \textbf{フェーズ遷移}: 実験フェーズの切り替わりを記録し, ベースラインとの比較やフェーズごとの状態推定に使用する.
+\item \textbf{タスク・イベント}: Phase 1の試行開始, Phase 2のアイテム獲得, Phase 3のゾンビ接近など, 感情変化のトリガーとなる瞬間を特定する.
+\item \textbf{環境変化}: ドアの開閉, BGMの切り替えタイミングなどを記録し, 環境要因によるストレス変化を分析する.
 \end{itemize}
 
 \subsection{統合解析 (Integration)}
-収集された生体信号(EDA, ECG, EMG)とイベントログは, 共通のタイムスタンプおよびサンプルインデックス(\texttt{sample\_index})を用いて厳密に同期される. これにより, 「ゾンビが接近した瞬間」や「アイテムを発見した瞬間」など, 特定の感情生起イベント直後の生理反応(SCRのピーク, 心拍数の急上昇など)をセグメン테ーションし, イベントと生体反応の因果関係を明確にした分析が可能となる.
+収集された生体信号(EDA, ECG, EMG)とイベントログは, 共通のタイムスタンプおよびサンプルインデックスを用いて厳密に同期される. タイムスタンプによる同期により, 「ゾンビが接近した瞬間」や「アイテムを発見した瞬間」など, 特定の感情生起イベント直後の生理反応(SCRのピーク, 心拍数の急上昇など)をセグメンテーションし, イベントと生体反応の因果関係を明確にした分析が可能となる.
 
 \chapter{実装}
-本章では、提案されたシステムを実際に実装した過程を具体的に記述する.
+本章では,提案したシステムを実際に実装した過程を具体的に記述する.
 使用したハードウェアとソフトウェア環境を紹介し,各モジュールの具体的な実装方法を説明する.
 
 \section{開発環境およびシステム構成}
@@ -400,10 +383,10 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
 
 \section{ハードウェア構成}
 \subsection{VR HMD: Meta Quest Pro}
-本実験では,Meta Quest Proをヘッドマウントディスプレイとして使用した.被験者は両手のコントローラを用いてVR空間内を移動し,特定のインタラクション（ドアの開閉,アイテム取得など）を行うことで,システムへの入力と行動データの収集を行った.
+本実験では,Meta Quest Proをヘッドマウントディスプレイとして使用した.被験者は両手のコントローラを用いてVR空間内を移動し,特定のインタラクション(ドアの開閉,アイテム取得など)を行うことで,システムへの入力と行動データの収集を行った.
 
 \subsection{BITalinoセンサシステム}
-被験者の生理的反応を測定するためにBITalino (r)evolutionボードを使用した.BITalinoデバイスはEMG,ECG,EDAなどのアナログ生体信号を測定し,これを10-bit ADCを通じてデジタル化して出力する.データのサンプリング周波数は1000 Hzに設定した.
+被験者の生理的反応を測定するためにBITalino (r)evolutionボードを使用した.BITalinoデバイスはEMG,ECG,EDAなどのアナログ生体信号を測定し,測定した信号を10-bit ADCを通じてデジタル化して出力する.データのサンプリング周波数は1000 Hzに設定した.
 
 収集された各センサのデジタル値は専用センサデータシートに提示された変換公式を通じて物理的単位に換算される.本研究では,前述の提案手法(第3章)で示した数式を用いて各信号の変換処理を行う.具体的なシステムパラメータは以下の通りである.
 \begin{itemize}
@@ -431,10 +414,9 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
   \label{fig:sensor_locations}
 \end{figure}
 
-\section{ソフトウェア構成}
 \section{システムアーキテクチャおよびデータ同期}
 
-本システムは,Unity 2022.3 LTSとPython分析サーバー間の非同期TCP/IPソケット通信を基盤として構築した.各モジュールの役割とデータフローを整理した図を \ref{fig:system_flow} に示す.
+本システムは,Unity 2022.3 LTSとPython分析サーバー間の非同期TCP/IPソケット通信を基盤として構築した.各モジュールの役割とデータフローを図\ref{fig:system_flow}に示す.
 
 \subsection{Unity\textendash Python間TCP同期設計}
 本システムの核心は,Unityで発生するイベントタイミングをPythonサーバに伝達し,Pythonが同時に読み取っているBITalinoサンプルストリームと結合(同期)する構造にある.
@@ -457,9 +439,9 @@ Unityイベントは「いつ発生したか」をコマンドで伝達し,Pytho
   \fbox{
     \begin{minipage}{0.9\textwidth}
       \centering
-      \textbf{System Architecture \& Data Flow} \\[1em]
+      System Architecture \& Data Flow \\[1em]
       \begin{tabular}{c c c}
-        \textbf{Unity (VR Client)} & $\xrightarrow{\text{TCP Socket}}$ & \textbf{Python (Analysis Server)} \\
+        Unity (VR Client) & $\xrightarrow{\text{TCP Socket}}$ & Python (Analysis Server) \\
         \fbox{\begin{minipage}{3.5cm}\centering
           VR Environment \\
           (Meta Quest Pro) \\
@@ -473,7 +455,7 @@ Unityイベントは「いつ発生したか」をコマンドで伝達し,Pytho
         \end{minipage}} \\
         & & $\downarrow \text{Sync}$ \\
         & & \fbox{\begin{minipage}{3.5cm}\centering
-          \textbf{BITalino Sensors} \\
+          BITalino Sensors \\
           (ECG, EMG, EDA) \\
           \vspace{0.5em}
           Bio-signals @ 1kHz
@@ -487,27 +469,27 @@ Unityイベントは「いつ発生したか」をコマンドで伝達し,Pytho
 
 \section{Unity側のシステム構成}
 
-Unityプロジェクトでは実験の各Phase（第0相 $\sim$ 第3相）に対応するマネージャスクリプト（例：\texttt{Phase0Manager},\texttt{Phase1Manager},\texttt{Phase23Manager} など）を作成し,イベント発生時の処理を制御した.
+Unityプロジェクトでは実験の各Phase(第0相 $\sim$ 第3相)に対応するマネージャスクリプト(例：\texttt{Phase0Manager},\texttt{Phase1Manager},\texttt{Phase23Manager} など)を作成し,イベント発生時の処理を制御した.
 
 \subsection{BitalinoController.csの設計}
 Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本スクリプトはシングルトンパターンで実装され,シーン転換が発生しても破棄されない特性を持つ.
 \begin{itemize}
-\item \textbf{TCP接続確立}: 実験開始時,Pythonサーバへの接続を試みる.
-\item \textbf{イベントマーカー送信}: VR空間で発生する全ての意味的イベント(Phase転換,アイテム獲得,敵接近など)を文字列コマンドで構成し,\texttt{writer.WriteLine(cmd)} を通じて即時送信する.ネットワーク遅延を最小化するため,非同期スレッドで処理される.
+\item TCP接続確立: 実験開始時,Pythonサーバへの接続を試みる.
+\item イベントマーカー送信: VR空間で発生する全ての意味的イベント(Phase転換,アイテム獲得,敵接近など)を文字列コマンドで構成し,\texttt{writer.WriteLine(cmd)} を通じて即時送信する.ネットワーク遅延を最小化するため,非同期スレッドで処理される.
 \end{itemize}
 
 \subsection{コンテンツ設計の基本コンセプト}
 本研究で制作したVRコンテンツは,特定の感情状態(集中,恐怖,驚き)を意図的かつ自然に誘発するように設計されたホラーアドベンチャーゲームである.コンテンツはUnityで開発され,暗い屋敷を探索しながらアイテムを収集する「探索型ホラー」形式を採用した.この形式はプレイヤーの自発的行動(探索)と,システム側の予期せぬ介入(ジャンプスケア)を結合することで,多様な感情スペクトルをカバーするのに適している.
 
 \subsection{4段階実験フェーズ構成}
-本研究で制作したVRコンテンツは「ランダム迷路型VRホラーゲーム」で構成され, 感情状態を段階的に誘導するためにPhase 0\textendash3の順次構造で設計した.
+本研究で制作したVRコンテンツは「探索・追跡型VRホラーゲーム」で構成され, 感情状態を段階的に誘導するためにPhase 0\textendash3の順次構造で設計した.
 また, 各フェーズおよびイベントの状況に応じて異なるBGMおよび効果音を使用した. Phase 2の探索パートでは不気味で静かな環境音を再生し緊張感を高める. アイテム獲得時には通知音を鳴らす. Phase 3でゾンビが登場し追跡が始まると, テンポの速い緊迫した追跡用BGMに切り替えることで, 聴覚的刺激による恐怖と焦燥感を増幅させる.
-実験は生理信号の変化を正確に測定するため,以下の4つのフェーズに分割して進行する.
+実験は生体信号の変化を正確に測定するため,以下の4つのフェーズに分割して進行する.
 
 \subsubsection{Phase 0: ベースライン (Baseline)}
 \begin{itemize}
 \item \textbf{目的}: 参加者の安静時生理指標の基準値を確保する.
-\item \textbf{環境}: 刺激のない静的な環境で安定した状態で60秒間維持を行い基準(baseline)生理値を確保する(図 \ref{fig:phase0}).
+\item \textbf{環境}: 刺激のない静的な環境で安定した状態を60秒間維持し,基準生理値を確保する (図 \ref{fig:phase0}).
 \end{itemize}
 \begin{figure}[t]
   \centering
@@ -520,8 +502,8 @@ Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本
 \subsubsection{Phase 1: 集中課題 (Focus / Go/No-Go Task)}
 \begin{itemize}
 \item \textbf{目的}: 恐怖・驚きの影響がない状態で「純粋集中」状態の生理データを取得する.
-\item \textbf{環境}: 明るいラボ(実験室)風のトレーニングルーム.
-\item \textbf{メカニズム}: 恐怖要素を排除した反応抑制課題(Go/No-Go)を遂行させる. 正面に現れる緑の球体(Go)には射撃(トリガー)反応,赤の球体(No-Go)には反応しない抑制課題(図 \ref{fig:phase1}).約30回の試行がランダム間隔で繰り返される.
+\item \textbf{環境}: 明るいラボ (実験室) 風のトレーニングルーム.
+\item \textbf{メカニズム}: 恐怖要素を排除した反応抑制課題 (Go/No-Go) を実施させる. 正面に現れる緑の球体 (Go) には射撃 (トリガー) 反応, 赤の球体 (No-Go) には反応しない抑制課題 (図 \ref{fig:phase1}). 約30回の試行がランダム間隔で繰り返される.
 \item \textbf{ラベリング}: \texttt{P1\_TRIAL\_ONSET\_GO} などのマーカーで課題遂行中の認知負荷と集中状態を記録する.
 \end{itemize}
 
@@ -538,13 +520,13 @@ Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本
 
 \subsubsection{Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}
 \begin{itemize}
-\item \textbf{目的}: 視野制限と音響演出で持続的恐怖(不安)を誘発する.
-\item \textbf{環境}: 暗い屋敷内部(図 \ref{fig:phase2} (a)).
+\item \textbf{目的}: 視野制限と音響演出で持続的恐怖 (不安) を誘発する.
+\item \textbf{環境}: 暗い屋敷内部 (図 \ref{fig:phase2} (a)).
 \item \textbf{制約}: 光源は左手トリガーを押している間のみ点灯する懐中電灯に制限される.
-\item \textbf{課題}: 屋敷内に隠された4つのビーカー(ピース)を収集する(図 \ref{fig:phase2} (b)).収集個数に応じて環境が段階的に変化する. 不確実性と緊張を高め, 環境音, 効果音, 照明などの演出を通じて恐怖・警戒状態を誘導する.
+\item \textbf{課題}: 屋敷内に隠された4つのビーカー (ピース) を収集する (図 \ref{fig:phase2} (b)). 収集個数に応じて環境が段階的に変化する. 不確実性と緊張を高め, 環境音, 効果音, 照明などの演出を通じて恐怖・警戒状態を誘導する.
   \begin{itemize}
   \item 1\textendash2個目: 微細な環境音の変化.
-  \item 3個目: 遠くから聞こえる不吉な悲鳴/物体落下音(ジャンプスケア前兆).
+  \item 3個目: 遠くから聞こえる不吉な悲鳴/物体落下音 (ジャンプスケア前兆).
   \item 4個目: 収集完了と同時にPhase 3強制移動マーカーが送信される.
   \end{itemize}
 \end{itemize}
@@ -563,8 +545,8 @@ Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本
 \subsubsection{Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}
 \begin{itemize}
 \item \textbf{目的}: 強い恐怖と特定対象に対する驚き反応を誘発する.
-\item \textbf{メカニズム}: Phase 2と同一マップで敵(ゾンビ)追跡演出を活性化し即時的脅威刺激を提供することで, 高い覚醒と強い恐怖/驚き反応を誘導する. 知能型ゾンビAIがプレイヤーを追跡する(図 \ref{fig:phase3} (b)).ゾンビは一定距離内に接近すると停止して威嚇し(図 \ref{fig:phase3} (a)),再び接近を試みる2段階近接ロジック(\texttt{P3\_ZOMBIE\_NEAR\_1}, \texttt{P3\_ZOMBIE\_NEAR\_2})を持つ.
-\item \textbf{終了条件}: プレイヤーが特定のドアを開けて脱出するか,ゾンビと一定回数接触すると \texttt{EXPERIMENT\_END} となり全データが保存される.
+\item \textbf{メカニズム}: Phase 2と同一マップで敵 (ゾンビ) 追跡演出を活性化し即時的脅威刺激を提供することで, 高い覚醒と強い恐怖/驚き反応を誘導する. 知能型ゾンビAIがプレイヤーを追跡する (図 \ref{fig:phase3} (b)). ゾンビは一定距離内に接近すると停止して威嚇し (図 \ref{fig:phase3} (a)), 再び接近を試みる2段階近接ロジック (\texttt{P3\_ZOMBIE\_NEAR\_1}, \texttt{P3\_ZOMBIE\_NEAR\_2}) を持つ.
+\item \textbf{終了条件}: プレイヤーが特定のドアを開けて脱出するか, ゾンビと一定回数接触すると \texttt{EXPERIMENT\_END} となり全データが保存される.
 \end{itemize}
 
 \begin{figure}[t]
@@ -582,9 +564,7 @@ Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本
 
 
 \chapter{実験}
-本章では,提案したVR基盤マルチモーダル感情推定フレームワークを検証するために遂行した予備実験の設計と手順を提示する.
-具体的に実験環境と装備構成,構成された刺激シナリオ,
-データ収集および同期方式,そしてラベリング基準を順に説明する.
+本章では,提案したVR基盤マルチモーダル感情推定フレームワークを検証するために実施した被験者実験の設計と手順を提示する.具体的には,実験の目標と参加者,実験環境,刺激シナリオ,データ収集手順,そしてラベリング基準について順に説明する.
 
 
 \section{実験設計および方法}
@@ -592,31 +572,31 @@ Unity環境では \texttt{BitalinoController.cs} が通信の中枢を担う.本
 \subsection{実験目標}
 
 本実験はUnityで開発したVRホラーコンテンツを通じて
-ユーザの恐怖および驚き.そしてそれに伴う緊張や警戒の状態を段階的に誘導し,
+ユーザの恐怖および驚き,ならびに付随する緊張や警戒の状態を段階的に誘導し,
 提案した収集・同期システムを通じて生体信号および行動/イベント反応の変化を
 捕捉できるか確認することに目的がある.
 さらに収集されたマルチモーダルデータを活用して感情状態分類の可能性を初期評価し,
 追加実験およびモデル改善点を導出する.
 本研究の仮説は ``VRコンテンツで誘発された恐怖/驚きおよび緊張状態は
-生体信号(EDA,ECG,EMGなど)の有意な変化として現れ,
-生体信号と行動/イベント情報を総合した特徴はユーザの感情状態を
+生体信号の有意な変化として現れ,
+生体信号と行動,イベント情報を総合した特徴はユーザの感情状態を
 区分するのに有用である'' というものである.
 
 \subsection{参加者}
 
-予備実験には6名の被験者が参加した.
+被験者実験には6名の被験者が参加した.
 参加者は平均年齢28歳の健康な成人男性で,
-VR使用経験があり心血管系または精神科的疾患がないと自己報告された.
+VR使用経験があり心血管系疾患または精神疾患がないことを自己申告した.
 すべての参加者は事前に実験手順と目的についての説明を聞いて同意書を作成し,
 実験中いつでも中断を要請する権利があることを告知された.
 
 \subsection{実験手順}
 実験は以下の手順で実施した.
 \begin{enumerate}
-\item 事前説明と同意: 参加者に実験の目的, 手順, およびVRホラーコンテンツを含むことによる潜在的なリスク(VR酔い, 精神的ストレスなど)について説明し, 書面による同意を得た.
-\item 機器装着: 参加者に生体センサ(ECG, EDA, EMG)を装着し, 信号品質を確認した. その後, HMDとコントローラを装着し, 座位にて待機させた.
-\item VR体験: 参加者はVRコンテンツを開始し, Phase 0(ベースライン)からPhase 3(追跡)までの一連のシナリオを連続して体験した. 体験中は生体信号および行動ログを同期して記録した.
-\item 事後評価: VR体験終了後, 機器を取り外し, 各フェーズおよび主要イベントにおける主観的な感情状態に関するアンケートに回答した. 具体的には, Phase および主要イベントで感じた感情強度 (例：恐怖, 驚き, 緊張, 集中, 没入など) を 7 点 Likert 尺度で評価した (1：非常に低い, 7：非常に高い).
+\item \textbf{事前説明と同意}: 参加者に実験の目的, 手順, およびVRホラーコンテンツを含むことによる潜在的なリスク (VR酔い, 精神的ストレスなど) について説明し, 書面による同意を得た.
+\item \textbf{機器装着}: 参加者に生体センサ (ECG, EDA, EMG) を装着し, 信号品質を確認した. その後, HMDとコントローラを装着し, 座位にて待機させた.
+\item \textbf{VR体験}: 参加者はVRコンテンツを開始し, Phase 0 (ベースライン) からPhase 3 (追跡) までの一連のシナリオを連続して体験した. 体験中は生体信号および行動ログを同期して記録した.
+\item \textbf{事後評価}: VR体験終了後, 機器を取り外し, 各フェーズおよび主要イベントにおける主観的な感情状態に関するアンケートに回答した. 具体的には, Phase および主要イベントで感じた感情強度 (例：恐怖, 驚き, 緊張, 集中, 没入など) を 7 点 Likert 尺度で評価した (1：非常に低い, 7：非常に高い).
 \end{enumerate}
 
 \subsection{実験環境}
@@ -642,7 +622,7 @@ VR使用経験があり心血管系または精神科的疾患がないと自己
   \centering
   \begin{tabular}{c|l|l|l|l}
     \hline
-    \textbf{Phase} & \textbf{名称} & \textbf{環境および課題} & \textbf{誘導感情} & \textbf{予想される生体反応} \\
+    Phase & 名称 & 環境および課題 & 誘導感情 & 予想される生体反応 \\
     \hline \hline
     0 & Baseline & 暗い部屋, 十字注視 (60秒) & 安定 (Rest) & ベースライン値の測定 \\
     \hline
@@ -660,8 +640,8 @@ VR使用経験があり心血管系または精神科的疾患がないと自己
 % ============================================
 \subsection{データ収集}
 
-参加者がVRコンテンツを開始すると生体信号およびイベント/行動ログ収集が同時に開始される．
-表\ref{tab:collected_data}に収集データの概要を示す．
+参加者がVRコンテンツを開始すると生体信号およびイベント/行動ログ収集が同時に開始される.
+表\ref{tab:collected_data}に収集データの概要を示す.
 
 \begin{table}[htbp]
 \centering
@@ -669,15 +649,15 @@ VR使用経験があり心血管系または精神科的疾患がないと自己
 \label{tab:collected_data}
 \begin{tabular}{lllp{5cm}}
 \hline
-\textbf{データ種別} & \textbf{センサ/ソース} & \textbf{サンプリング} & \textbf{収集項目} \\
+データ種別 & センサ/ソース & サンプリング & 収集項目 \\
 \hline
-\multicolumn{4}{l}{\textbf{生体信号データ (BITalino)}} \\
+\multicolumn{4}{l}{生体信号データ (BITalino)} \\
 \hline
 EMG & A1チャンネル & 1 kHz & 筋電図 RAW値 (10-bit ADC) \\
 EDA & A2チャンネル & 1 kHz & 皮膚電気伝導度 RAW値 \\
 ECG & A3チャンネル & 1 kHz & 心電図 RAW値 \\
 \hline
-\multicolumn{4}{l}{\textbf{イベントログ (Unity → Python)}} \\
+\multicolumn{4}{l}{イベントログ (Unity → Python)} \\
 \hline
 Phase制御 & TCP通信 & イベント発生時 & Phase 0--3 開始・終了 \\
 Go/No-Go課題 & TCP通信 & イベント発生時 & 試行開始, HIT, MISS, NO\_RESPONSE \\
@@ -686,29 +666,29 @@ VR環境イベント & TCP通信 & イベント発生時 & ドア開閉, ビー�
 \end{tabular}
 \end{table}
 
-図\ref{fig:continuous_data}に代表参加者（Subject E2）の連続生体信号データを示す．
-Phase 2からPhase 3にかけてSCLの上昇およびEMGの反応増加が観察される．
+図\ref{fig:continuous_data}に代表参加者(Subject E2)の連続生体信号データを示す.
+Phase 2からPhase 3にかけてSCLの上昇およびEMGの反応増加が観察される.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig1_continuous_data.png}
-\caption{連続生体信号記録（Subject E2）．上から EMGエンベロープ，EDA（SCL），ECGフィルタ済み信号．各Phaseは背景色で区別される（Phase 0: 青, Phase 1: 橙, Phase 2: 赤, Phase 3: 紫）．}
+\caption{連続生体信号記録(Subject E2).上から EMGエンベロープ,EDA(SCL),ECGフィルタ済み信号.各Phaseは背景色で区別される(Phase 0: 青, Phase 1: 橙, Phase 2: 赤, Phase 3: 紫).}
 \label{fig:continuous_data}
 \end{figure}
 
-図\ref{fig:raw_signal}に各Phase別の生データ，図\ref{fig:preprocessed}に前処理後の信号と抽出特徴量を示す．
+図\ref{fig:raw_signal}に各Phase別の生データ,図\ref{fig:preprocessed}に前処理後の信号と抽出特徴量を示す.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig2a_phase_comparison_raw.png}
-\caption{Subject E2のPhase別生データ．各列はPhase 0--3を，各行はEMG，EDA，ECGを示す．赤点線はPhase内の平均値．}
+\caption{Subject E2のPhase別生データ.各列はPhase 0--3を,各行はEMG,EDA,ECGを示す.赤点線はPhase内の平均値.}
 \label{fig:raw_signal}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig2b_preprocessed_overview.png}
-\caption{Subject E2のPhase別前処理済み信号と特徴量．第1行: EMGエンベロープ，第2行: EDA（SCL），第3行: ECG（R-peak検出），第4行: 主要特徴量．}
+\caption{Subject E2のPhase別前処理済み信号と特徴量.第1行: EMGエンベロープ,第2行: EDA(SCL),第3行: ECG(R-peak検出),第4行: 主要特徴量.}
 \label{fig:preprocessed}
 \end{figure}
 
@@ -717,13 +697,13 @@ Phase 2からPhase 3にかけてSCLの上昇およびEMGの反応増加が観察
 % ============================================
 \subsection{ラベリング}
 
-収集された生体データには，システムが自動付与する「客観的ラベル」と，参加者の事後報告に基づく「主観的ラベル」を併用する．
+収集された生体データには,システムが自動付与する「客観的ラベル」と,参加者の事後報告に基づく「主観的ラベル」を併用する.
 
 \subsubsection{客観的ラベル}
-表\ref{tab:event_markers}にVRアプリケーションから送信される主要イベントマーカーを示す．
-図\ref{fig:event_window}に示すように，各イベント発生時点（$t_0$）を中心に前後2.5秒（計5秒間）のウィンドウを設定し，該当区間の特徴量を抽出した．
-この窓幅は，EDAの皮膚電気反応が刺激提示後1--4秒で最大振幅に達すること\cite{Benedek2010,Braithwaite2013}，
-およびVR環境における感情認識研究での標準的な分析窓\cite{MarinMorales2018,Kreibig2010}に基づき設定した．
+表\ref{tab:event_markers}にVRアプリケーションから送信される主要イベントマーカーを示す.
+図\ref{fig:event_window}に示すように,各イベント発生時点($t_0$)を中心に前後2.5秒(計5秒間)のウィンドウを設定し,該当区間の特徴量を抽出した.
+この窓幅は,EDAの皮膚電気反応が刺激提示後1--4秒で最大振幅に達すること\cite{Benedek2010,Braithwaite2013},
+およびVR環境における感情認識研究での標準的な分析窓\cite{MarinMorales2018,Kreibig2010}に基づき設定した.
 
 \begin{table}[htbp]
 \centering
@@ -731,7 +711,7 @@ Phase 2からPhase 3にかけてSCLの上昇およびEMGの反応増加が観察
 \label{tab:event_markers}
 \begin{tabular}{llp{6cm}}
 \hline
-\textbf{Phase} & \textbf{マーカー} & \textbf{説明} \\
+Phase & マーカー & 説明 \\
 \hline
 Phase 0 & BASELINE\_START/END & ベースライン測定 (60秒) \\
 Phase 1 & P1\_TRIAL\_ONSET & Go/No-Go試行開始 \\
@@ -746,12 +726,12 @@ Phase 3 & CHASE\_START & 追跡開始 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig3_event_window.png}
-\caption{イベントマーカーと分析ウィンドウの定義．各イベント発生時点（$t_0$）を中心に前後2.5秒（計5秒間）のウィンドウを設定．}
+\caption{イベントマーカーと分析ウィンドウの定義.各イベント発生時点($t_0$)を中心に前後2.5秒(計5秒間)のウィンドウを設定.}
 \label{fig:event_window}
 \end{figure}
 
 \subsubsection{主観的ラベル}
-実験直後，参加者は表\ref{tab:questionnaire}に示す事後アンケートに回答した（7点Likert尺度）．
+実験直後,参加者は表\ref{tab:questionnaire_detail}に示す事後アンケートに回答した(7点Likert尺度).
 
 \begin{table}[htbp]
   \centering
@@ -759,7 +739,7 @@ Phase 3 & CHASE\_START & 追跡開始 \\
   \label{tab:survey_results}
   \begin{tabular}{c|c|c|c|c|c|c|l}
     \hline
-    \textbf{ID} & \textbf{探索} & \textbf{収集} & \textbf{扉開放} & \textbf{追跡認知} & \textbf{追跡対峙} & \textbf{解放感} & \textbf{備考} \\
+    ID & 探索 & 収集 & 扉開放 & 追跡認知 & 追跡対峙 & 解放感 & 備考 \\
     & (Q2-1) & (Q2-3) & (Q2-6) & (Q3-1) & (Q3-2) & (Q3-3) & \\
     \hline \hline
     A & 2 & 3 & 5 & 6 & 3 & 5 & 後半恐怖上昇, 典型的パターン \\
@@ -779,11 +759,11 @@ Phase 3 & CHASE\_START & 追跡開始 \\
 
 \begin{table}[htbp]
 \centering
-\caption{事後アンケート詳細結果（7点Likert尺度, 平均 $\pm$ SD）}
+\caption{事後アンケート詳細結果(7点Likert尺度, 平均 $\pm$ SD)}
 \label{tab:questionnaire_detail}
 \begin{tabular}{lp{8cm}cc}
 \hline
-\textbf{質問ID} & \textbf{評価項目 (イベント内容)} & \textbf{平均} & \textbf{SD} \\
+質問ID & 評価項目 (イベント内容) & 平均 & SD \\
 \hline
 Q2-1 & 暗い屋敷の探索開始時の恐怖/不安 & 3.33 & 1.51 \\
 Q2-2 & 1つ目のビーカー獲得時の恐怖/不安 & 2.83 & 1.17 \\
@@ -804,16 +784,16 @@ Q3-3 & 実験終了時の緊張解放感の程度 & 4.00 & 2.00 \\
 
 \subsection{全体統計}
 
-表\ref{tab:phase_stats}に全参加者（6名，8セッション）のPhase別生体反応統計量を示す．
-図\ref{fig:phase_mean}に示すように，Phase 0からPhase 3に向かってSCLおよびEMGの上昇傾向が確認された．
+表\ref{tab:phase_stats}に全参加者(6名,8セッション)のPhase別生体反応統計量を示す.
+図\ref{fig:phase_mean}に示すように,Phase 0からPhase 3に向かってSCLおよびEMGの上昇傾向が確認された.
 
 \begin{table}[htbp]
 \centering
-\caption{全参加者のPhase別生体反応統計量（6名，8セッション，Mean $\pm$ SD）}
+\caption{全参加者のPhase別生体反応統計量(6名,8セッション,Mean $\pm$ SD)}
 \label{tab:phase_stats}
 \begin{tabular}{lcccc}
 \hline
-\textbf{特徴量} & \textbf{Phase 0} & \textbf{Phase 1} & \textbf{Phase 2} & \textbf{Phase 3} \\
+特徴量 & Phase 0 & Phase 1 & Phase 2 & Phase 3 \\
 \hline
 心拍数 (bpm) & 73.0 $\pm$ 11.7 & 74.2 $\pm$ 9.5 & 76.5 $\pm$ 8.1 & 72.2 $\pm$ 20.2 \\
 HRV RMSSD (ms) & 143.3 $\pm$ 284.5 & 51.4 $\pm$ 32.7 & 67.0 $\pm$ 53.0 & 742.4 $\pm$ 1775.9 \\
@@ -828,34 +808,34 @@ EMG RMS ($\mu$V) & 16.9 $\pm$ 6.6 & 18.2 $\pm$ 6.6 & 25.4 $\pm$ 8.9 & 36.0 $\pm$
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig6_phase_mean.png}
-\caption{Phase別平均生体反応（6名，8セッション，Mean $\pm$ SD）．Phase 2からPhase 3にかけてSCLおよびEMGの上昇が確認される．}
+\caption{Phase別平均生体反応(6名,8セッション,Mean $\pm$ SD).Phase 2からPhase 3にかけてSCLおよびEMGの上昇が確認される.}
 \label{fig:phase_mean}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig4_phase_boxplot.png}
-\caption{Phase別生体反応の箱ひげ図（6名，8セッション）．}
+\caption{Phase別生体反応の箱ひげ図(6名,8セッション).}
 \label{fig:phase_boxplot}
 \end{figure}
 
 \subsection{個人差分析}
 
-図\ref{fig:subject_variation}および図\ref{fig:subject_heatmap}に参加者別の生体反応パターンを示す．
-Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し，Subject DはPhase 3でEMG RMSの著しい増加を示した．
-一方，Subject A, FはPhase全体を通じて比較的安定した反応パターンを示した．
+図\ref{fig:subject_variation}および図\ref{fig:subject_heatmap}に参加者別の生体反応パターンを示す.
+Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し,Subject DはPhase 3でEMG RMSの著しい増加を示した.
+一方,Subject A, FはPhase全体を通じて比較的安定した反応パターンを示した.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig5_subject_variation.png}
-\caption{参加者別Phase変動．Subject A--F（6名，8セッション）の各Phase別生体反応．個人差が大きいことが確認された．}
+\caption{参加者別Phase変動.Subject A--F(6名,8セッション)の各Phase別生体反応.個人差が大きいことが確認された.}
 \label{fig:subject_variation}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig7_subject_heatmap.png}
-\caption{参加者×Phaseヒートマップ．色が濃いほど値が高い．SCLはPhase 2--3で全体的に上昇傾向を示す．}
+\caption{参加者×Phaseヒートマップ.色が濃いほど値が高い.SCLはPhase 2--3で全体的に上昇傾向を示す.}
 \label{fig:subject_heatmap}
 \end{figure}
 
@@ -865,27 +845,27 @@ Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し，Subject DはPhase 3�
 
 \section{主観的感情評価分析}
 
-実験直後に実施したアンケート結果を分析し，参加者の主観的な感情変化を定量化した．この分析結果は生体信号解釈の基準点（Ground Truth）として活用される．
+実験直後に実施したアンケート結果を分析し,参加者の主観的な感情変化を定量化した.この分析結果は生体信号解釈の基準点(Ground Truth)として活用される.
 
 \subsection{被験者別反応の類型化および特異事例の分析}
-アンケート調査は，大きく分けてPhase 2の探索パート（Q2-1 $\sim$ Q2-6）とPhase 3の追跡パート（Q3-1 $\sim$ Q3-3）で構成された．参加者の回答を総合した結果，ゾンビがいる部屋のドアを開けた瞬間（Q2-6）およびゾンビが追跡を開始した時点（Q3-1）において，最も高い恐怖値が記録された．
+アンケート調査は,大きく分けてPhase 2の探索パート(Q2-1 $\sim$ Q2-6)とPhase 3の追跡パート(Q3-1 $\sim$ Q3-3)で構成された.参加者の回答を総合した結果,ゾンビがいる部屋のドアを開けた瞬間(Q2-6)およびゾンビが追跡を開始した時点(Q3-1)において,最も高い恐怖値が記録された.
 
-主観報告に基づき，参加者の反応パターンを以下の3つのタイプに分類した．
+主観報告に基づき,参加者の反応パターンを以下の3つのタイプに分類した.
 
 \paragraph{1. 没入型恐怖反応群 (Immersion-Fear Group: A, B, C, E)}
-このグループは，実験の進行に伴い恐怖値が線形に上昇する傾向を示した．特に参加者Eは，ゾンビ追跡状況（Q3-1, Q3-2）において最高値である7点を記録し，極度の恐怖と緊張を訴えた．彼らはVR環境が提供する視聴覚刺激を現実的な脅威として受容しており，これは後述する生体信号の急激な変化とも一致する結果であった．
+このグループは,実験の進行に伴い恐怖値が線形に上昇する傾向を示した.特に参加者Eは,ゾンビ追跡状況(Q3-1, Q3-2)において最高値である7点を記録し,極度の恐怖と緊張を訴えた.彼らはVR環境が提供する視聴覚刺激を現実的な脅威として受容しており,VR刺激に対する受容反応は,後述する生体信号の急激な変化とも一致する結果であった.
 
 \paragraph{2. 認知失敗群 (Cognitive Failure Group: D, F)}
-これは特定の状況を明確に認知できず，感情生起が抑制された事例である．参加者Dは，ゾンビが追跡している事実を認知できなかったと回答し，その結果Q3-1のスコアは1点にとどまった．参加者Fも同様の認知失敗を報告し，事後インタビューにおいて「Q3-1, Q3-2の状況を認知できなかった」と明言した．これは，VR内での感情変動が参加者の注意（Attention）および認知的評価（Cognitive Appraisal）プロセスに大きく依存することを示唆している．
+認知失敗群は,特定の状況を明確に認知できず,感情生起が抑制された事例群である.参加者Dは,ゾンビが追跡している事実を認知できなかったと回答し,その結果Q3-1のスコアは1点にとどまった.参加者Fも同様の認知失敗を報告し,事後インタビューにおいて「Q3-1, Q3-2の状況を認知できなかった」と明言した.認知失敗による感情生起の抑制は,VR内での感情変動が参加者の注意(Attention)および認知的評価(Cognitive Appraisal)プロセスに大きく依存することを示唆している.
 
 \paragraph{3. 選択的知覚反応群 (Selective Perception Group: F)}
-これは持続的な恐怖よりも瞬間的な驚き刺激に敏感に反応したケースである．参加者Fは，追跡状況は認知できなかったものの，ゾンビ部屋のドアを開けた瞬間（Q2-6）には6点という高い緊張度を報告した．これは，特定の演出が意図した感情を誘発することに成功したことを意味し，全体的なナラティブへの没入とは別に，瞬間的なインパクトが生体反応に影響を与えた可能性を示唆している．
+選択的知覚反応群は,持続的な恐怖よりも瞬間的な驚き刺激に敏感に反応したケースである.参加者Fは,追跡状況は認知できなかったものの,ゾンビ部屋のドアを開けた瞬間(Q2-6)には6点という高い緊張度を報告した.高い緊張度の報告は,特定の演出が意図した感情を誘発することに成功したことを意味し,全体的なナラティブへの没入とは別に,瞬間的なインパクトが生体反応に影響を与えた可能性を示唆している.
 
 
 \section{客観的生体反応分析: フェーズ別統計および指標分析}
 
 \subsection{皮膚電気活動 (EDA) 分析結果}
-皮膚電気活動 (Electrodermal Activity: EDA) は交感神経系の活性度を表す核心的な指標であり，本実験では皮膚コンダクタンスレベル (Skin Conductance Level: SCL) の平均値を中心に分析した．
+皮膚電気活動 (Electrodermal Activity: EDA) は交感神経系の活性度を表す核心的な指標であり,本実験では皮膚コンダクタンスレベル (Skin Conductance Level: SCL) の平均値を中心に分析した.
 
 \begin{table}[htbp]
 \centering
@@ -893,7 +873,7 @@ Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し，Subject DはPhase 3�
 \label{tab:eda_scl_stats}
 \begin{tabular}{lcccc}
 \hline
-\textbf{フェーズ (Phase)} & \textbf{平均 SCL ($\mu$S)} & \textbf{標準偏差 (SD)} & \textbf{最小値 (Min)} & \textbf{最大値 (Max)} \\
+フェーズ (Phase) & 平均 SCL ($\mu$S) & 標準偏差 (SD) & 最小値 (Min) & 最大値 (Max) \\
 \hline
 Phase 0 & 22.20 & 6.22 & 9.05 & 28.02 \\
 Phase 1  & 20.90 & 6.51 & 7.55 & 28.09 \\
@@ -903,11 +883,11 @@ Phase 3  & 26.67 & 1.47 & 23.94 & 27.82 \\
 \end{tabular}
 \end{table}
 
-データ分析の結果，Phase 0とPhase 1の間では有意なSCLの上昇は観察されなかったが，暗い屋敷を探索し始めるPhase 2に進入すると，SCL平均値が26.59 $\mu$Sへと急激に上昇した．これは視覚的制限と環境音が参加者の警戒心 (Vigilance) を高め，交感神経系を持続的に覚醒させたことを意味する．Phase 3でも26.67 $\mu$Sの高い水準が維持され，標準偏差が1.47 $\mu$Sと非常に低く現れた点は，すべての参加者が共通して高い覚醒状態に到達したことを示している．特にSCR (Skin Conductance Response) ピーク数については，Phase 1で平均7.88回であったものが，探索と追跡が含まれるシナリオにおいて持続的に発生し，脅威刺激に対する反応性を証明した．
+データ分析の結果,Phase 0とPhase 1の間では有意なSCLの上昇は観察されなかったが,暗い屋敷を探索し始めるPhase 2に進入すると,SCL平均値が26.59 $\mu$Sへと急激に上昇した.SCL平均値の上昇は,視覚的制限と環境音が参加者の警戒心 (Vigilance) を高め,交感神経系を持続的に覚醒させたことを意味する.Phase 3でも26.67 $\mu$Sの高い水準が維持され,標準偏差が1.47 $\mu$Sと非常に低く現れた点は,すべての参加者が共通して高い覚醒状態に到達したことを示している.特にSCR (Skin Conductance Response) ピーク数については,Phase 1で平均7.88回であったものが,探索と追跡が含まれるシナリオにおいて持続的に発生し,脅威刺激に対する反応性を証明した.
 
 % ============================================
 \subsection{心拍変動 (HRV) および心電図 (ECG) 分析結果}
-心電図データを基に算出された心拍数 (Heart Rate, HR) と心拍変動指標は，被験者の自律神経系バランスとストレスレベルを表す．
+心電図データを基に算出された心拍数 (Heart Rate, HR) と心拍変動指標は,被験者の自律神経系バランスとストレスレベルを表す.
 
 \begin{table}[htbp]
 \centering
@@ -915,7 +895,7 @@ Phase 3  & 26.67 & 1.47 & 23.94 & 27.82 \\
 \label{tab:ecg_hrv_stats}
 \begin{tabular}{lcccc}
 \hline
-\textbf{特徴量 (Feature)} & \textbf{Phase 0} & \textbf{Phase 1} & \textbf{Phase 2} & \textbf{Phase 3} \\
+特徴量 (Feature) & Phase 0 & Phase 1 & Phase 2 & Phase 3 \\
 \hline
 平均心拍数 (HR, bpm) & 73.02 $\pm$ 11.65 & 74.15 $\pm$ 9.54 & 76.52 $\pm$ 8.11 & 72.16 $\pm$ 20.23 \\
 RMSSD (ms) & 143.34 $\pm$ 284.51 & 51.42 $\pm$ 32.71 & 67.04 $\pm$ 53.03 & 742.37 $\pm$ 1775.91 \\
@@ -925,14 +905,14 @@ LF/HF比 & 1.72 $\pm$ 1.10 & 2.37 $\pm$ 1.95 & 1.87 $\pm$ 1.26 & 1.58 $\pm$ 2.50
 \end{tabular}
 \end{table}
 
-心拍数の場合，Phase 2で平均76.52 bpmとピークに達し，探索過程における持続的な緊張状態を反映した．興味深い点は，最も強力な恐怖刺激が提示されたPhase 3 (Chase) において，平均心拍数が72.16 bpmへとわずかに減少し，標準偏差が20.23 bpmへと急激に増加した点である．これは，一部の被験者に見られた「すくみ反応 (Freezing Response)」によって心拍数が一時的に低下した事例と，逆にパニック状態で心拍数が急増した事例が混在して現れた結果であると解釈される．
+心拍数の場合,Phase 2で平均76.52 bpmとピークに達し,探索過程における持続的な緊張状態を反映した.興味深い点は,最も強力な恐怖刺激が提示されたPhase 3 (Chase) において,平均心拍数が72.16 bpmへとわずかに減少し,標準偏差が20.23 bpmへと急激に増加した点である.平均心拍数の減少と標準偏差の増大は,一部の被験者に見られた「すくみ反応 (Freezing Response)」によって心拍数が一時的に低下した事例と,逆にパニック状態で心拍数が急増した事例が混在して現れた結果であると解釈される.
 
-時間領域HRV指標であるRMSSDとSDNNは，Phase 1においてベースラインと比較して大きく減少し，認知的負荷 (Cognitive Load) が副交感神経活動を抑制し，ストレス反応を誘導したことを定量的に示している．Phase 3のRMSSD値が異常に高く測定されたことは，一部の被験者の激しい不整脈様反応や身体動作によるアーティファクトが反映された結果と推定され，これは今後の分析において精密なノイズ除去の必要性を示唆している．
+時間領域HRV指標であるRMSSDとSDNNは,Phase 1においてベースラインと比較して大きく減少し,認知的負荷 (Cognitive Load) が副交感神経活動を抑制し,ストレス反応を誘導したことを定量的に示している.Phase 3のRMSSD値が異常に高く測定されたことは,一部の被験者の激しい不整脈様反応や身体動作によるアーティファクトが反映された結果と推定され,RMSSD値の異常は,今後の分析において精密なノイズ除去の必要性を示唆している.
 
-周波数領域のLF/HF比はPhase 1で2.37と最も高く，これはGo/No-Go課題を遂行する過程における高度な集中と交感神経系の活性化を意味する．
+周波数領域のLF/HF比はPhase 1で2.37と最も高く,LF/HF比の上昇は,Go/No-Go課題を実施する過程における高度な集中と交感神経系の活性化を意味する.
 
 \subsection{筋電図 (EMG) 分析結果}
-右腕の筋肉に装着されたEMGセンサは，被験者の身体的緊張度と驚き反応に伴う筋肉収縮を測定した．
+右腕の筋肉に装着されたEMGセンサは,被験者の身体的緊張度と驚き反応に伴う筋肉収縮を測定した.
 
 \begin{table}[htbp]
 \centering
@@ -940,7 +920,7 @@ LF/HF比 & 1.72 $\pm$ 1.10 & 2.37 $\pm$ 1.95 & 1.87 $\pm$ 1.26 & 1.58 $\pm$ 2.50
 \label{tab:emg_stats}
 \begin{tabular}{lcccc}
 \hline
-\textbf{特徴量 (Feature)} & \textbf{Phase 0} & \textbf{Phase 1} & \textbf{Phase 2} & \textbf{Phase 3} \\
+特徴量 (Feature) & Phase 0 & Phase 1 & Phase 2 & Phase 3 \\
 \hline
 平均電圧 (Mean, $\mu$V) & 14.90 $\pm$ 7.17 & 15.95 $\pm$ 8.36 & 19.83 $\pm$ 7.94 & 27.69 $\pm$ 17.36 \\
 RMS電圧 (RMS, $\mu$V) & 16.87 $\pm$ 6.63 & 18.23 $\pm$ 6.61 & 25.40 $\pm$ 8.93 & 36.01 $\pm$ 30.05 \\
@@ -949,40 +929,40 @@ RMS電圧 (RMS, $\mu$V) & 16.87 $\pm$ 6.63 & 18.23 $\pm$ 6.61 & 25.40 $\pm$ 8.93
 \end{tabular}
 \end{table}
 
-EMG分析の結果，フェーズが進行するにつれて筋肉の緊張度が明確に上昇する様相が観察された．特にPhase 3におけるRMS電圧は36.01 $\mu$Vであり，Baseline (16.87 $\mu$V) と比較して2倍以上に増加し，最大電圧は平均223.11 $\mu$Vに達した．これは，ゾンビの追跡という直接的な脅威の前で，被験者が逃避あるいは防御のために身体筋肉を強く収縮させたことを示す決定的な証拠である．また，標準偏差が30.05 $\mu$Vと非常に大きく現れた点は，被験者の傾向によって身体的硬直反応の程度が極端に分かれたことを示唆している．
+EMG分析の結果,フェーズが進行するにつれて筋肉の緊張度が明確に上昇する様相が観察された.特にPhase 3におけるRMS電圧は36.01 $\mu$Vであり,Baseline (16.87 $\mu$V) と比較して2倍以上に増加し,最大電圧は平均223.11 $\mu$Vに達した.EMGの増加は,ゾンビの追跡という直接的な脅威の前で,被験者が逃避あるいは防御のために身体筋肉を強く収縮させたことを裏付ける証拠である.また,標準偏差が30.05 $\mu$Vと非常に大きく現れた点は,被験者の傾向によって身体的硬直反応の程度が極端に分かれたことを示唆している.
 
 \section{個人差分析および特異反応者の識別：主観・客観連携の深層事例}
-全体統計分析を超え，主観的報告と生体反応の間の相関関係を明確に把握するため，主要な被験者3名に対する深層事例分析を遂行した．
+全体統計分析を超え,主観的報告と生体反応の間の相関関係を明確に把握するため,主要な被験者3名に対する深層事例分析を実施した.
 
-\subsection{極端的反応者 (Subject E2)}
-参加者E2は，アンケートにおいて追跡時の恐怖度7点と解放感7点を同時に記録した「超没入型」参加者である．彼の生体データは，このような主観的報告を劇的に裏付けている．
+\subsection{特異な反応を示す参加者 (Subject E2)}
+参加者E2は,アンケートにおいて追跡時の恐怖度7点と解放感7点を同時に記録した「没入度が高い」参加者である.彼の生体データは,このような主観的報告を強く裏付けている.
 
-Phase 3においてEMG RMS値が101.99 $\mu$Vへと急増したが，これは全被験者平均の約3倍に達する数値である．同時に心拍数は29.00 bpmと異常に低く測定されたが，これは心拍変動 (RMSSD 4766.04 ms) の極端な上昇と結合しており，単純な安静ではなく，極度のストレスによる心臓調節能力の一時的麻痺，あるいは強力な「すくみ反応 (Freezing Response)」による徐脈現象として解釈される．主観的にも最も高い恐怖度 (7点) を報告しており，客観的生体信号と主観的経験が最も強力に一致するパターンを示した．
+Phase 3においてEMG RMS値が101.99 $\mu$Vへと急増したが,EMG RMS値は全被験者平均の約3倍に達する数値である.同時に心拍数は29.00 bpmと異常に低く測定されたが,低い心拍数は心拍変動 (RMSSD 4766.04 ms) の極端な上昇と結合しており,単純な安静ではなく,強いストレスによる心臓調節能力の一時的麻痺,あるいは顕著な「すくみ反応 (Freezing Response)」による徐脈現象として解釈される.主観的にも最も高い恐怖度 (7点) を報告しており,客観的生体信号と主観的経験が最も良く一致するパターンを示した.
 
 \subsection{認知失敗および低反応者 (Subject D)}
-参加者Dは，主観的に追跡を認知できなかったと報告しており，これは生体指標の停滞につながった．
+参加者Dは,主観的に追跡を認知できなかったと報告しており,認知の欠如は生体指標の停滞につながった.
 \begin{itemize}
-\item \textbf{SCL減少}: Phase 2 (28.20 $\mu$S) からPhase 3 (23.94 $\mu$S) へと覚醒数値が下落した．
-\item \textbf{安定的HR}: 心拍数もまた77.77 bpmから78.65 bpmへとほとんど変化がなかった．
+\item \textbf{SCL減少}: Phase 2 (28.20 $\mu$S) からPhase 3 (23.94 $\mu$S) へと覚醒数値が下落した.
+\item \textbf{安定的HR}: 心拍数もまた77.77 bpmから78.65 bpmへとほとんど変化がなかった.
 \end{itemize}
-これは「実験課題が無事に終了した」と判断し，急激な心理的弛緩 (Early Relief) 状態に進入したことを示唆する．このようなベースライン以下への生体指標の下落は，感情推定フレームワークが単に恐怖の有無だけでなく，ユーザが現在の状況を「安全」あるいは「終了」と認知しているか否かを判別する有用な指標となり得ることを示している．
+以上の結果は「実験課題が無事に終了した」と判断し,急激な心理的弛緩 (Early Relief) 状態に進入したことを示唆する.このようなベースライン以下への生体指標の下落は,感情推定フレームワークが単に恐怖の有無だけでなく,ユーザが現在の状況を「安全」あるいは「終了」と認知しているか否かを判別する有用な指標となり得ることを示している.
 
 \subsection{無意識的緊張維持者 (Subject F)}
-参加者Fは事後アンケートにおいて追跡を認知できなかったと回答したが，彼の身体は異なる反応を示していた．
+参加者Fは事後アンケートにおいて追跡を認知できなかったと回答したが,彼の身体は異なる反応を示していた.
 \begin{itemize}
-\item \textbf{高い覚醒水準}: Phase 3のSCL値は25.32 $\mu$Sであり，全参加者のPhase 3平均である26.67 $\mu$Sに近接した数値である．心拍数は90.39 bpmで実験全体の中で最高値を記録し，EMG RMSもまた35.17 $\mu$Vで平均以上の高い身体的緊張度を示した．
-\item \textbf{SCRピークの存在}: 特にPhase 2において16回のSCRピークが発生したが，これは彼がアイテムを収集する過程ですでに相当な心理的圧迫を感じていたことを意味する．
+\item \textbf{高い覚醒水準}: Phase 3のSCL値は25.32 $\mu$Sであり, 全参加者のPhase 3平均である26.67 $\mu$Sに近接した数値である. 心拍数は90.39 bpmで実験全体の中で最高値を記録し, EMG RMSもまた35.17 $\mu$Vで平均以上の高い身体的緊張度を示した.
+\item \textbf{SCRピークの存在}: 特にPhase 2において16回のSCRピークが発生したが, SCRピークの頻発は,参加者Fがアイテムを収集する過程ですでに相当な心理的圧迫を感じていたことを意味する.
 \end{itemize}
-「追跡を認知できなかった」という回答は，実際の追跡状況における視覚的認知失敗を意味するだけであり，彼が置かれていた環境全体に対する緊張感は解消されていなかったことを示唆する．
+「追跡を認知できなかった」という回答は,実際の追跡状況における視覚的認知失敗を意味するだけであり,彼が置かれていた環境全体に対する緊張感は解消されていなかったことを示唆する.
 
 \section{機械学習による自動Phase分類}
 
-生体信号特徴量のみを用いて実験Phaseを自動分類する機械学習モデルを構築し，その性能を評価した．
+生体信号特徴量のみを用いて実験Phaseを自動分類する機械学習モデルを構築し,その性能を評価した.
 
 \subsection{手法}
 
 \subsubsection{特徴量}
-表\ref{tab:ml_features}に示す20個の生理学的特徴量を使用した．
+表\ref{tab:ml_features}に示す20個の生理学的特徴量を使用した.
 
 \begin{table}[htbp]
 \centering
@@ -990,42 +970,42 @@ Phase 3においてEMG RMS値が101.99 $\mu$Vへと急増したが，これは�
 \label{tab:ml_features}
 \begin{tabular}{ll}
 \hline
-\textbf{信号種別} & \textbf{特徴量} \\
+信号種別 & 特徴量 \\
 \hline
-ECG & 心拍数，HRV (RMSSD, SDNN, pNN50)，LF/HF比，R-peak数，RR間隔統計 \\
-EMG & 平均値，標準偏差，最大値，RMS，積分EMG \\
-EDA & 平均SCL，SCL標準偏差，平均SCR，最大SCR，SCRピーク数 \\
+ECG & 心拍数,HRV (RMSSD, SDNN, pNN50),LF/HF比,R-peak数,RR間隔統計 \\
+EMG & 平均値,標準偏差,最大値,RMS,積分EMG \\
+EDA & 平均SCL,SCL標準偏差,平均SCR,最大SCR,SCRピーク数 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{交差検証}
-一般化性能を評価するため，Leave-One-Session-Out 交差検証を採用した．
-本実験では6名の参加者から8セッションのデータを収集した（2名が2回参加）．
-各fold（計8回）では1セッションをテストセット，残り7セッションをトレーニングセットとして使用した．
+一般化性能を評価するため,Leave-One-Session-Out 交差検証を採用した.
+本実験では6名の参加者から8セッションのデータを収集した(2名が2回参加).
+各fold(計8回)では1セッションをテストセット,残り7セッションをトレーニングセットとして使用した.
 
-なお，同一参加者の複数セッション（Subject B: 2セッション，Subject E: 2セッション）が
-トレーニングとテストに分かれる場合があるため，
-本評価は厳密な個人間一般化性能ではなく，新規セッションへの汎化性能を示している．
+なお,同一参加者の複数セッション(Subject B: 2セッション,Subject E: 2セッション)が
+トレーニングとテストに分かれる場合があるため,
+本評価は厳密な個人間一般化性能ではなく,新規セッションへの汎化性能を示している.
 
 \subsubsection{分類アルゴリズム}
-5種類の機械学習アルゴリズムを比較評価した：Random Forest，Gradient Boosting，SVM (RBF kernel)，k-NN，Logistic Regression．
+5種類の機械学習アルゴリズムを比較評価した：Random Forest,Gradient Boosting,SVM (RBF kernel),k-NN,Logistic Regression.
 
 \subsection{分類結果}
 
 \subsubsection{モデル比較}
 
-表\ref{tab:ml_performance}に各モデルのLOSO交差検証による性能を示す．
+表\ref{tab:ml_performance}に各モデルのLOSO交差検証による性能を示す.
 
 \begin{table}[htbp]
 \centering
-\caption{Phase分類モデルの性能比較（LOSO交差検証）}
+\caption{Phase分類モデルの性能比較(LOSO交差検証)}
 \label{tab:ml_performance}
 \begin{tabular}{lcccc}
 \hline
-\textbf{モデル} & \textbf{Accuracy} & \textbf{F1-Score} & \textbf{Precision} & \textbf{Recall} \\
+モデル & Accuracy & F1-Score & Precision & Recall \\
 \hline
-Random Forest & \textbf{0.677} & \textbf{0.666} & \textbf{0.704} & \textbf{0.677} \\
+Random Forest & 0.677 & 0.666 & 0.704 & 0.677 \\
 Gradient Boosting & 0.645 & 0.637 & 0.655 & 0.645 \\
 SVM (RBF) & 0.452 & 0.465 & 0.507 & 0.452 \\
 k-NN & 0.452 & 0.421 & 0.449 & 0.452 \\
@@ -1034,42 +1014,42 @@ Logistic Regression & 0.484 & 0.495 & 0.516 & 0.484 \\
 \end{tabular}
 \end{table}
 
-Random Forestが最高性能（Accuracy: 67.7\%，F1: 66.6\%）を達成した．図\ref{fig:model_comparison}に各モデルの性能比較を示す．
+Random Forestが最高性能(Accuracy: 67.7\%,F1: 66.6\%)を達成した.図\ref{fig:model_comparison}に各モデルの性能比較を示す.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig11_model_comparison.png}
-\caption{Phase分類モデルの性能比較．Random ForestとGradient Boostingが他モデルを上回る性能を示した．}
+\caption{Phase分類モデルの性能比較.Random ForestとGradient Boostingが他モデルを上回る性能を示した.}
 \label{fig:model_comparison}
 \end{figure}
 
 \subsubsection{混同行列分析}
 
-図\ref{fig:confusion_matrix}にRandom Forestモデルの混同行列を示す．
+図\ref{fig:confusion_matrix}にRandom Forestモデルの混同行列を示す.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{img/fig8_confusion_matrices.png}
-\caption{各モデルの正規化混同行列．Random Forestでは Phase 0 (BASELINE) が88\%，Phase 3 (CHASE) が71\%の再現率を示した．}
+\caption{各モデルの正規化混同行列.Random Forestでは Phase 0 (BASELINE) が88\%,Phase 3 (CHASE) が71\%の再現率を示した.}
 \label{fig:confusion_matrix}
 \end{figure}
 
 Phase別の分類性能は以下の通りである：
 \begin{itemize}
-\item \textbf{Phase 0 (BASELINE)}: Recall 88\%，安定した生体信号パターンにより高い識別率
-\item \textbf{Phase 1 (TASK)}: Recall 38\%，Phase 0との混同が多く，認知課題による生理的変化が限定的
-\item \textbf{Phase 2 (PUZZLE)}: Recall 75\%，探索活動に伴うEMG・EDA上昇が特徴的
-\item \textbf{Phase 3 (CHASE)}: Recall 71\%，恐怖反応による顕著な生理的変化を捕捉
+\item \textbf{Phase 0 (BASELINE)}: Recall 88\%, 安定した生体信号パターンにより高い識別率
+\item \textbf{Phase 1 (TASK)}: Recall 38\%, Phase 0との混同が多く, 認知課題による生理的変化が限定的
+\item \textbf{Phase 2 (PUZZLE)}: Recall 75\%, 探索活動に伴うEMG・EDA上昇が特徴的
+\item \textbf{Phase 3 (CHASE)}: Recall 71\%, 恐怖反応による顕著な生理的変化を捕捉
 \end{itemize}
 
 \subsubsection{特徴量重要度}
 
-図\ref{fig:feature_importance}にRandom Forestモデルにおける特徴量重要度を示す．
+図\ref{fig:feature_importance}にRandom Forestモデルにおける特徴量重要度を示す.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig9_feature_importance.png}
-\caption{Random Forestモデルの特徴量重要度．ECG\_num\_r\_peaks（R-peak数），EMG\_integrated\_emg（積分EMG），EMG\_std\_uV（EMG標準偏差）が上位を占めた．}
+\caption{Random Forestモデルの特徴量重要度.ECG\_num\_r\_peaks(R-peak数),EMG\_integrated\_emg(積分EMG),EMG\_std\_uV(EMG標準偏差)が上位を占めた.}
 \label{fig:feature_importance}
 \end{figure}
 
@@ -1084,75 +1064,75 @@ Phase別の分類性能は以下の通りである：
 
 \subsubsection{参加者別分類精度}
 
-図\ref{fig:subject_accuracy}に参加者別の分類精度を示す．
+図\ref{fig:subject_accuracy}に参加者別の分類精度を示す.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{img/fig10_subject_accuracy.png}
-\caption{参加者別Phase分類精度．Subject B2，E2は100\%の精度を達成した一方，Subject Aは33\%と低精度であった．}
+\caption{参加者別Phase分類精度.Subject B2,E2は100\%の精度を達成した一方,Subject Aは33\%と低精度であった.}
 \label{fig:subject_accuracy}
 \end{figure}
 
-参加者間で大きな精度差が観察された（33\%--100\%）．この結果は，個人差を考慮したキャリブレーションの必要性を示唆している．
+参加者間で大きな精度差が観察された(33\%--100\%).この結果は,個人差を考慮したキャリブレーションの必要性を示唆している.
 
 \chapter{考察}
 
 \section{実験結果の解釈および生体信号の反応}
-本研究で構築した感情推定フレームワークは，VR環境においてユーザが感じる感情変化をリアルタイムに捕捉することを目的としている．実験設計に従って進行された4段階のフェーズ (Phase 0--3) を通じて，ユーザの心理状態が安定した状態から恐怖状態へと段階的に変化することが確認され，これは収集された生体データによって裏付けられた．特に皮膚電気活動 (EDA)，心電図 (ECG)，筋電図 (EMG) を統合的に分析することで，個別の信号のみでは把握が困難なユーザの内面状態をより立体的に理解することが可能となった．
+本研究で構築した感情推定フレームワークは,VR環境においてユーザが感じる感情変化をリアルタイムに捕捉することを目的としている.実験設計に従って進行された4段階のフェーズ (Phase 0--3) を通じて,ユーザの心理状態が安定した状態から恐怖状態へと段階的に変化することが確認され,心理状態の段階的変化は,収集された生体データによって裏付けられた.特に皮膚電気活動 (EDA),心電図 (ECG),筋電図 (EMG) を統合的に分析することで,個別の信号のみでは把握が困難なユーザの内面状態をより立体的に理解することが可能となった.
 
-データを具体的に見ると，皮膚コンダクタンスレベル (SCL) は探索が開始されるPhase 2において前段階よりも大きく上昇して約26.59 $\mu$Sを記録し，ゾンビが出現するPhase 3まで高い水準を維持した．これは，VRの視覚的制限と音響効果がユーザの緊張感を効果的に高めたことを示している．特にPhase 3においてすべての参加者のSCL値が一様に高く現れた点は，この段階で共通して強い覚醒状態を経験したことを示唆する．
+データを具体的に見ると,皮膚コンダクタンスレベル (SCL) は探索が開始されるPhase 2において前段階よりも大きく上昇して約26.59 $\mu$Sを記録し,ゾンビが出現するPhase 3まで高い水準を維持した.SCLの持続的上昇は,VRの視覚的制限と音響効果がユーザの緊張感を効果的に高めたことを示している.特にPhase 3においてすべての参加者のSCL値が一様に高く現れた点は,この段階で共通して強い覚醒状態を経験したことを示唆する.
 
-一方で心拍数 (HR) は少し異なる様相を示した．Phase 2までは漸進的に上昇したが，最も恐ろしい刺激が与えられるPhase 3において，むしろ平均値が72.16 bpmへと低下しつつ参加者ごとの偏差が大きくなった．これは単に平均心拍数のみで感情を判断することが困難であることを示しており，「すくみ (Freezing) 反応」のような個人ごとの対応方式の差異が反映された結果であると考えられる．
+一方で心拍数 (HR) は少し異なる様相を示した.Phase 2までは漸進的に上昇したが,最も恐ろしい刺激が与えられるPhase 3において,むしろ平均値が72.16 bpmへと低下しつつ参加者ごとの偏差が大きくなった.心拍数の低下と偏差の増大は,単に平均心拍数のみで感情を判断することが困難であることを示しており,「すくみ (Freezing) 反応」のような個人ごとの対応方式の差異が反映された結果であると考えられる.
 
 \section{参加者別特異反応とすくみ (Freezing) 現象}
-本実験で注目すべき部分は，参加者ごとに現れた反応の差異である．特に参加者E2の事例が印象的である．E2はアンケートにおいてゾンビ追跡状況に対して満点である7点の恐怖を感じたと回答した．しかし実際の生体データでは，Phase 3の心拍数が28.96 bpmまで低下する非正常な徐脈現象が現れ，心拍変動指標 (RMSSD) は非常に高く測定された．
+本実験で注目すべき部分は,参加者ごとに現れた反応の差異である.特に参加者E2の事例は注目に値する.E2はアンケートにおいてゾンビ追跡状況に対して満点である7点の恐怖を感じたと回答した.しかし実際の生体データでは,Phase 3の心拍数が28.96 bpmまで低下する非正常な徐脈現象が現れ,心拍変動指標 (RMSSD) は非常に高く測定された.
 
-これは心理学で言われる「恐怖誘発性徐脈 (Fear-induced Bradycardia)」，すなわちすくみ反応の典型的な姿である．脅威を感じた際に身体の動きを止めて周囲に集中する防御機制が作動したものであり，この時，副交感神経が強く活性化されながら心拍数が急激に低下することになる．E2の筋電図 (EMG) 値が平均より3倍も高かった点を考慮すれば，外見上は動いていなかったが，体内では極度に緊張し筋肉を収縮させていたことが分かる．
+非正常な徐脈現象と高いRMSSD値は,心理学で言われる「恐怖誘発性徐脈 (Fear-induced Bradycardia)」,すなわちすくみ反応の典型的な姿である.脅威を感じた際に身体の動きを止めて周囲に集中する防御機制が作動したものであり,この時,副交感神経が強く活性化されながら心拍数が急激に低下することになる.E2の筋電図 (EMG) 値が平均より3倍も高かった点を考慮すれば,外見上は動いていなかったが,体内では極度に緊張し筋肉を収縮させていたことが分かる.
 
-参加者DとFの事例も興味深い．Dはゾンビが追いかけてきていることに気づかず恐怖点数として1点のみを与え，生体データでも緊張が解ける様子が現れた．一方でFは本人も追跡を認知できなかったと回答したが，実際の身体反応 (SCL, HR, EMG) は全体平均よりも高いか同等の水準を維持した．これは意識的には脅威を知らなかったとしても，VR環境の全般的な雰囲気のために無意識的な緊張状態が継続していたことを示している．
+参加者DとFの事例も興味深い.Dはゾンビが追いかけてきていることに気づかず恐怖点数として1点のみを与え,生体データでも緊張が解ける様子が現れた.一方でFは本人も追跡を認知できなかったと回答したが,実際の身体反応 (SCL, HR, EMG) は全体平均よりも高いか同等の水準を維持した.高い身体反応の維持は,意識的には脅威を知らなかったとしても,VR環境の全般的な雰囲気のために無意識的な緊張状態が継続していたことを示している.
 
 \section{機械学習基盤フェーズ分類の意義および特徴量分析}
-機械学習モデルを通じて実験フェーズを自動的に分類した結果，ランダムフォレスト (Random Forest) モデルが67.7\%の精度を記録した．これは4つの状態を分類する問題において無作為確率 (25\%) よりも約2.7倍高い性能である．このような結果は，センサから抽出された生理的特徴量がVR体験中の心理状態変化を有意に反映していることを立証する．特に安定状態 (Phase 0) と追跡状態 (Phase 3) の識別率が高く現れたが，これは恐怖状況で発生する生体反応の明確な変化をモデルが効果的に捕捉できることを意味する．
+機械学習モデルを通じて実験フェーズを自動的に分類した結果,ランダムフォレスト (Random Forest) モデルが67.7\%の精度を記録した.67.7\%の精度は,4つの状態を分類する問題において無作為確率 (25\%) よりも約2.7倍高い性能である.このような結果は,センサから抽出された生理的特徴量がVR体験中の心理状態変化を有意に反映していることを立証する.特に安定状態 (Phase 0) と追跡状態 (Phase 3) の識別率が高く現れたが,高い識別率は,恐怖状況で発生する生体反応の明確な変化をモデルが効果的に捕捉できることを意味する.
 
-特徴量重要度を分析してみると，筋電図 (積分EMG，標準偏差) と皮膚コンダクタンス (平均SCL，平均SCR) がフェーズ識別に非常に有効な役割を果たした．これらの指標は恐怖と緊張状態で発生する交感神経系の活性化をよく示しており，今後のリアルタイム感情認識システムにおいても核心的な役割を果たすことが期待される．
+特徴量重要度を分析してみると,筋電図 (積分EMG,標準偏差) と皮膚コンダクタンス (平均SCL,平均SCR) がフェーズ識別に非常に有効な役割を果たした.これらの指標は恐怖と緊張状態で発生する交感神経系の活性化をよく示しており,今後のリアルタイム感情認識システムにおいても核心的な役割を果たすことが期待される.
 
-ただし，心電図のR-peak数 (ECG\_num\_r\_peaks) が最も重要な指標として選ばれた点は注意が必要である．これは実験設計上，フェーズごとの持続時間が異なっていた点 (Phase 2は長く，Phase 3は短い) がモデル学習に反映された「持続時間バイアス (Duration bias)」である可能性が高い．したがって，真の意味での感情認識のためには，特徴量を単位時間当たりの比率として正規化する過程が必須的に伴わなければならない．
+ただし,心電図のR-peak数 (ECG\_num\_r\_peaks) が最も重要な指標として選ばれた点は注意が必要である.R-peak数の重要度が高い結果は,実験設計上,フェーズごとの持続時間が異なっていた点 (Phase 2は長く,Phase 3は短い) がモデル学習に反映された「持続時間バイアス (Duration bias)」である可能性が高い.したがって,真の意味での感情認識のためには,特徴量を単位時間当たりの比率として正規化する過程が必須的に伴わなければならない.
 
 \section{リアルタイム感情認識システム高度化のための展望}
-本研究で構築した分類モデルは，リアルタイム感情認識フレームワークへと進むための予備検証段階である．実際のサービスで活用可能な水準のシステムを構築するためには，次のような課題を解決しなければならない．
+本研究で構築した分類モデルは,リアルタイム感情認識フレームワークへと進むための予備検証段階である.実際のサービスで活用可能な水準のシステムを構築するためには,次のような課題を解決しなければならない.
 
-第一に，学習ラベルの再定義が必要である．現在は実験段階 (文脈情報) を分類対象としたが，実用的なシステムのためには，ユーザが直接報告した主観的感情スコア (恐怖度，緊張度など) を分類目標としなければならない．アンケート結果を活用して「高恐怖状態」と「低恐怖状態」などに感情ラベルを細分化して再学習させれば，モデルの実用性がさらに高まるであろう．
+第一に,学習ラベルの再定義が必要である.現在は実験段階 (文脈情報) を分類対象としたが,実用的なシステムのためには,ユーザが直接報告した主観的感情スコア (恐怖度,緊張度など) を分類目標としなければならない.アンケート結果を活用して「高恐怖状態」と「低恐怖状態」などに感情ラベルを細分化して再学習させれば,モデルの実用性がさらに高まると考えられる.
 
-第二に，時間分解能の改善である．本研究では数十秒から分単位のフェーズ分類を遂行したが，リアルタイムコンテンツに応用するには秒単位の精密な推定が必要である．このためにスライディングウィンドウ (Sliding Window) 方式を導入し，連続的に感情状態を推定する手法が必要である．
+第二に,時間分解能の改善である.本研究では数十秒から分単位のフェーズ分類を実施したが,リアルタイムコンテンツに応用するには秒単位の精密な推定が必要である.このためにスライディングウィンドウ (Sliding Window) 方式を導入し,連続的に感情状態を推定する手法が必要である.
 
-第三に，個人適応型メカニズムの導入である．参加者ごとに精度偏差 (33\% $\sim$ 100\%) が大きく現れたことは，個人ごとの生理的特性の差異を示している．実用システムでは，体験前の短いキャリブレーション (Calibration) セッションを通じて個人の基底反応を学習し，これを基にモデルを補正する機能が非常に重要である．
+第三に,個人適応型メカニズムの導入である.参加者ごとに精度偏差 (33\% $\sim$ 100\%) が大きく現れたことは,個人ごとの生理的特性の差異を示している.実用システムでは,体験前の短いキャリブレーション (Calibration) セッションを通じて個人の基底反応を学習し,学習した基底反応に基づきモデルを補正する機能が非常に重要である.
 
 \section{技術的限界および改善方向}
-システム実装において最も大きな技術的課題は，動きによるノイズ (Motion Artifact) とデータ同期化問題であった．ユーザがVR機器を装着して激しく動く過程で，心電図信号が揺れたり筋電図信号に雑音が混ざる現象が発生した．
+システム実装において最も大きな技術的課題は,動きによるノイズ (Motion Artifact) とデータ同期化問題であった.ユーザがVR機器を装着して激しく動く過程で,心電図信号が揺れたり筋電図信号に雑音が混ざる現象が発生した.
 
-特にPhase 3で現れた一部の数値は，実際の反応だけでなくセンサの揺れによるエラーが混ざった可能性を排除し難い．これを改善するために，加速度計データを参照信号として活用し，動きノイズをリアルタイムに除去する技術を導入しなければならない．また，UnityとPythonサーバ間の非同期通信遅延を減らすために，LSL (Lab Streaming Layer) のような専門的な同期プロトコルを適用することも考慮に値する．
+特にPhase 3で現れた一部の数値は,実際の反応だけでなくセンサの揺れによるエラーが混ざった可能性を排除できない.ノイズの問題を改善するために,加速度計データを参照信号として活用し,動きノイズをリアルタイムに除去する技術を導入する必要がある.また,UnityとPythonサーバ間の非同期通信遅延を減らすために,LSL (Lab Streaming Layer) のような専門的な同期プロトコルを適用することも検討に値する.
 
 \chapter{結論}
 
-本研究では，VR体験中の感情状態を没入感を損なうことなく客観的に扱うために，
-生体信号（EDA，ECG，EMG）とVR内のイベント／行動ログをリアルタイムに同期・記録できる
-マルチモーダル感情推定フレームワークを構築した．
-予備実験の結果，恐怖・緊張が高まる場面でEDA/EMGに一貫した変化が観察され，
-Phase分類においても無作為水準を上回る性能が得られたことから，
-提案フレームワークがVR体験の客観的評価に有用である可能性を示した．
+本研究では,VR体験中の感情状態を没入感を損なうことなく客観的に扱うために,
+生体信号(EDA,ECG,EMG)とVR内のイベント／行動ログをリアルタイムに同期・記録できる
+マルチモーダル感情推定フレームワークを構築した.
+予備実験の結果,恐怖・緊張が高まる場面でEDA/EMGに一貫した変化が観察され,
+Phase分類においても無作為水準を上回る性能が得られたことから,
+提案フレームワークがVR体験の客観的評価に有用である可能性を示した.
 
-一方で，被験者数・セッション数の不足や動作由来ノイズの影響により，
-心拍系指標の安定性と個人間一般化には課題が残る．
-今後はデータ規模の拡大とアーティファクト除去の強化に加え，
-分類対象をPhaseから主観評定に基づく感情ラベル（高恐怖，低恐怖等）へ再定義し，
-スライディングウィンドウによる秒単位推定と個人キャリブレーションを組み合わせて，
-実運用可能なリアルタイム感情推定へ発展させる．
+一方で,被験者数・セッション数の不足や動作由来ノイズの影響により,
+心拍系指標の安定性と個人間一般化には課題が残る.
+今後はデータ規模の拡大とアーティファクト除去の強化に加え,
+分類対象をPhaseから主観評定に基づく感情ラベル(高恐怖,低恐怖等)へ再定義し,
+スライディングウィンドウによる秒単位推定と個人キャリブレーションを組み合わせて,
+実運用可能なリアルタイム感情推定へ発展させる.
 % 謝辞 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \acknowledgements
 
-本研究を進めるにあたり，終始懇切丁寧なるご指導とご鞭撻を賜りました関西学院大学工学部知能・機械工学課程 井村誠孝教授に，謹んで深甚なる謝意を表します．
-また，本研究の遂行に際し，実験にご協力賜りました被験者の皆様には，貴重なお時間を割いてご参加いただき，多大なるご協力を賜りましたことをここに記し，深く感謝申し上げます．
+本研究を進めるにあたり,終始懇切丁寧なるご指導とご鞭撻を賜りました関西学院大学工学部知能・機械工学課程 井村誠孝教授に,謹んで深甚なる謝意を表します.
+また,本研究の遂行に際し,実験にご協力賜りました被験者の皆様には,貴重なお時間を割いてご参加いただき,多大なるご協力を賜りましたことをここに記し,深く感謝申し上げます.
 
 % 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1167,12 +1147,12 @@ Phase分類においても無作為水準を上回る性能が得られたこと
 
 \section{本文と直接関係ない知識}
 
-付録は無いことが多いが，どうしても書いておきたいことは書いてもよい．
-無い場合は，\verb|\appendix|からまとめて削除する．
+付録は無いことが多いが,どうしても書いておきたいことは書いてもよい.
+無い場合は,\verb|\appendix|からまとめて削除する.
 
 % 研究業績
 
 % \papers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ここに，あれば自分の業績リスト．無ければ項目ごとコメントアウト．
+% ここに,あれば自分の業績リスト.無ければ項目ごとコメントアウト.
 
 \end{document}
