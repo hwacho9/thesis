@@ -1,0 +1,18 @@
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{12}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 提案システムのデータフローおよびTCP同期メカニズム}}{13}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Phase 0: ベースライン測定 (安定)}}{14}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Phase 1: 集中課題 (Go/No-Go Task)}}{14}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Phase 2: 屋敷探索と予期不安}}{15}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Phase 3: ゾンビ追跡と驚き}}{15}{}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 連続生体信号記録(Subject E2).上から EMGエンベロープ,EDA(SCL),ECGフィルタ済み信号.各Phaseは背景色で区別される(Phase 0: 青, Phase 1: 橙, Phase 2: 赤, Phase 3: 紫).}}{19}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Subject E2のPhase別生データ.各列はPhase 0--3を,各行はEMG,EDA,ECGを示す.赤点線はPhase内の平均値.}}{20}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Subject E2のPhase別前処理済み信号と特徴量.第1行: EMGエンベロープ,第2行: EDA(SCL),第3行: ECG(R-peak検出),第4行: 主要特徴量.}}{21}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces イベントマーカーと分析ウィンドウの定義.各イベント発生時点($t_0$)を中心に前後2.5秒(計5秒間)のウィンドウを設定.}}{22}{}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Phase別平均生体反応(6名,8セッション,Mean $\pm $ SD).Phase 2からPhase 3にかけてSCLおよびEMGの上昇が確認される.}}{23}{}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Phase別生体反応の箱ひげ図(6名,8セッション).}}{24}{}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces 参加者別Phase変動.Subject A--F(6名,8セッション)の各Phase別生体反応.個人差が大きいことが確認された.}}{24}{}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 参加者×Phaseヒートマップ.色が濃いほど値が高い.SCLはPhase 2--3で全体的に上昇傾向を示す.}}{25}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Phase分類モデルの性能比較.Random ForestとGradient Boostingが他モデルを上回る性能を示した.}}{31}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 各モデルの正規化混同行列.Random Forestでは Phase 0 (BASELINE) が88\%,Phase 3 (CHASE) が71\%の再現率を示した.}}{32}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Random Forestモデルの特徴量重要度.ECG\_num\_r\_peaks(R-peak数),EMG\_integrated\_emg(積分EMG),EMG\_std\_uV(EMG標準偏差)が上位を占めた.}}{33}{}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 参加者別Phase分類精度.Subject B2,E2は100\%の精度を達成した一方,Subject Aは33\%と低精度であった.}}{33}{}%
