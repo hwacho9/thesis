@@ -247,11 +247,13 @@ Radiahらは,バーチャル環境のレイアウト,色彩,音,装飾,天候と
 
 \section{生体信号の前処理および数値変換モデル}
 BITalinoセンサから収集される生データを物理的意味を持つ単位に変換するため,以下のような変換を適用する.
-生体信号取得システムの動作電圧を $V_{CC}$ ,ADC解像度を $n$ ビットとする.
+生体信号取得システムの動作電圧を $V_{\mathrm{CC}}$ ,ADC解像度を $n$ ビットとする.
 
 \subsection{心電図 (ECG) および筋電図 (EMG) の変換と前処理}
-$$\mathrm{ECG(V)} = \left( \frac{\mathrm{ADC}}{2^n - 1} - 0.5 \right) \times \frac{V_\mathrm{CC}}{G_\mathrm{ECG}}$$
-$$\mathrm{EMG(mV)} = \left( \frac{\mathrm{ADC}}{2^n} - 0.5 \right) \times V_\mathrm{CC} \times \frac{1000}{G_\mathrm{EMG}}$$
+心電図および筋電図信号は, AD変換を経て得られたデータに対して, 以下の変換を行いECG(V), EMG(mV)を得る.
+
+$$\mathrm{ECG} = \left( \frac{\mathrm{ADC}}{2^n - 1} - 0.5 \right) \times \frac{V_{\mathrm{CC}}}{G_\mathrm{ECG}}$$
+$$\mathrm{EMG} = \left( \frac{\mathrm{ADC}}{2^n} - 0.5 \right) \times V_{\mathrm{CC}} \times \frac{1000}{G_\mathrm{EMG}}$$
 変換された信号は以下のように前処理される.
 \begin{itemize}
 \item ECG: 0.5--40 Hz 帯域通過フィルタを適用した後,R-peak検出を実行する.
@@ -260,7 +262,7 @@ $$\mathrm{EMG(mV)} = \left( \frac{\mathrm{ADC}}{2^n} - 0.5 \right) \times V_\mat
 
 \subsection{皮膚電気活動 (EDA) の変換と前処理}
 皮膚導電率は, 以下の関数を用いてマイクロジーメンス ($\mu$S) 単位に変換される.
-$$\mathrm{EDA(\mu S)} = \frac{\mathrm{ADC}}{2^n} \times \frac{V_{CC}}{0.132}$$
+$$\mathrm{EDA} = \frac{\mathrm{ADC}}{2^n} \times \frac{V_{\mathrm{CC}}}{0.132}$$
 本公式の分母の $0.132$ は EDA センサの回路設計に基づく伝達関数の定数である.
 EDA信号は0.5 Hz 低域通過フィルタ (LPF) を適用した後,緩やかに変化するSCL (Tonic) 成分と特定の刺激による急激な変化を表すSCR (Phasic) 成分に分解して処理する.
 
@@ -313,24 +315,29 @@ $$\mathrm{SCR_{amp}} = \mathrm{SC_{peak}} - \mathrm{SC_{onset}}$$
 
 \subsection{ECG特徴}
 心電図から心拍数および心拍変動指標を抽出し,自律神経系反応を分析する.
+指標は時間領域と周波数領域に分けられる.
 
-\subsubsection{時間領域HRV指標}
+時間領域のHRV指標として, 以下の統計量を算出する.
 \begin{itemize}
 \item \textbf{平均心拍数}: 1分間あたりの心拍数 (bpm)
 \item \textbf{RMSSD}: 連続するRR間隔の差分の二乗平均平方根であり, 副交感神経の活動指標として広く用いられる.
-$$RMSSD = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} (RR_{i+1} - RR_i)^2}$$
+$$\mathrm{RMSSD} = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} (RR_{i+1} - RR_i)^2}$$
 \item \textbf{SDNN}: NN間隔の標準偏差であり, 交感・副交感神経の両方を含む全体的なHRV指標である.
-$$SDNN = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (RR_i - \overline{RR})^2}$$
+$$\mathrm{SDNN} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (RR_i - \overline{RR})^2}$$
 \item \textbf{pNN50}: 連続するRR間隔の差が50 ms以上である割合 (\%) であり, 副交感神経活動を反映する.
 \end{itemize}
 
-\subsubsection{周波数領域HRV指標}
-RR間隔時系列をFFTにより周波数領域に変換し,パワースペクトル密度を算出する \cite{TaskForce1996}.
+また, 周波数領域のHRV指標として, RR間隔時系列をFFTにより周波数領域に変換し, パワースペクトル密度 (Power Spectral Density: PSD) を算出する \cite{TaskForce1996}.
+
+PSDは, 信号のパワー（分散）が周波数ごとにどのように分布しているかを表す関数である. 離散信号であるRR間隔時系列の離散フーリエ変換 (DFT) を $X(f)$ とすると, PSDは一般に以下のように定義される.
+$$ \mathrm{PSD}(f) = \frac{1}{N} |X(f)|^2 $$
+ここで, $N$ はデータ点数, $f$ は周波数を表す. このPSDを特定の周波数帯域で積分（面積計算）することで, 以下のような各指標のパワー値が算出される.
+
 \begin{itemize}
 \item \textbf{LFパワー} (0.04--0.15 Hz): 交感神経と副交感神経の両方の活動を反映
 \item \textbf{HFパワー} (0.15--0.40 Hz): 副交感神経活動 (呼吸性洞性不整脈) を反映
 \item \textbf{LF/HF比}: 自律神経系バランス指標. 値が高いほどストレス状態を示す
-$$LF/HF = \frac{\int_{0.04}^{0.15} PSD(f) df}{\int_{0.15}^{0.40} PSD(f) df}$$
+$$\mathrm{LF/HF} = \frac{\int_{0.04}^{0.15} \mathrm{PSD}(f) df}{\int_{0.15}^{0.40} \mathrm{PSD}(f) df}$$
 \end{itemize}
 
 \subsection{EMG特徴}
@@ -338,10 +345,11 @@ $$LF/HF = \frac{\int_{0.04}^{0.15} PSD(f) df}{\int_{0.15}^{0.40} PSD(f) df}$$
 \begin{itemize}
 \item \textbf{平均電圧, 最大電圧} ($\mu$V)
 \item \textbf{RMS電圧}: 筋活動の全体的なエネルギー量
-$$RMS = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
+$$\mathrm{RMS} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} x_i^2}$$
 \end{itemize}
 
 \subsection{EDA特徴}
+皮膚電気活動 (EDA) からは, 以下の特徴量を抽出して分析に用いる.
 \begin{itemize}
 \item \textbf{平均SCL} ($\mu$S): 基礎的な覚醒水準を示す皮膚電気伝導度の平均値
 \item \textbf{SCRパルス数}: 刺激に対する一過性反応の回数 \cite{Hinkle2019}
@@ -383,6 +391,8 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
 
 
 \section{ハードウェア構成}
+本実験システムを構成するハードウェア機器として, 映像提示のためのVR HMDと, 生体信号取得のためのセンサシステムについて述べる.
+
 \subsection{VR HMD}
 本実験では,Meta Quest Proをヘッドマウントディスプレイとして使用した.参加者は両手のコントローラを用いてVR空間内を移動し,特定のインタラクション(ドアの開閉,アイテム取得など)を行うことで,システムへの入力と行動データの収集を行った.
 
@@ -391,7 +401,7 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
 
 収集された各センサのデジタル値は専用センサデータシートに提示された変換公式を通じて物理的単位に換算される.本研究では,第3章の提案手法で示した数式を用いて各信号の変換処理を行う.具体的なシステムパラメータは以下の通りである.
 \begin{itemize}
-\item 動作電圧 ($V_\mathrm{CC}$): 3.3 V
+\item 動作電圧 ($V_{\mathrm{CC}}$): 3.3 V
 \item ADC解像度 ($n$): 10-bit ($0 \sim 1023$)
 \item センサ別ゲイン定数 (Gain): BITalino (r)evolution センサの製造元(PLUX Biosignals)公式データシートに定義された固有値を適用した.
   \begin{itemize}
@@ -489,6 +499,7 @@ Unity環境では \texttt{BitalinoController.cs} が通信操作を行う.本ス
 実験は生体信号の変化を正確に測定するため,以下の4つのフェーズに分割して進行する.
 
 \subsubsection{Phase 0: ベースライン (Baseline)}
+Phase 0は, 参加者の平常時の生体信号を測定し, 基準値を確立するためのフェーズである.
 \begin{itemize}
 \item \textbf{目的}: 参加者の安静時生理指標の基準値を確保する.
 \item \textbf{環境}: 刺激のない静的な環境で安定した状態を60秒間維持し,基準生理値を確保する (図 \ref{fig:phase0}).
@@ -502,6 +513,7 @@ Unity環境では \texttt{BitalinoController.cs} が通信操作を行う.本ス
 この期間のデータは,個人差の大きいEDA・HRVの変化量を正規化するための基準($Baseline$)として使用される.
 
 \subsubsection{Phase 1: 集中課題 (Focus / Go/No-Go Task)}
+Phase 1は, 恐怖刺激のない環境下で認知課題を行い, 集中状態における生体反応を取得するフェーズである.
 \begin{itemize}
 \item \textbf{目的}: 恐怖・驚きの影響がない状態で「純粋集中」状態の生理データを取得する.
 \item \textbf{環境}: 明るいラボ (実験室) 風のトレーニングルーム.
@@ -521,6 +533,7 @@ Unity環境では \texttt{BitalinoController.cs} が通信操作を行う.本ス
 \end{figure}
 
 \subsubsection{Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}
+Phase 2は, 視覚的制限と環境音により予期不安を煽りながら探索を行うフェーズである.
 \begin{itemize}
 \item \textbf{目的}: 視野制限と音響演出で持続的恐怖 (不安) を誘発する.
 \item \textbf{環境}: 暗い屋敷内部 (図 \ref{fig:phase2} (a)).
@@ -546,6 +559,7 @@ Unity環境では \texttt{BitalinoController.cs} が通信操作を行う.本ス
 \end{figure}
 
 \subsubsection{Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}
+Phase 3は, 追跡者 (ゾンビ) との遭遇により, 強い恐怖と驚き反応を誘発するフェーズである.
 \begin{itemize}
 \item \textbf{目的}: 強い恐怖と特定対象に対する驚き反応を誘発する.
 \item \textbf{メカニズム}: Phase 2と同一マップで敵 (ゾンビ) 追跡演出を活性化し即時的脅威刺激を提供することで, 高い覚醒と強い恐怖/驚き反応を誘導する. ゾンビがプレイヤーを追跡する (図 \ref{fig:phase3} (b)). ゾンビは一定距離内に接近すると停止して威嚇し (図 \ref{fig:phase3} (a)), 再び接近を試みる2段階近接ロジック (\texttt{P3\_ZOMBIE\_NEAR\_1}, \texttt{P3\_ZOMBIE\_NEAR\_2}) を持つ.
@@ -865,6 +879,7 @@ Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し,Subject DはPhase 3でE
 
 
 \section{客観的生体反応分析: フェーズ別統計および指標分析}
+収集された生体信号 (EDA, ECG, EMG) について, 各フェーズごとの統計的変化と特徴的な反応パターンを分析する.
 
 \subsection{皮膚電気活動 (EDA) 分析結果}
 皮膚電気活動は交感神経系の活性度を表す核心的な指標であり,本実験ではSCLの平均値を中心に分析した.
@@ -931,7 +946,7 @@ RMS電圧 (RMS, $\mu$V) & 16.87 $\pm$ 6.63 & 18.23 $\pm$ 6.61 & 25.40 $\pm$ 8.93
 \end{tabular}
 \end{table}
 
-EMG分析の結果,フェーズが進行するにつれて筋肉の緊張度が明確に上昇する様相が観察された.特にPhase 3におけるRMS電圧は36.01 $\mu$Vであり,Baseline (16.87 $\mu$V) と比較して2倍以上に増加し,最大電圧は平均223.11 $\mu$Vに達した.EMGの増加は,ゾンビの追跡という直接的な脅威の前で,参加者が逃避あるいは防御のために身体筋肉を強く収縮させたことを裏付ける証拠である.また,標準偏差が30.05 $\mu$Vと非常に大きく現れた点は,参加者の傾向によって身体的硬直反応の程度が極端に分かれたことを示唆している.
+EMG分析の結果,フェーズが進行するにつれて筋肉の緊張度が明確に上昇する様相が観察された.特にPhase 3におけるRMS電圧は36.01 $\mu$Vであり,Baseline (16.87 $\mu$V) と比較して2倍以上に増加し,最大電圧は平均223.11 $\mu$Vになった.EMGの増加は,ゾンビの追跡という直接的な脅威の前で,被験者が逃避あるいは防御のために身体筋肉を強く収縮させたことを裏付ける証拠である.また,標準偏差が30.05 $\mu$Vと非常に大きく現れた点は,被験者の傾向によって身体的硬直反応の程度が極端に分かれたことを示唆している.
 
 \section{個人差分析および特異反応者の識別：主観・客観連携の深層事例}
 全体統計分析を超え,主観的報告と生体反応の間の相関関係を明確に把握するため,主要な参加者3名に対する深層事例分析を実施した.
@@ -962,6 +977,7 @@ Phase 3においてEMG RMS値が101.99 $\mu$Vへと急増したが,EMG RMS値は
 生体信号特徴量のみを用いて実験Phaseを自動分類する機械学習モデルを構築し,その性能を評価した.
 
 \subsection{手法}
+機械学習を用いたPhase分類モデルの構築手順, 使用した特徴量, および検証方法について述べる.
 
 \subsubsection{特徴量}
 表\ref{tab:ml_features}に示す20個の生理学的特徴量を使用した.
@@ -994,6 +1010,7 @@ EDA & 平均SCL,SCL標準偏差,平均SCR,最大SCR,SCRピーク数 \\
 5種類の機械学習アルゴリズムを比較評価した：Random Forest,Gradient Boosting,SVM (RBF kernel),k-NN,Logistic Regression.
 
 \subsection{分類結果}
+構築した機械学習モデルの分類性能を, 精度指標および混同行列を用いて評価した結果を示す.
 
 \subsubsection{モデル比較}
 
