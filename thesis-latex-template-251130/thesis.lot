@@ -8,6 +8,7 @@
 \contentsline {table}{\numberline {5.6}{\ignorespaces 全参加者のPhase別生体反応統計量(6名,8セッション,Mean $\pm $ SD)}}{23}{}%
 \contentsline {table}{\numberline {6.1}{\ignorespaces 全参加者のフェーズ別EDA (SCL) 統計値 (Mean $\pm $ SD)}}{28}{}%
 \contentsline {table}{\numberline {6.2}{\ignorespaces 全参加者のフェーズ別ECG/HRV主要統計値 (Mean $\pm $ SD)}}{28}{}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces 全参加者のフェーズ別EMG主要統計値 (Mean $\pm $ SD)}}{29}{}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces 機械学習に使用した特徴量}}{30}{}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Phase分類モデルの性能比較(LOSO交差検証)}}{31}{}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces ベースライン正規化後のフェーズ別ECG/HRV変化率 (\%, Mean $\pm $ SD)}}{29}{}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces 全参加者のフェーズ別EMG主要統計値 (Mean $\pm $ SD)}}{29}{}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces 機械学習に使用した特徴量}}{30}{}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Phase分類モデルの性能比較(LOSO交差検証)}}{31}{}%
