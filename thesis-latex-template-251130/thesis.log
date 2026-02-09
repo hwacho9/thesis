@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  10 FEB 2026 01:16
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  10 FEB 2026 01:47
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1646,15 +1646,15 @@ File: img/fig8_confusion_matrices.png Graphic file (type png)
 Package luatex.def Info: img/fig8_confusion_matrices.png  used on input line 11
 22.
 (luatex.def)             Requested size: 441.59923pt x 291.83066pt.
-<img/fig9_feature_importance.png, id=163, 859.5312pt x 570.4512pt>
+
+
+[31<./img/fig11_model_comparison.png>]
+<img/fig9_feature_importance.png, id=167, 859.5312pt x 570.4512pt>
 File: img/fig9_feature_importance.png Graphic file (type png)
 <use img/fig9_feature_importance.png>
 Package luatex.def Info: img/fig9_feature_importance.png  used on input line 11
 39.
 (luatex.def)             Requested size: 397.4366pt x 263.77731pt.
-
-
-[31<./img/fig11_model_comparison.png>]
 <img/fig10_subject_accuracy.png, id=168, 859.5312pt x 425.4294pt>
 File: img/fig10_subject_accuracy.png Graphic file (type png)
 <use img/fig10_subject_accuracy.png>
@@ -1720,10 +1720,10 @@ L3 programming layer <2020/03/25>
 Here is how much of LuaTeX's memory you used:
  13576 strings out of 475506
  244629,794899 words of node,token memory allocated
- 3492 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 180 kern, 1 penalty, 2 glyph, 910 attribut
+ 3512 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 184 kern, 1 penalty, 2 glyph, 910 attribut
 e, 51 glue_spec, 95 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:47,2:67578,3:681,4:677,5:412,6:80,7:7091,8:46,9:2953,10:47,11:
+   avail lists: 1:47,2:67554,3:680,4:678,5:411,6:80,7:7091,8:46,9:2953,10:47,11:
 559
  35999 multiletter control sequences out of 65536+600000
  232 fonts using 79647567 bytes
@@ -1748,7 +1748,7 @@ hare/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive
 Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></
 opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx
 /ztmr.pfb>
-Output written on thesis.pdf (51 pages, 8225559 bytes).
+Output written on thesis.pdf (51 pages, 8235790 bytes).
 
 PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams

@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Phase別生体反応の箱ひげ図(6名,8セッション).}}{24}{}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces 参加者別Phase変動}}{24}{}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces 参加者×Phaseヒートマップ}}{25}{}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Phase分類モデルの性能比較.Random ForestとGradient Boostingが他モデルを上回る性能を示した.}}{31}{}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces 各モデルの正規化混同行列.Random Forestでは Phase 0 (BASELINE) が88\%,Phase 3 (CHASE) が71\%の再現率を示した.}}{32}{}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Random Forestモデルの特徴量重要度.ECG\_num\_r\_peaks(R-peak数),EMG\_integrated\_emg(積分EMG),EMG\_std\_uV(EMG標準偏差)が上位を占めた.}}{33}{}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces 参加者別Phase分類精度.Subject B2,E2は100\%の精度を達成した一方,Subject Aは33\%と低精度であった.}}{33}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Phase分類モデルの性能比較}}{31}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 各モデルの正規化混同行列}}{32}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Random Forestモデルの特徴量重要度}}{33}{}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces 参加者別Phase分類精度}}{33}{}%
