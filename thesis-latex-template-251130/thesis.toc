@@ -27,15 +27,15 @@
 \contentsline {subsection}{\numberline {4.2.3}センサチャンネル構成および付着位置}{12}{}%
 \contentsline {section}{\numberline {4.3}システムアーキテクチャおよびデータ同期}{12}{}%
 \contentsline {subsection}{\numberline {4.3.1}Unity\textendash Python間TCP同期設計}{12}{}%
-\contentsline {subsection}{\numberline {4.3.2}イベントログフォーマットと時間同期方式}{12}{}%
+\contentsline {subsection}{\numberline {4.3.2}イベントログフォーマットと時間同期方式}{13}{}%
 \contentsline {section}{\numberline {4.4}Unity側のシステム構成}{13}{}%
 \contentsline {subsection}{\numberline {4.4.1}BitalinoController.csの設計}{13}{}%
-\contentsline {subsection}{\numberline {4.4.2}コンテンツ設計の基本コンセプト}{13}{}%
-\contentsline {subsection}{\numberline {4.4.3}4段階実験フェーズ構成}{13}{}%
+\contentsline {subsection}{\numberline {4.4.2}コンテンツ設計の基本コンセプト}{14}{}%
+\contentsline {subsection}{\numberline {4.4.3}4段階実験フェーズ構成}{14}{}%
 \contentsline {subsubsection}{\numberline {4.4.3.1}Phase 0: ベースライン (Baseline)}{14}{}%
 \contentsline {subsubsection}{\numberline {4.4.3.2}Phase 1: 集中課題 (Focus / Go/No-Go Task)}{14}{}%
-\contentsline {subsubsection}{\numberline {4.4.3.3}Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}{14}{}%
-\contentsline {subsubsection}{\numberline {4.4.3.4}Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}{15}{}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}Phase 2: 屋敷探索と予期不安 (Fear / Exploration)}{15}{}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}Phase 3: ゾンビ追跡と驚き (Fear \& Surprise / Pursuit)}{16}{}%
 \contentsline {chapter}{\numberline {第5章}実験}{17}{}%
 \contentsline {section}{\numberline {5.1}実験の目的}{17}{}%
 \contentsline {section}{\numberline {5.2}参加者}{17}{}%
@@ -44,10 +44,7 @@
 \contentsline {section}{\numberline {5.5}刺激シナリオ}{18}{}%
 \contentsline {section}{\numberline {5.6}データ収集}{18}{}%
 \contentsline {section}{\numberline {5.7}ラベリング}{19}{}%
-\contentsline {subsection}{\numberline {5.7.1}客観的ラベル}{19}{}%
-\contentsline {subsection}{\numberline {5.7.2}主観的ラベル}{19}{}%
-\contentsline {subsection}{\numberline {5.7.3}全体統計}{20}{}%
-\contentsline {subsection}{\numberline {5.7.4}個人差分析}{20}{}%
+\contentsline {subsection}{\numberline {5.7.1}結果}{19}{}%
 \contentsline {chapter}{\numberline {第6章}実験結果}{27}{}%
 \contentsline {section}{\numberline {6.1}主観的感情評価分析}{27}{}%
 \contentsline {subsection}{\numberline {6.1.1}参加者別反応の類型化および特異事例の分析}{27}{}%
@@ -55,22 +52,22 @@
 \contentsline {paragraph}{2. 認知失敗群 (Cognitive Failure Group: D, F)}{27}{}%
 \contentsline {paragraph}{3. 選択的知覚反応群 (Selective Perception Group: F)}{27}{}%
 \contentsline {section}{\numberline {6.2}客観的生体反応分析: フェーズ別統計および指標分析}{27}{}%
-\contentsline {subsection}{\numberline {6.2.1}皮膚電気活動 (EDA) 分析結果}{27}{}%
+\contentsline {subsection}{\numberline {6.2.1}皮膚電気活動 (EDA) 分析結果}{28}{}%
 \contentsline {subsection}{\numberline {6.2.2}心拍変動 (HRV) および心電図 (ECG) 分析結果}{28}{}%
-\contentsline {subsection}{\numberline {6.2.3}筋電図 (EMG) 分析結果}{28}{}%
+\contentsline {subsection}{\numberline {6.2.3}筋電図 (EMG) 分析結果}{29}{}%
 \contentsline {section}{\numberline {6.3}個人差分析および特異反応者の識別：主観・客観連携の深層事例}{29}{}%
 \contentsline {subsection}{\numberline {6.3.1}特異な反応を示す参加者 (Subject E2)}{29}{}%
 \contentsline {subsection}{\numberline {6.3.2}認知失敗および低反応者 (Subject D)}{29}{}%
-\contentsline {subsection}{\numberline {6.3.3}無意識的緊張維持者 (Subject F)}{29}{}%
+\contentsline {subsection}{\numberline {6.3.3}無意識的緊張維持者 (Subject F)}{30}{}%
 \contentsline {section}{\numberline {6.4}機械学習による自動Phase分類}{30}{}%
 \contentsline {subsection}{\numberline {6.4.1}手法}{30}{}%
 \contentsline {subsubsection}{\numberline {6.4.1.1}特徴量}{30}{}%
 \contentsline {subsubsection}{\numberline {6.4.1.2}交差検証}{30}{}%
 \contentsline {subsubsection}{\numberline {6.4.1.3}分類アルゴリズム}{30}{}%
-\contentsline {subsection}{\numberline {6.4.2}分類結果}{30}{}%
+\contentsline {subsection}{\numberline {6.4.2}分類結果}{31}{}%
 \contentsline {subsubsection}{\numberline {6.4.2.1}モデル比較}{31}{}%
 \contentsline {subsubsection}{\numberline {6.4.2.2}混同行列分析}{31}{}%
-\contentsline {subsubsection}{\numberline {6.4.2.3}特徴量重要度}{31}{}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}特徴量重要度}{32}{}%
 \contentsline {subsubsection}{\numberline {6.4.2.4}参加者別分類精度}{32}{}%
 \contentsline {chapter}{\numberline {第7章}考察}{35}{}%
 \contentsline {section}{\numberline {7.1}実験結果の解釈および生体信号の反応}{35}{}%
@@ -81,5 +78,4 @@
 \contentsline {chapter}{\numberline {第8章}結論}{37}{}%
 \contentsline {chapter}{\mbox {} 謝辞}{39}{}%
 \contentsline {chapter}{\mbox {} 参考文献}{41}{}%
-\contentsline {chapter}{\mbox {} 付録}{43}{}%
-\contentsline {section}{\numberline {A}本文と直接関係ない知識}{43}{}%
+\contentsline {chapter}{研究業績}{43}{}%

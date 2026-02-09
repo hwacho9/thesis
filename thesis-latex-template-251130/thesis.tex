@@ -416,10 +416,10 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
 \begin{figure}[t]
   \centering
   \begin{tabular}{ccc}
-    \includegraphics[width=0.3\linewidth]{EMG.jpg} &
-    \includegraphics[width=0.3\linewidth]{EDA.jpg} &
-    \includegraphics[width=0.3\linewidth]{ECG.png} \\
-    (a) EMGセンサ付着位置 (Channel A1) & (b) EDAセンサ付着位置 (Channel A2) & (c) ECGセンサ付着位置 (Channel A3)
+    \includegraphics[width=0.28\linewidth]{EMG.jpg} &
+    \includegraphics[width=0.28\linewidth]{EDA.jpg} &
+    \includegraphics[width=0.28\linewidth]{ECG.png} \\
+    (a) EMGセンサ (A1) & (b) EDAセンサ (A2) & (c) ECGセンサ (A3)
   \end{tabular}
   \caption{各生体センサの付着位置}
   \label{fig:sensor_locations}
@@ -427,15 +427,70 @@ Unity (C\#) とPython間の通信はTCPソケット通信で構成し,Unityプ�
 
 \section{システムアーキテクチャおよびデータ同期}
 
-本システムは,Unity 2022.3 LTSとPython分析サーバー間の非同期TCP/IPソケット通信を基盤として構築した.各モジュールの役割とデータフローを図\ref{fig:system_flow}に示す.
+本システムは, Unity 2022.3 LTSによるVR環境とPython分析サーバーを有機的に統合したマルチモーダルデータ収集プラットフォームとして構築した. 両者間のデータ連携には非同期TCP/IPソケット通信を採用している. 各モジュールの役割とデータフローを図\ref{fig:system_flow}に示す.
 
 \subsection{Unity\textendash Python間TCP同期設計}
-本システムの核心は,Unityで発生するイベントタイミングをPythonサーバに伝達し,Pythonが同時に読み取っているBITalinoサンプルストリームと結合(同期)する構造にある.
+本システムは, ユーザの感情を誘発するVRコンテンツの進行状況に合わせて, 生体信号データにイベントラベルを付与するように設計されている. このデータ連携を実現するために, UnityからPythonサーバへイベントタイミングを伝達し, BITalinoのサンプルデータと結合する構造を採用している.
+
 Unity側では \texttt{BitalinoController.cs}で \texttt{TcpClient} を用いてローカルのPythonサーバに接続し,Phase開始/終了および主要イベント発生時に文字列コマンドを送信する.送信方式は \texttt{writer.WriteLine(cmd)} 形式で改行ベースのメッセージ境界を使用して実装した.
-送信コマンドの例は以下の通りである: \texttt{START}, \texttt{STOP}, \texttt{PHASE0\_BASELINE\_START/END}, \texttt{PHASE1\_TASK\_START}, \texttt{P1\_TRIAL\_ONSET\_GO}, \texttt{PHASE2\_SCENE\_START}, \texttt{P2\_PIECE\_1\textasciitilde4}, \texttt{PHASE3\_START}, \texttt{P3\_ZOMBIE\_NEAR\_1/2}, \texttt{P3\_ZOMBIE\_LOOK\_1}, \texttt{DOOR\_OPEN}, \texttt{EXPERIMENT\_END} など.
+
+表\ref{tab:tcp_commands}に, UnityからPythonサーバへ送信されるTCPコマンドの一覧を示す.
+
+\begin{table}[t]
+\centering
+\caption{Unity\textendash Python間TCPコマンド一覧}
+\label{tab:tcp_commands}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Phase} & \textbf{コマンド} & \textbf{説明} \\
+\hline
+\hline
+システム制御 & \texttt{START} & BITalino接続開始・測定開始 \\
+\cline{2-3}
+ & \texttt{STOP} & 測定終了・データ保存 \\
+\cline{2-3}
+ & \texttt{EXPERIMENT\_END} & 実験全体の終了 \\
+\hline
+\hline
+Phase 0 & \texttt{PHASE0\_BASELINE\_START} & ベースライン測定開始 \\
+\cline{2-3}
+ & \texttt{PHASE0\_BASELINE\_END} & ベースライン測定終了 \\
+\hline
+\hline
+Phase 1 & \texttt{PHASE1\_TASK\_START} & 認知課題Phase開始 \\
+\cline{2-3}
+ & \texttt{P1\_TRIAL\_ONSET\_GO} & 各試行の開始タイミング \\
+\hline
+\hline
+Phase 2 & \texttt{PHASE2\_SCENE\_START} & 悲しみ誘発シーン開始 \\
+\cline{2-3}
+ & \texttt{P2\_PIECE\_1} & シーンイベント1発生 \\
+\cline{2-3}
+ & \texttt{P2\_PIECE\_2} & シーンイベント2発生 \\
+\cline{2-3}
+ & \texttt{P2\_PIECE\_3} & シーンイベント3発生 \\
+\cline{2-3}
+ & \texttt{P2\_PIECE\_4} & シーンイベント4発生 \\
+\hline
+\hline
+Phase 3 & \texttt{PHASE3\_START} & 恐怖誘発シーン開始 \\
+\cline{2-3}
+ & \texttt{P3\_ZOMBIE\_NEAR\_1} & ゾンビ接近イベント1 \\
+\cline{2-3}
+ & \texttt{P3\_ZOMBIE\_NEAR\_2} & ゾンビ接近イベント2 \\
+\cline{2-3}
+ & \texttt{P3\_ZOMBIE\_LOOK\_1} & ゾンビ注視イベント \\
+\cline{2-3}
+ & \texttt{DOOR\_OPEN} & ドア開放イベント \\
+\hline
+\end{tabular}
+\end{table}
+
+これらのコマンドを介して, UnityとPythonは双方向的なデータ連携を実現している. 
+
 \texttt{BitalinoController.cs} は実験全体で共通して使用される通信モジュールであるため,シングルトンおよび \texttt{DontDestroyOnLoad} 形式で維持されるように設計し,シーン転換時にも接続状態を保存する.
 
-Python側はTCPサーバとして動作し,Unityから受信したコマンドをイベントログとして記録すると同時に,BITalino装置から生体信号サンプルを持続的に読み取り保存する.特に \texttt{START} 受信時にBITalino接続および測定を開始し,UnityコマンドをイベントCSVとして記録する.
+Python側はTCPサーバとして動作し,Unityから受信したコマンドをイベントログとして記録すると同時に,BITalino装置から生体信号サンプルを持続的に読み取り保存する.特に \texttt{START} 受信時にBITalino接続および測定を開始し, 以降のUnityコマンドをイベントCSVとして時系列順に記録する. \texttt{STOP} または \texttt{EXPERIMENT\_END} 受信時には測定を終了し, 収集したデータをファイルに保存する.
 
 \subsection{イベントログフォーマットと時間同期方式}
 イベントログは以下のようなCSVフォーマットで記録する.
@@ -524,8 +579,8 @@ Phase 1は, 恐怖刺激のない環境下で認知課題を行い, 集中状態
 \begin{figure}[t]
   \centering
   \begin{tabular}{cc}
-    \includegraphics[width=0.45\linewidth]{phase1_go.png} &
-    \includegraphics[width=0.45\linewidth]{phase1_nogo.png} \\
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase1_go.png} &
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase1_nogo.png} \\
     (a) Go課題 (緑のボール・射撃) & (b) No-Go課題 (赤のボール・待機)
   \end{tabular}
   \caption{Phase 1: 集中課題 (Go/No-Go Task)}
@@ -550,8 +605,8 @@ Phase 2は, 視覚的制限と環境音により予期不安を煽りながら�
 \begin{figure}[t]
   \centering
   \begin{tabular}{cc}
-    \includegraphics[width=0.45\linewidth]{phase2_map.png} &
-    \includegraphics[width=0.45\linewidth]{phase2_item.png} \\
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase2_map.png} &
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase2_item.png} \\
     (a) 屋敷内部の暗い環境 & (b) アイテム探索 (アイテム収集)
   \end{tabular}
   \caption{Phase 2: 屋敷探索と予期不安}
@@ -569,8 +624,8 @@ Phase 3は, 追跡者 (ゾンビ) との遭遇により, 強い恐怖と驚き�
 \begin{figure}[t]
   \centering
   \begin{tabular}{cc}
-    \includegraphics[width=0.45\linewidth]{phase2_zombie.png} &
-    \includegraphics[width=0.45\linewidth]{phase3_trace.png} \\
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase2_zombie.png} &
+    \includegraphics[width=0.45\linewidth, height=3.5cm]{phase3_trace.png} \\
     (a) 潜んでいるゾンビの発見 & (b) ゾンビによる追跡 (恐怖・驚き)
   \end{tabular}
   \caption{Phase 3: ゾンビ追跡と驚き}
@@ -712,11 +767,9 @@ Phase 2からPhase 3にかけてSCLの上昇およびEMGの反応増加が観察
 % 5.1.7 ラベリング
 % ============================================
 \section{ラベリング}
-
 収集された生体データには,システムが自動付与する客観的ラベルと,参加者の事後報告に基づく主観的ラベルを併用する.
 
-\subsection{客観的ラベル}
-表\ref{tab:event_markers}にVRアプリケーションから送信される主要イベントマーカーを示す.
+客観的ラベルは, 表\ref{tab:event_markers}に示すVRアプリケーションから送信される主要イベントマーカーに基づいて付与される.
 図\ref{fig:event_window}に示すように,各イベント発生時点($t_0$)を中心に前後2.5秒(計5秒間)のウィンドウを設定し,該当区間の特徴量を抽出した.
 この窓幅は,EDAの皮膚電気反応が刺激提示後1--4秒で最大振幅に達すること\cite{Benedek2010,Braithwaite2013},
 およびVR環境における感情認識研究での標準的な分析窓\cite{MarinMorales2018,Kreibig2010}に基づき設定した.
@@ -746,8 +799,7 @@ Phase 3 & CHASE\_START & 追跡開始 \\
 \label{fig:event_window}
 \end{figure}
 
-\subsection{主観的ラベル}
-実験直後,参加者は表\ref{tab:questionnaire_detail}に示す事後アンケートに回答した.
+主観的ラベルは, 実験直後に参加者が回答した事後アンケートに基づいて付与される. 詳細は表\ref{tab:questionnaire_detail}に示す通りである.
 
 \begin{table}[t]
   \centering
@@ -798,10 +850,15 @@ Q3-3 & 実験終了時の緊張解放感の程度 & 4.00 & 2.00 \\
 % 5.2 結果
 % ============================================
 
-\subsection{全体統計}
+\subsection{結果}
 
 表\ref{tab:phase_stats}に全参加者(6名,8セッション)のPhase別生体反応統計量を示す.
-図\ref{fig:phase_mean}に示すように,Phase 0からPhase 3に向かってSCLおよびEMGの上昇傾向が確認された.
+図\ref{fig:phase_mean}に示すように, Phase 2からPhase 3にかけてSCLおよびEMGの上昇傾向が確認されるなど, Phase 0からPhase 3に向かって生体反応の変化が確認された.
+
+さらに, 図\ref{fig:subject_variation}および図\ref{fig:subject_heatmap}に参加者別の生体反応パターンを示す. 図\ref{fig:subject_variation}から個人差が大きいことが確認され, 図\ref{fig:subject_heatmap}のヒートマップ（色が濃いほど値が高い）からは, SCLがPhase 2から3にかけて全体的に上昇傾向を示していることが読み取れる.
+Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し,Subject DはPhase 3でEMG RMSの著しい増加を示した.
+一方,Subject A, FはPhase全体を通じて比較的安定した反応パターンを示した.
+
 
 \begin{table}[t]
 \centering
@@ -824,7 +881,7 @@ EMG RMS ($\mu$V) & 16.9 $\pm$ 6.6 & 18.2 $\pm$ 6.6 & 25.4 $\pm$ 8.9 & 36.0 $\pm$
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig6_phase_mean.png}
-\caption{Phase別平均生体反応(6名,8セッション,Mean $\pm$ SD).Phase 2からPhase 3にかけてSCLおよびEMGの上昇が確認される.}
+\caption{Phase別平均生体反応(6名,8セッション,Mean $\pm$ SD)}
 \label{fig:phase_mean}
 \end{figure}
 
@@ -835,29 +892,26 @@ EMG RMS ($\mu$V) & 16.9 $\pm$ 6.6 & 18.2 $\pm$ 6.6 & 25.4 $\pm$ 8.9 & 36.0 $\pm$
 \label{fig:phase_boxplot}
 \end{figure}
 
-\subsection{個人差分析}
 
-図\ref{fig:subject_variation}および図\ref{fig:subject_heatmap}に参加者別の生体反応パターンを示す.
-Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し,Subject DはPhase 3でEMG RMSの著しい増加を示した.
-一方,Subject A, FはPhase全体を通じて比較的安定した反応パターンを示した.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{img/fig5_subject_variation.png}
-\caption{参加者別Phase変動.Subject A--F(6名,8セッション)の各Phase別生体反応.個人差が大きいことが確認された.}
+\caption{参加者別Phase変動}
 \label{fig:subject_variation}
 \end{figure}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{img/fig7_subject_heatmap.png}
-\caption{参加者×Phaseヒートマップ.色が濃いほど値が高い.SCLはPhase 2--3で全体的に上昇傾向を示す.}
+\caption{参加者×Phaseヒートマップ}
 \label{fig:subject_heatmap}
 \end{figure}
 
 
 
 \chapter{実験結果}
+本章では, 実施した実験から得られたデータの分析結果を提示する. まず主観的なアンケート評価の結果を述べ, 続いて生体信号の客観的な統計分析結果を示す. 最後に, これらの特徴量を用いた機械学習によるフェーズ分類の性能評価について記述する.
 
 \section{主観的感情評価分析}
 
@@ -875,7 +929,7 @@ Subject E1, E2はPhase 3で顕著なLF/HF上昇を示し,Subject DはPhase 3でE
 認知失敗群は,特定の状況を明確に認知できず,感情生起が抑制された事例群である.参加者Dは,ゾンビが追跡している事実を認知できなかったと回答し,その結果Q3-1のスコアは1点にとどまった.参加者Fも同様の認知失敗を報告し,事後インタビューにおいて「Q3-1, Q3-2の状況を認知できなかった」と明言した.認知失敗による感情生起の抑制は,VR内での感情変動が参加者の注意および認知的評価プロセスに大きく依存することを示唆している.
 
 \paragraph{3. 選択的知覚反応群 (Selective Perception Group: F)}
-選択的知覚反応群は,持続的な恐怖よりも瞬間的な驚き刺激に敏感に反応したケースである.参加者Fは,追跡状況は認知できなかったものの,ゾンビ部屋のドアを開けた瞬間(Q2-6)には6点という高い緊張度を報告した.高い緊張度の報告は,特定の演出が意図した感情を誘発することに成功したことを意味し,全体的なナラティブへの没入とは別に,瞬間的なインパクトが生体反応に影響を与えた可能性を示唆している.
+選択的知覚反応群は,持続的な恐怖よりも瞬間的な驚き刺激に敏感に反応したケースである.参加者Fは,追跡状況は認知できなかったものの,ゾンビ部屋のドアを開けた瞬間(Q2-6)には6点という高い緊張度を報告した.高い緊張度の報告は,特定の演出が意図した感情を誘発することに成功したことを意味し,全体的な文脈への没入とは別に,瞬間的なインパクトが生体反応に影響を与えた可能性を示唆している.
 
 
 \section{客観的生体反応分析: フェーズ別統計および指標分析}
@@ -1150,8 +1204,8 @@ Phase分類においても無作為水準を上回る性能が得られたこと
 
 \acknowledgements
 
-本研究を進めるにあたり,終始懇切丁寧なるご指導とご鞭撻を賜りました関西学院大学工学部知能・機械工学課程 井村誠孝教授に,謹んで深甚なる謝意を表します.
-また,本研究の遂行に際し,実験にご協力賜りました参加者の皆様には,貴重なお時間を割いてご参加いただき,多大なるご協力を賜りましたことをここに記し,深く感謝申し上げます.
+本研究を進めるにあたり, 終始懇切丁寧なるご指導とご鞭撻を賜りました関西学院大学工学部知能・機械工学課程 井村誠孝教授に, 謹んで深甚なる謝意を表します. 
+また, 本研究の遂行にあたり, 有益な御討論ならびに御指導を賜りました関西学院大学工学部知能・機械工学課程 河野恭之教授, 宮原啓造教授に, 心より感謝申し上げます. さらに, 本研究の遂行に際し, 実験にご協力賜りました参加者の皆様には, 貴重なお時間を割いてご参加いただき, 多大なるご協力を賜りましたことをここに記し, 深く感謝申し上げます.
 
 % 参考文献 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1162,16 +1216,12 @@ Phase分類においても無作為水準を上回る性能が得られたこと
 
 % 付録 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\appendix
-
-\section{本文と直接関係ない知識}
-
-付録は無いことが多いが,どうしても書いておきたいことは書いてもよい.
-無い場合は,\verb|\appendix|からまとめて削除する.
-
-研究業績
-
-% \papers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ここに,あれば自分の業績リスト.無ければ項目ごとコメントアウト.
+\chapter*{研究業績}
+\addcontentsline{toc}{chapter}{研究業績}
+\begin{itemize}
+\item 趙 聖化, 井村 誠孝:
+「VRコンテンツ体験時における生体・行動情報の統合に基づくリアルタイム感情推定フレームワーク」,
+第30回日本バーチャルリアリティ学会大会, 発表番号: 2B2-08, 2025.
+\end{itemize}
 
 \end{document}
