@@ -1,11 +1,11 @@
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの付着位置}}{12}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 各生体センサの装着位置}}{12}{}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces 提案システムのデータフローおよびTCP同期メカニズム}}{14}{}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Phase 0: ベースライン測定 (安定)}}{15}{}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Phase 1: 集中課題 (Go/No-Go Task)}}{15}{}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Phase 2: 屋敷探索と予期不安}}{16}{}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Phase 3: ゾンビ追跡と驚き}}{16}{}%
 \contentsline {figure}{\numberline {5.1}{\ignorespaces 連続生体信号記録(Subject E2).上から EMGエンベロープ,EDA(SCL),ECGフィルタ済み信号.各Phaseは背景色で区別される(Phase 0: 青, Phase 1: 橙, Phase 2: 赤, Phase 3: 紫).}}{19}{}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Subject E2のPhase別生データ.各列はPhase 0--3を,各行はEMG,EDA,ECGを示す.赤点線はPhase内の平均値.}}{20}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Subject E2のPhase別取得データ.各列はPhase 0--3を,各行はEMG,EDA,ECGを示す.赤点線はPhase内の平均値.}}{20}{}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Subject E2のPhase別前処理済み信号と特徴量.第1行: EMGエンベロープ,第2行: EDA(SCL),第3行: ECG(R-peak検出),第4行: 主要特徴量.}}{21}{}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces イベントマーカーと分析ウィンドウの定義.各イベント発生時点($t_0$)を中心に前後2.5秒(計5秒間)のウィンドウを設定.}}{22}{}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Phase別平均生体反応(6名,8セッション,Mean $\pm $ SD)}}{23}{}%

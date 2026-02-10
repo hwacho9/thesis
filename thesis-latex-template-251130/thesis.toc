@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {4.2}ハードウェア構成}{11}{}%
 \contentsline {subsection}{\numberline {4.2.1}VR HMD}{11}{}%
 \contentsline {subsection}{\numberline {4.2.2}生体センシングシステム}{11}{}%
-\contentsline {subsection}{\numberline {4.2.3}センサチャンネル構成および付着位置}{12}{}%
+\contentsline {subsection}{\numberline {4.2.3}センサチャンネル構成および装着位置}{12}{}%
 \contentsline {section}{\numberline {4.3}システムアーキテクチャおよびデータ同期}{12}{}%
 \contentsline {subsection}{\numberline {4.3.1}Unity\textendash Python間TCP同期設計}{12}{}%
 \contentsline {subsection}{\numberline {4.3.2}イベントログフォーマットと時間同期方式}{13}{}%
