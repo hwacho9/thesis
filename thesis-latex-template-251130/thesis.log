@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  18 FEB 2026 18:19
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  18 FEB 2026 18:23
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1640,12 +1640,12 @@ File: img/fig11_model_comparison.png Graphic file (type png)
 Package luatex.def Info: img/fig11_model_comparison.png  used on input line 111
 2.
 (luatex.def)             Requested size: 397.4366pt x 196.82486pt.
-<img/fig8_confusion_matrices.png, id=162, 1076.823pt x 711.6186pt>
+<img/fig8_confusion_matrices.png, id=162, 1076.3412pt x 711.6186pt>
 File: img/fig8_confusion_matrices.png Graphic file (type png)
 <use img/fig8_confusion_matrices.png>
 Package luatex.def Info: img/fig8_confusion_matrices.png  used on input line 11
 21.
-(luatex.def)             Requested size: 441.59923pt x 291.83066pt.
+(luatex.def)             Requested size: 441.59923pt x 291.96097pt.
 
 
 [31<./img/fig11_model_comparison.png>]
@@ -1748,7 +1748,7 @@ hare/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive
 Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></
 opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx
 /ztmr.pfb>
-Output written on thesis.pdf (51 pages, 8235514 bytes).
+Output written on thesis.pdf (51 pages, 8235640 bytes).
 
 PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
