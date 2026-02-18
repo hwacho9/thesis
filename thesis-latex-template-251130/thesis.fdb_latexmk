@@ -1,6 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1770688351.37509 "/Users/chosunghwa/Desktop/授業/handout/thesis-latex-template-251130/thesis.tex" "thesis.pdf" "thesis" 1770688351.51273 2
-  "/Users/chosunghwa/Desktop/授業/handout/thesis-latex-template-251130/thesis.tex" 1770688350.87197 91678 3aaf2f8691a9d9270e893db794fbfab3 ""
+["pdflatex"] 1771406292.5884 "thesis.tex" "thesis.pdf" "thesis" 1771406292.81173 2
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1741388039 46850 d87daedc2abdc653769a6f1067849fe0 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/everyhook/everyhook.sty" 1741388039 5531 6783cc7ca14ebcec881a109a07e02d11 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/jlreq/jlreq-helpers.sty" 1741388039 21198 4561cb0e83239e0adc8e4f204ae00bdf ""
@@ -8,8 +7,8 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/svn-prov/svn-prov.sty" 1741388039 6852 44ea8d7e58290cde708a34ebf3953571 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346141 1288109d02d1c772df65535881471649 ""
-  "thesis.aux" 0 -1 0 "pdflatex"
-  "thesis.tex" 1770688350.87197 91678 3aaf2f8691a9d9270e893db794fbfab3 ""
+  "thesis.aux" 1771405975.86749 17742 6e5197257ec371ba3986494f95c08b7d "pdflatex"
+  "thesis.tex" 1771405956.07754 91688 a07259f814fdf2449881cb6f81f8608a ""
   (generated)
   "thesis.aux"
   "thesis.log"

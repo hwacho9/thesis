@@ -1,17 +1,8 @@
-\ProvidesPackage{hsi-thesis}[2026/02/17 v0.6]
+\ProvidesPackage{hsi-thesis}[2025/11/30 v0.5]
 
 % page style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{plain}
-
-% format %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\setlength\abovecaptionskip{1ex}
-\setlength\belowcaptionskip{1ex}
-
-\ModifyHeading{chapter}{
-    second_heading_text_indent=0pt
-}
 
 % define %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -88,7 +79,7 @@
 
       \vspace*{12mm}
       
-      修 士 論 文}
+      卒 業 論 文}
   \end{center}
   \vspace*{32mm}
   \begin{center}
@@ -100,7 +91,7 @@
   \end{center}
   \vspace*{3mm}
   \begin{center}
-    \huge{(人間システム工学専攻)}
+    \huge{(人間システム工学科)}
   \end{center}
   \clearpage
 }

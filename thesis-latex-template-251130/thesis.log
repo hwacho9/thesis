@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  10 FEB 2026 10:52
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  18 FEB 2026 18:19
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -932,7 +932,7 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@dima=\skip63
 \bigstrutjot=\dimen262
 ) (./hsi-thesis.sty
-Package: hsi-thesis 2025/11/30 v0.5
+Package: hsi-thesis 2026/02/17 v0.6
 )
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/newtx/TeXGy
 reTermesX.fontspec)(load cache: extra_texgyretermesx-regular.luc)
@@ -1451,19 +1451,19 @@ File: ./img/phase1_nogo.png Graphic file (type png)
 <use ./img/phase1_nogo.png>
 Package luatex.def Info: ./img/phase1_nogo.png  used on input line 582.
 (luatex.def)             Requested size: 198.71095pt x 99.58475pt.
-<./img/phase2_map.png, id=83, 1036.87375pt x 556.0775pt>
+
+
+[15<./img/phase0_baseline.png><./img/phase1_go.png><./img/phase1_nogo.png>]
+<./img/phase2_map.png, id=90, 1036.87375pt x 556.0775pt>
 File: ./img/phase2_map.png Graphic file (type png)
 <use ./img/phase2_map.png>
 Package luatex.def Info: ./img/phase2_map.png  used on input line 607.
 (luatex.def)             Requested size: 198.71677pt x 99.58052pt.
-<./img/phase2_item.png, id=84, 625.1355pt x 373.99725pt>
+<./img/phase2_item.png, id=91, 625.1355pt x 373.99725pt>
 File: ./img/phase2_item.png Graphic file (type png)
 <use ./img/phase2_item.png>
 Package luatex.def Info: ./img/phase2_item.png  used on input line 608.
 (luatex.def)             Requested size: 198.712pt x 99.58244pt.
-
-
-[15<./img/phase0_baseline.png><./img/phase1_go.png><./img/phase1_nogo.png>]
 <./img/phase2_zombie.png, id=92, 898.35625pt x 568.1225pt>
 File: ./img/phase2_zombie.png Graphic file (type png)
 <use ./img/phase2_zombie.png>
@@ -1720,10 +1720,10 @@ L3 programming layer <2020/03/25>
 Here is how much of LuaTeX's memory you used:
  13576 strings out of 475506
  244629,794899 words of node,token memory allocated
- 3488 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 184 kern, 1 penalty, 2 glyph, 899 attribut
-e, 51 glue_spec, 94 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:47,2:67626,3:680,4:677,5:411,6:80,7:7091,8:46,9:2964,10:47,11:
+ 3584 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 184 kern, 1 penalty, 2 glyph, 943 attribut
+e, 51 glue_spec, 98 attribute_list, 1 write, 14 user_defined nodes
+   avail lists: 1:47,2:67578,3:680,4:677,5:447,6:80,7:7055,8:46,9:2964,10:47,11:
 559
  35999 multiletter control sequences out of 65536+600000
  232 fonts using 79647567 bytes
@@ -1748,7 +1748,7 @@ hare/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive
 Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></
 opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx
 /ztmr.pfb>
-Output written on thesis.pdf (51 pages, 8235796 bytes).
+Output written on thesis.pdf (51 pages, 8235514 bytes).
 
 PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
