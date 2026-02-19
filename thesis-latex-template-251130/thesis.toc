@@ -9,8 +9,6 @@
 \contentsline {section}{\numberline {3.2}生体信号の前処理および数値変換モデル}{7}{}%
 \contentsline {subsection}{\numberline {3.2.1}心電図 (ECG) および筋電図 (EMG) の変換と前処理}{7}{}%
 \contentsline {subsection}{\numberline {3.2.2}皮膚電気活動 (EDA) の変換と前処理}{8}{}%
-\contentsline {paragraph}{SCL (Skin Conductance Level, Tonic):}{8}{}%
-\contentsline {paragraph}{SCR (Skin Conductance Response, Phasic):}{8}{}%
 \contentsline {section}{\numberline {3.3}特徴抽出}{8}{}%
 \contentsline {subsection}{\numberline {3.3.1}ECG特徴}{9}{}%
 \contentsline {subsection}{\numberline {3.3.2}EMG特徴}{9}{}%
