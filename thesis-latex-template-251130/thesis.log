@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  20 FEB 2026 02:10
+This is LuaHBTeX, Version 1.21.0 (TeX Live 2025/Homebrew)  (format=lualatex 2025.3.7)  22 FEB 2026 11:14
  restricted system commands enabled.
 **thesis.tex
 (./thesis.tex
@@ -1747,7 +1747,7 @@ hare/texmf-dist/fonts/type1/public/newtx/txexs.pfb></opt/homebrew/Cellar/texlive
 Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></
 opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx
 /ztmr.pfb>
-Output written on thesis.pdf (51 pages, 8231178 bytes).
+Output written on thesis.pdf (51 pages, 8224607 bytes).
 
 PDF statistics: 285 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
